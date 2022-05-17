@@ -35,9 +35,7 @@ class Api {
       body: JSON.stringify(dados)
    
     });
-
     if (resposta.status == 200) {
-      console.log(resposta.status);
       const modalDiv = document.getElementById("modalDiv");
       modalDiv.classList.add("modal__div");
       const modalTexto = document.querySelector(".modal__texto");
@@ -46,7 +44,7 @@ class Api {
 
       modalTexto.innerText = "Login efetuado com sucesso!";
       setTimeout(() => {
-        window.location = "../../src/pages/dashboard.html";
+        //window.location = "../../src/pages/dashboard.html";
       }, 3000);
     } else {
       const modalDiv = document.getElementById("modalDiv");
@@ -60,6 +58,7 @@ class Api {
       }, 3000);
     }
     const infos = await resposta.json();
+    localStorage.setItem("token", JSON.stringify(infos));
     return infos;
   }
 
