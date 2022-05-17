@@ -10,16 +10,27 @@ class Api {
       body: JSON.stringify(dados)
     });
     const infos = await resposta.json();
+    .then((res) => {
+      if (res.status) {
+        console.log(res.status)
+        return false;
+      } else if (res.id) {
+        console.log(res.id)
+        return true;
+      }
+    })
     return infos;
   }
 
   static async loginUsuario(dados) {
+
     const resposta = await fetch(`${this.baseUrl}auth/login`, {
       method: "POST",
       headers: {
         "Content-type": "application/json"
       },
       body: JSON.stringify(dados)
+   
     });
     if (resposta.status == 200) {
       const modalDiv = document.getElementById("modalDiv");

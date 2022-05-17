@@ -1,0 +1,325 @@
+.header {
+    padding: 21px 18px;
+}
+
+.header .titulo {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 21.6949px;
+    line-height: 33px;
+    color: #212529;
+    margin-bottom: 30px;
+}
+
+.header .titulo--rosa {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16.2712px;
+    line-height: 24px;
+    color: #FF2253;
+}
+
+.header input {
+    background: #E9ECEF;
+    border: 1.5px solid #E9ECEF;
+    font-family: 'inter';
+    border-radius: 8px;
+    padding: 10px;
+    outline: none;
+    width: 100%;
+}
+
+.header input::placeholder {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #868E96;
+}
+
+.header input:focus {
+    background: #F8F9FA;
+    border: 1.5px solid #212529;
+}
+
+.header img {
+    width: 36px;
+    height: 36px;
+    border-radius: 128px;
+    position: absolute;
+    right: 30px;
+    top: 26px;
+    cursor: pointer;
+}
+
+.main {
+    text-align: center;
+    padding: 0 18px;
+}
+
+.main .filtros {
+    display: flex;
+    overflow-x: scroll;
+    gap: 22px
+}
+
+.main .filtros::-webkit-scrollbar {
+    width: 1px;
+}
+
+.main .filtros::-webkit-scrollbar-thumb {
+    display: none;
+}
+
+.main .filtro__botao {
+    background: #FFF7F4;
+    border: 1.5px solid #FFF7F4;
+    border-radius: 32px;
+    font-weight: 500;
+    font-size: 16px;
+    font-family: 'Poppins';
+    line-height: 19px;
+    text-align: center;
+    color: #212529;
+    padding: 8px 14px;
+}
+
+.main .botao--focado {
+    background: #FF2253;
+    border: 1.5px solid #FF2253;
+    color: #F8F9FA;
+}
+
+.main .filtro__botao:hover {
+    background: #FF2253;
+    border: 1.5px solid #FF2253;
+    color: #F8F9FA;
+    cursor: pointer;
+}
+
+.main .botao--adicionar {
+    margin: 10px 0 30px 0;
+}
+
+.main .cabeca__tabela {
+    margin-bottom: 30px;
+}
+
+.main .cabeca__tabela ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.main .cabeca__tabela .cabeca__tabela--iten {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: #868E96;
+}
+
+.main .corpo__tabela--linha {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #FFFFFF;
+    border: 1px solid #E9ECEF;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    padding: 10px 0;
+}
+
+.main .box {
+    width: 25%;
+}
+
+.main .corpo__tabela--linha img {
+    width: 32px;
+    height: 32px;
+    border-radius: 150px;
+}
+
+.main .corpo__tabela--nome {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #212529;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.main .corpo__tabela--categoria {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    color: #868E96;
+    background: #F8F9FA;
+    border-radius: 8px;
+}
+
+.main .corpo__tabela--descricao {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: #868E96;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.main .corpo__tabela--botao {
+    background: #F8F9FA;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 12px;
+    line-height: 14px;
+    color: #868E96;
+    border: none;
+}
+
+@media (min-width: 770px) {
+    .header {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .header input {
+        width: 300px;
+        height: 50%;
+        margin-right: 60px;
+    }
+
+    .container__botoes {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 30px;
+    }
+
+    .main .filtros {
+        display: block;
+        gap: 0;
+        overflow: hidden;
+    }
+}
+
+@media (min-width: 980px) {
+    .header {
+        padding: 20px 117px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .header .titulo {
+        font-size: 24px;
+        margin: 0;
+    }
+
+    .header .titulo--rosa {
+        font-size: 20px;
+    }
+
+    .header input {
+        width: 312px;
+        height: 50%;
+        margin-right: 60px;
+    }
+
+    .header img {
+        right: 120px;
+        top: initial;
+    }
+
+    .main {
+        padding: 0 117px;
+    }
+
+    .main .container__botoes {
+        display: flex;
+        justify-content: space-between;
+        margin: 44px 0 58px 0;
+    }
+
+    .main .filtros {
+        display: block;
+        overflow-x: hidden;
+        gap: 0;
+    }
+
+    .main .filtro__botao {
+        margin-right: 28px;
+    }
+
+    .main .botao--adicionar {
+        margin: 0;
+    }
+
+    .main .tabela__produtos {
+        height: 60vh;
+        overflow-y: scroll;
+    }
+
+    .main .tabela__produtos::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    .main .tabela__produtos::-webkit-scrollbar-thumb {
+        background-color: #FF2253;
+        border-radius: 10px;
+    }
+
+    .main .cabeca__tabela {
+        margin-bottom: 31px;
+        padding: 0 20px;
+    }
+
+    .main .cabeca__tabela .cabeca__tabela--iten {
+        width: 100px;
+    }
+
+    .main .corpo__tabela--linha {
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    .main .box {
+        max-width: 300px;
+    }
+
+    .main .produto__nome {
+        display: flex;
+        align-items: center;
+        max-width: 250px;
+    }
+
+    .main .corpo__tabela--linha img {
+        margin-right: 12px;
+    }
+
+    .main .corpo__tabela--nome {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .main .corpo__tabela--categoria {
+        padding: 6px;
+        margin-right: 5px;
+    }
+
+    .main .corpo__tabela--descricao {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
