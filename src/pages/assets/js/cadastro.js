@@ -1,13 +1,7 @@
-const body = document.querySelector('body')
+import { Api } from "../../../controller/Api.js"
 
-const formulario = document.querySelector('form')
-const botao = document.getElementById('btnCadastro')
-
+const formulario = document.querySelector('form');
 function PegaValor() {
-    
-    console.log(formulario[0])
-    console.log(formulario[1])
-    console.log(formulario[2])
     return {
         "name":formulario[0].value,
         "email":formulario[1].value,
@@ -15,8 +9,18 @@ function PegaValor() {
     }
 }
 
-botao.addEventListener("click", (event) => {
-    event.preventDefault()
+const botao = document.getElementById('btnCadastro');
+botao.addEventListener("click",async (event) => {
+    event.preventDefault();
+    const validacao = await Api.registrarUsuario(PegaValor());
+    if (validacao === true) {
+        alert("Cadastro concluído");
+        location.replace("/index.html");
+    } else if(validacao === undefined){
+        alert("Usuário já cadastrado");
+    }else{
+        alert("Usuário já cadastrado");
+    }
     
 })
 
