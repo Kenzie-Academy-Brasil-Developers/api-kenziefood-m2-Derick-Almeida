@@ -25,4 +25,4 @@ const PesquisarProduto = class {
     }
 }
 
-export default PesquisarProduto;
+export  {PesquisarProduto};
