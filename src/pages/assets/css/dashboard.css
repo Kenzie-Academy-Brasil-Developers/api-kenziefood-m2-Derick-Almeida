@@ -186,6 +186,7 @@
     line-height: 14px;
     color: #868E96;
     border: none;
+    cursor: pointer;
 }
 
 @media (min-width: 770px) {
@@ -210,6 +211,20 @@
         display: block;
         gap: 0;
         overflow: hidden;
+    }
+
+    .main .filtro__botao {
+        margin-right: 28px;
+    }
+
+    .main .produto__nome {
+        display: flex;
+        align-items: center;
+        max-width: 250px;
+    }
+
+    .main .corpo__tabela--linha img {
+        margin-right: 10px;
     }
 }
 
