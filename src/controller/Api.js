@@ -29,7 +29,6 @@ class Api {
         location.reload();
       }, 3000);
     }
-
     const infos = await resposta.json();
     return infos;
   }
