@@ -1,102 +1,106 @@
 body {
-  font-family: "Poppins", sans-serif;
+    font-family: "Poppins", sans-serif;
 }
+
 .modal__div {
-  width: 100%;
-  background: #ff2253;
-  color: #ffffff;
-  position: absolute;
-  top: 0;
-  height: 5%;
-  display: flex;
-  align-items: center;
-  animation: modal 3.5s;
-  opacity: 0;
+    width: 100%;
+    background: #ff2253;
+    color: #ffffff;
+    position: absolute;
+    top: 0;
+    height: 5%;
+    display: flex;
+    align-items: center;
+    opacity: 0;
 }
+
 .modal__texto {
-  padding: 15px;
+    padding: 15px;
 }
+
 @keyframes modal {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
 
 .main {
-  background: #dee2e6;
-  border-radius: 12px;
-  max-width: 80%;
-  margin: 25% auto;
-  text-align: center;
-  padding: 40px 0;
+    background: #ff83f3;
+    border-radius: 12px;
+    max-width: 80%;
+    margin: 25% auto;
+    text-align: center;
+    padding: 40px 0;
 }
 
 .form__titulo {
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 33px;
-  text-shadow: 1px 1px 0px #ff2253;
-  margin-bottom: 25px;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 33px;
+    text-shadow: 1px 1px 0px #ff2253;
+    margin-bottom: 25px;
 }
 
 .form__titulo {
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 33px;
-  text-shadow: 1px 1px 2px #ff2253, -0.5px -0.5px 0px white;
-  margin-bottom: 25px;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 33px;
+    text-shadow: 1px 1px 2px #ff2253, -0.5px -0.5px 0px white;
+    margin-bottom: 25px;
 }
 
 input {
-  background: #f8f9fa;
-  border: 1.5px solid #dee2e6;
-  border-radius: 8px;
-  outline: none;
-  padding: 8px;
-  display: block;
-  margin: 20px auto;
+    background: #f8f9fa;
+    border: 1.5px solid #dee2e6;
+    border-radius: 8px;
+    outline: none;
+    padding: 8px;
+    display: block;
+    margin: 20px auto;
 }
 
 input::placeholder {
-  color: #868e96;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 19px;
+    color: #868e96;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
 }
 
 input:focus {
-  background: #dee2e6;
-  border: 1.5px solid #dee2e6;
+    background: #dee2e6;
+    border: 1.5px solid #dee2e6;
 }
 
 .form__botao {
-  border: none;
-  background: #ff2253;
-  border: 1.5px solid #ff2253;
-  border-radius: 32px;
-  color: #f8f9fa;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 19px;
-  padding: 5px 20px;
+    border: none;
+    background: #F8F9FA;
+    border: 1.5px solid #F8F9FA;
+    border-radius: 32px;
+    color: #212529;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    padding: 5px 20px;
 }
 
 .form__botao:hover {
-  cursor: pointer;
-  background: #ff2253;
-  border: 1.5px solid #ff2253;
-  color: #f8f9fa;
+    cursor: pointer;
+    background: #ff2253;
+    border: 1.5px solid #ff2253;
+    color: #f8f9fa;
 }
 
 @media (min-width: 560px) {
-  .main {
-    max-width: 35%;
-    margin: 15% auto;
-  }
+    .main {
+        max-width: 35%;
+        margin: 10% auto;
+    }
 }

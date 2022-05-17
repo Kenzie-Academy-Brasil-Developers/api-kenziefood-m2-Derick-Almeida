@@ -1,39 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./assets/css/reset.css" />
-    <link rel="stylesheet" href="./assets/css/login.css" />
-    <title>Login</title>
-  </head>
 
-  <body>
-    <section class="modal">
-      <div id="modalDiv">
-        <p class="modal__texto"></p>
-      </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./assets/css/reset.css" />
+  <link rel="stylesheet" href="./assets/css/login.css" />
+  <title>Login</title>
+</head>
 
-      <div id="modalNegativo">
-        <p class="modal__texto"></p>
-      </div>
-    </section>
+<body>
+  <section class="modal">
+    <div id="modalDiv" class="modal__div">
+      <p class="modal__texto"></p>
+    </div>
 
-    <main class="main">
-      <h1 class="form__titulo">Login</h1>
-      <form action="">
-        <input type="email" name="email" placeholder="E-mail" />
-        <input type="password" name="password" placeholder="Senha" />
-        <button id="btnLogin" class="form__botao">Login</button>
-      </form>
-    </main>
-    <script type="module" src="./assets/js/login.js"></script>
-  </body>
+    <div id="modalNegativo">
+      <p class="modal__texto"></p>
+    </div>
+  </section>
+
+  <main class="main">
+    <h1 class="form__titulo">Login</h1>
+    <form action="">
+      <input type="email" name="email" placeholder="E-mail" />
+      <input type="password" name="password" placeholder="Senha" />
+      <button id="btnLogin" class="form__botao">Login</button>
+    </form>
+  </main>
+  <script type="module" src="./assets/js/login.js"></script>
+</body>
+
 </html>

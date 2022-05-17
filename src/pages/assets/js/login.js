@@ -22,21 +22,26 @@ function pegarDadosFormulario(event) {
 
 async function fazerLogin(dadosLogin) {
   const response = await Api.loginUsuario(dadosLogin);
+
   const modalDiv = document.getElementById("modalDiv");
-  modalDiv.classList.add("modal__div");
   const modalTexto = document.querySelector(".modal__texto");
+
   if (typeof response === "string") {
     localStorage.setItem("token", response);
     modalTexto.textContent = "Login efetuado com sucesso!";
+    modalDiv.style.animation = 'modal 3.5s';
     setTimeout(() => {
       window.location = "../../src/pages/dashboard.html";
-    }, 3000);
+    }, 3500);
+
   } else {
+    modalDiv.style.animation = 'modal 3.5s';
     modalDiv.style.background = "red";
     modalTexto.innerText = response.error;
+
     setTimeout(() => {
       location.reload();
-    }, 3000);
+    }, 3500);
   }
 }
 
