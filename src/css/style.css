@@ -1,0 +1,127 @@
+:root {
+    --background: #FAFAFA;
+    --cor-primaria: #FF2253;
+    --cor-primaria-50: #FFE9EE;
+
+    --cor-secundaria: #4ACA94;
+    --cor-secundaria-50: #E4F7EF;
+
+    --cor-produto-1: #EEF6FF;
+    --cor-produto-2: #FFF7F4;
+    --cor-produto-3: #FFE4EA;
+    --cor-produto-4: #F3EEF5;
+
+    --cinza-4: #212529;
+    --cinza-3: #868E96;
+    --cinza-2: #E9ECEF;
+    --cinza-1: #F8F9FA;
+
+    --font: 'Poppins';
+    --font-inter : 'Inter'
+}
+
+
+@media only screen and (max-width: 560px){
+    header .containerLogo{
+        display: flex;
+        height: 4vh;
+        padding: 21px 18px;
+    }
+    .containerLogo > h2 {
+        font-family: var(--font);
+        font-weight: 700;
+        font-size: 22px;
+        color: var(--cinza-4);
+    }
+    .containerLogo > h2 > span {
+        font-family: var(--font);
+        font-weight: 700;
+        font-size: 16px;
+        color: var(--cor-primaria);
+    }
+
+    header > .containerBuscaPorNome {
+        width: 80%;
+        height: 35px;
+        margin: auto;
+        background-color: var(--cinza-2);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 15px 17px;
+        gap: 14px;
+        border-radius: 12px;
+    }
+
+    .containerBuscaPorNome > input {
+        color: var(--cinza-3);
+        background-color: var(--cinza-2);
+        width: 100%;
+        padding: 15px 2px;
+        font-size: 16px;
+        font-weight: 400;
+        border:none;
+        outline: none;
+    }
+    .containerBuscaPorNome input::focus{
+        background-color: var(--background);
+        border: 1.5px solid var(--cinza-4);
+    }
+
+    .filtros {
+        margin: 10px auto;
+        display:flex;
+        width: 80%;
+        height: 60px;
+        overflow-x: hidden;
+        overflow-x: scroll;
+    }
+    .filtro_botao {
+        background-color: var(--cinza-1);
+        font-size: 16px;
+        color: var(--cinza-4);
+        line-height: 19px;
+        border: 1.5px solid var(--cinza-1);
+        border-radius: 30px;
+        height: 48px;
+        width: auto;
+        padding: 15px 14px;
+    }
+    .botao--focado {
+        background-color: var(--cor-primaria);
+        color: var(--cinza-1);
+    }
+
+    .box {
+        background-color: var(--cinza-3);
+        height: 62vh;
+        display: flex;
+        overflow-x: hidden;
+        overflow-x: scroll;
+        padding: 8px 18px;
+    }
+    
+    .carrinhoBox {
+        background-color: var(--cor-primaria);
+        height: auto;
+        width: 100%;
+        height: 64px;
+    }
+    
+    .carrinho_header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+    .carrinho_header h3 {
+        font-family: var(--font);
+        font-weight: 700;
+        font-size: 16px;
+        color: var(--cinza-1);
+    }
+}
+
+@media only screen and (min-width: 561px) {
+
+}
