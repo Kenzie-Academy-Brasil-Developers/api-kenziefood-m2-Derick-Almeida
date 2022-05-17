@@ -9,7 +9,7 @@ async function loginUser(event) {
     email: email.value,
     password: password.value
   });
-
+  console.log(localStorage.getItem("token"));
   return USER_DATAS;
 }
 const BUTTON_LOGIN = document.getElementById("btnLogin");
