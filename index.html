@@ -1,38 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kenzie Food</title>
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./src/css/style.css">
+    <link rel="stylesheet" href="./src/css/reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Inter:wght@300;400;600;700&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+  </head>
 
-<body>
-  <header>
-    <h2>KENZIE FOOD</h2>
-    <input type="search" id="buscarProduto" placeholder="Pesquisar por Produto">
-  </header>
-
-  <main class="main">
-    <div class="filtos">
-      <button>Todos</button>
-      <button>Panificadora</button>
-      <button>Frutas</button>
-      <button>Bebidas</button>
+  <body>
+    <header>
+      <div class="containerLogo">
+        <h2>Kenzie <span>Food</span></h2> 
+      </div>
+      <div class="containerBuscaPorNome">
+        <img src="" alt="icon">
+        <input type="search" placeholder="Pesquisar por Produto">
+      </div>
+    </header>
+    <div class="filtros">
+      <button class="filtro_botao botao--focado" data-tag="Todos">Todos</button>
+      <button class="filtro_botao" data-tag="Panificadora">Panificadora</button>
+      <button class="filtro_botao" data-tag="Frutas">Frutas</button>
+      <button class="filtro_botao" data-tag="Bebidas">Bebidas</button>
     </div>
-    <div class="box">
-    </div>
-  </main>
-
-  <section class="carrinhoBox">
-    <div class="carrinho_header"></div>
-    <h3>Carrinho</h3>
-    <button>Fechar Carrinho</button>
-    <div class="carrinho_content"></div>
-  </section>
-
-</body>
-<script type="module" src="./src/js/main.js"></script>
-
+    <main>
+      <div class="box">
+      </div>
+    </main>
+    <section class="carrinhoBox">
+      <div class="carrinho_header">
+        <h3>Carrinho</h3>
+      </div>
+      <div class="carrinho_content"></div>
+    </section>
+  </body>
+  <script type="module" src="src/js/main.js"></script>
 </html>
+
