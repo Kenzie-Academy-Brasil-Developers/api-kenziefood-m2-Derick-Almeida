@@ -1,0 +1,183 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ff2253;
+}
+
+.container {
+  width: 80%;
+  height: 80vh;
+  display: flex;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212);
+}
+
+.form__img {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 1rem;
+}
+.form__img img {
+  width: 31rem;
+}
+.form {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #ffffff;
+  padding: 3rem;
+}
+.form__header {
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: space-between;
+  width: 30rem;
+}
+.login__button {
+  display: flex;
+  align-items: center;
+}
+.login__button button {
+  border: none;
+  background: #ff2253;
+  padding: 0.4rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  transition: background 2s;
+}
+
+.login__button button:hover {
+  background: #f8869f;
+}
+.login__button button a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 500;
+}
+.form__header h1::after {
+  content: "";
+  display: block;
+  width: 5rem;
+  height: 0.3rem;
+  background-color: #ff2253;
+  margin: 0 auto;
+  position: absolute;
+  border-radius: 10px;
+}
+.grupo_inputs {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 0.62rem;
+  padding: 0 0.5rem;
+}
+.input__box {
+  margin-bottom: 1.1rem;
+  display: flex;
+  flex-direction: column;
+}
+.input__box input {
+  margin: 0.6rem 0;
+  padding: 0.8rem 1.2rem;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  box-shadow: 1px 1px 6px #131212;
+}
+.input__box input:hover {
+  background-color: #e6e6e6;
+}
+.input__box label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #000000c0;
+}
+.input__box input::placeholder {
+  color: #000000de;
+}
+.botao__continuar button {
+  width: 100%;
+  margin-top: 2.5rem;
+  border: none;
+  outline: none;
+  background: #ff2253;
+  color: #ffffff;
+  padding: 0.62rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 2s;
+}
+.botao__continuar button:hover {
+  background: #fc5e81;
+}
+.botao__continuar button a {
+  text-decoration: none;
+  font-size: 0.93rem;
+  font-weight: 500;
+  color: #ffffff;
+}
+@media screen and (max-width: 1330px) {
+  .form__img {
+    display: none;
+  }
+  .container {
+    width: 50%;
+  }
+  .form {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1064px) {
+  .container {
+    width: 90%;
+    height: auto;
+  }
+  .grupo_inputs {
+    flex-direction: column;
+    overflow-y: scroll;
+    flex-wrap: nowrap;
+    max-height: 10rem;
+    padding-right: 5rem;
+  }
+}
+@media screen and (max-width: 550px) {
+  .form__header {
+    width: 100%;
+    justify-content: center;
+  }
+  .form__header h1 {
+    font-size: 20px;
+    margin-right: 30px;
+  }
+  .grupo_inputs {
+    width: 90%;
+    margin: auto;
+    display: flex;
+  }
+  .grupo_inputs input {
+    justify-content: stretch;
+  }
+  .botao__continuar {
+    width: 80%;
+    margin: auto;
+  }
+}
