@@ -14,23 +14,21 @@ class Api {
       modalDiv.classList.add("modal__div");
       const modalTexto = document.querySelector(".modal__texto");
 
-      const infos = await resposta.json()
-        .then((res) => {
-          if (res.status) {
-            console.log(res.status)
-            return false;
-          } else if (res.id) {
-            console.log(res.id)
-            return true;
-          }
-        })
+      modalTexto.innerText = "Cadastro efetuado com sucesso!";
+      setTimeout(() => {
+        window.location = "../../src/pages/login.html";
+      }, 3000);
+    } else {
+      const modalDiv = document.getElementById("modalDiv");
+      modalDiv.classList.add("modal__div");
+      const modalTexto = document.querySelector(".modal__texto");
+
       modalDiv.style.background = "red";
       modalTexto.innerText = "Informações Inválidas!";
       setTimeout(() => {
         location.reload();
       }, 3000);
     }
-
     const infos = await resposta.json();
     return infos;
   }
