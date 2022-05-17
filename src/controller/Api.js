@@ -11,15 +11,15 @@ class Api {
     });
 
     const infos = await resposta.json()
-    .then((res) => {
-      if (res.status) {
-        console.log(res.status)
-        return false;
-      } else if (res.id) {
-        console.log(res.id)
-        return true;
-      }
-    })
+      .then((res) => {
+        if (res.status) {
+          console.log(res.status)
+          return false;
+        } else if (res.id) {
+          console.log(res.id)
+          return true;
+        }
+      })
 
     console.log(infos);
     return infos;
@@ -33,7 +33,7 @@ class Api {
         "Content-type": "application/json"
       },
       body: JSON.stringify(dados)
-   
+
     });
     if (resposta.status == 200) {
       const modalDiv = document.getElementById("modalDiv");
@@ -44,7 +44,7 @@ class Api {
 
       modalTexto.innerText = "Login efetuado com sucesso!";
       setTimeout(() => {
-        //window.location = "../../src/pages/dashboard.html";
+        window.location = "../../src/pages/dashboard.html";
       }, 3000);
     } else {
       const modalDiv = document.getElementById("modalDiv");
