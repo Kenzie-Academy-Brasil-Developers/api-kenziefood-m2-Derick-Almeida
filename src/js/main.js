@@ -4,6 +4,11 @@ import { criarCard } from "./card.js";
 const box = document.querySelector(".box");
 
 let produtos = await Api.produtos();
-produtos.forEach(element => {
-  criarCard(element);
-});
+
+function criarModal(array) {
+  array.forEach(element => {
+    criarCard(element);
+  });
+}
+criarModal(produtos);
+export { criarModal };
