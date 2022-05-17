@@ -1,7 +1,6 @@
 import { Api } from "../../../controller/Api.js";
 
-async function loginUser(event) {
-  event.preventDefault();
+async function loginUser() {
   const email = document.getElementById("email");
   const password = document.getElementById("password");
 
