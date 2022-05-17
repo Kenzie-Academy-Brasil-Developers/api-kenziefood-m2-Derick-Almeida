@@ -4,7 +4,7 @@ import {criarCard} from "./card.js"
 
 const box = document.querySelector(".box")
 console.log(box)
-
+let produtos = await Api.produtos()
 produtos.forEach(element => {criarCard(element)});
 
 PesquisarProduto.filtrarProdutos();
