@@ -9,8 +9,7 @@ class Api {
       },
       body: JSON.stringify(dados)
     });
-
-    const infos = await resposta.json()
+    const infos = await resposta.json();
     .then((res) => {
       if (res.status) {
         console.log(res.status)
@@ -20,8 +19,6 @@ class Api {
         return true;
       }
     })
-
-    console.log(infos);
     return infos;
   }
 
@@ -44,7 +41,7 @@ class Api {
 
       modalTexto.innerText = "Login efetuado com sucesso!";
       setTimeout(() => {
-        //window.location = "../../src/pages/dashboard.html";
+        window.location = "../../src/pages/dashboard.html";
       }, 3000);
     } else {
       const modalDiv = document.getElementById("modalDiv");
@@ -65,7 +62,6 @@ class Api {
   static async produtos() {
     const resposta = await fetch(`${this.baseUrl}products`);
     const info = await resposta.json();
-    console.log(info);
     return info;
   }
 
@@ -76,7 +72,6 @@ class Api {
       }
     });
     const infos = await resposta.json();
-    console.log(infos);
     return infos;
   }
 
@@ -90,7 +85,6 @@ class Api {
       body: JSON.stringify(dados)
     });
     const infos = await resposta.json();
-    console.log(infos);
     return infos;
   }
 }
