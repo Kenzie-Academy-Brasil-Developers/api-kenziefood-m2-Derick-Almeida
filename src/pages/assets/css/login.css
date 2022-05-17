@@ -1,19 +1,21 @@
 body {
   font-family: "Poppins", sans-serif;
 }
-/* .modal {
+.modal__div {
   width: 100%;
-  background: green;
+  background: #ff2253;
   color: #ffffff;
   position: absolute;
   top: 0;
   height: 5%;
   display: flex;
   align-items: center;
-  animation: modal 10s;
+  animation: modal 3.5s;
   opacity: 0;
 }
-
+.modal__texto {
+  padding: 15px;
+}
 @keyframes modal {
   0% {
     opacity: 0;
@@ -24,7 +26,7 @@ body {
   100% {
     opacity: 0;
   }
-} */
+}
 
 .main {
   background: #dee2e6;
@@ -44,22 +46,21 @@ body {
 }
 
 .form__titulo {
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 33px;
-    text-shadow: 1px 1px 2px #ff2253, -0.5px -0.5px 0px white;
-    margin-bottom: 25px;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 33px;
+  text-shadow: 1px 1px 2px #ff2253, -0.5px -0.5px 0px white;
+  margin-bottom: 25px;
 }
 
 input {
-    background: #F8F9FA;
-    border: 1.5px solid #DEE2E6;
-    border-radius: 8px;
-    outline: none;
-    padding: 8px;
-    display: block;
-    margin: 20px auto;
-
+  background: #f8f9fa;
+  border: 1.5px solid #dee2e6;
+  border-radius: 8px;
+  outline: none;
+  padding: 8px;
+  display: block;
+  margin: 20px auto;
 }
 
 input::placeholder {
@@ -70,8 +71,8 @@ input::placeholder {
 }
 
 input:focus {
-    background: #DEE2E6;
-    border: 1.5px solid #DEE2E6;
+  background: #dee2e6;
+  border: 1.5px solid #dee2e6;
 }
 
 .form__botao {
@@ -87,11 +88,10 @@ input:focus {
 }
 
 .form__botao:hover {
-    cursor: pointer;
-    background: #FF2253;
-    border: 1.5px solid #FF2253;
-    color: #F8F9FA;
-
+  cursor: pointer;
+  background: #ff2253;
+  border: 1.5px solid #ff2253;
+  color: #f8f9fa;
 }
 
 @media (min-width: 560px) {
