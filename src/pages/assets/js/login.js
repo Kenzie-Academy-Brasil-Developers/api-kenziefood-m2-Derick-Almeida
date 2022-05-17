@@ -1,48 +1,16 @@
 import { Api } from "../../../controller/Api.js";
 
-function eventoBotaoLogin() {
-  const botao = document.getElementById("btnLogin");
-  botao.addEventListener("click", pegarDadosFormulario);
-}
-
-function pegarDadosFormulario(event) {
+async function loginUser(event) {
   event.preventDefault();
+  const email = document.getElementById("email");
+  const password = document.getElementById("password");
 
-  const formulario = document.querySelector("form");
-  const elementosFormulario = [...formulario.children];
-  const dadosLogin = {};
-  elementosFormulario.forEach(elem => {
-    if (elem.name !== "") {
-      dadosLogin[elem.name] = elem.value;
-    }
+  const USER_DATAS = await Api.loginUsuario({
+    email: email.value,
+    password: password.value
   });
 
-  fazerLogin(dadosLogin);
+  return USER_DATAS;
 }
-
-async function fazerLogin(dadosLogin) {
-  const response = await Api.loginUsuario(dadosLogin);
-
-  const modalDiv = document.getElementById("modalDiv");
-  const modalTexto = document.querySelector(".modal__texto");
-
-  if (typeof response === "string") {
-    localStorage.setItem("token", response);
-    modalTexto.textContent = "Login efetuado com sucesso!";
-    modalDiv.style.animation = 'modal 3.5s';
-    setTimeout(() => {
-      window.location = "../../src/pages/dashboard.html";
-    }, 3500);
-
-  } else {
-    modalDiv.style.animation = 'modal 3.5s';
-    modalDiv.style.background = "red";
-    modalTexto.innerText = response.error;
-
-    setTimeout(() => {
-      location.reload();
-    }, 3500);
-  }
-}
-
-eventoBotaoLogin();
+const BUTTON_LOGIN = document.getElementById("btnLogin");
+BUTTON_LOGIN.addEventListener("click", loginUser);

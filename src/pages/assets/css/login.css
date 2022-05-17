@@ -1,106 +1,160 @@
-body {
-    font-family: "Poppins", sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap");
+
+@keyframes modal {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 .modal__div {
-    width: 100%;
-    background: #ff2253;
-    color: #ffffff;
-    position: absolute;
-    top: 0;
-    height: 5%;
-    display: flex;
-    align-items: center;
-    opacity: 0;
+  width: 100%;
+  background: #43fd5f;
+  color: #ffffff;
+  position: absolute;
+  top: 0;
+  height: 5%;
+  display: flex;
+  align-items: center;
+  animation: modal 3.5s;
+  opacity: 0;
 }
-
 .modal__texto {
-    padding: 15px;
+  padding: 15px;
 }
 
-@keyframes modal {
-    0% {
-        opacity: 0;
-    }
+body {
+  margin: 0;
+  font-family: "Noto Sans", sans-serif;
+  background: #ff2253;
+}
+body * {
+  box-sizing: border-box;
+}
+.main__login {
+  width: 100vw;
+  height: 100vh;
 
-    50% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 0;
-    }
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.main {
-    background: #ff83f3;
-    border-radius: 12px;
-    max-width: 80%;
-    margin: 25% auto;
-    text-align: center;
-    padding: 40px 0;
+.login__esquerda {
+  width: 50vw;
+  height: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.login__esquerda > h1 {
+  font-size: 3vw;
+  color: #ffffff;
+}
+.login__esquerda_img {
+  width: 35vw;
+}
+.login__direita {
+  width: 50vw;
+  height: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card__login {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 30px 35px;
+  background: #e31744;
+  border-radius: 20px;
+  box-shadow: 0px 10px 40px #ec5273;
 }
 
-.form__titulo {
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 33px;
-    text-shadow: 1px 1px 0px #ff2253;
-    margin-bottom: 25px;
+.card__login > h1 {
+  color: #ffffff;
+  font-weight: 800;
+  margin: 0;
 }
 
-.form__titulo {
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 33px;
-    text-shadow: 1px 1px 2px #ff2253, -0.5px -0.5px 0px white;
-    margin-bottom: 25px;
+.textfield {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 10px 0px;
+}
+.textfield > input {
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  padding: 15px;
+  background-color: #ec3e64;
+  color: #dbdbdb;
+  font-size: 12pt;
+  box-shadow: 0px 10px 40px #cd4663;
+  outline: none;
+  box-sizing: border-box;
 }
 
-input {
-    background: #f8f9fa;
-    border: 1.5px solid #dee2e6;
-    border-radius: 8px;
-    outline: none;
-    padding: 8px;
-    display: block;
-    margin: 20px auto;
+.textfield > label {
+  color: #dbdbdb;
+  margin-bottom: 10px;
+}
+.textfield > input::placeholder {
+  color: #dbdbdb;
 }
 
-input::placeholder {
-    color: #868e96;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
+.btn__login {
+  width: 100%;
+  padding: 16px 0px;
+  margin: 25px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 3px;
+  color: #ec3e64;
+  background: #d9d7d7;
+  cursor: pointer;
+  box-shadow: 0px 10px 40px -12px #b15b6e;
 }
 
-input:focus {
-    background: #dee2e6;
-    border: 1.5px solid #dee2e6;
+@media only screen and (max-width: 950px) {
+  .card__login {
+    width: 85%;
+  }
 }
 
-.form__botao {
-    border: none;
-    background: #F8F9FA;
-    border: 1.5px solid #F8F9FA;
-    border-radius: 32px;
-    color: #212529;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 19px;
-    padding: 5px 20px;
-}
-
-.form__botao:hover {
-    cursor: pointer;
-    background: #ff2253;
-    border: 1.5px solid #ff2253;
-    color: #f8f9fa;
-}
-
-@media (min-width: 560px) {
-    .main {
-        max-width: 35%;
-        margin: 10% auto;
-    }
+@media only screen and (max-width: 600px) {
+  .main__login {
+    flex-direction: column;
+  }
+  .login__esquerda > h1 {
+    display: none;
+  }
+  .login__esquerda {
+    width: 100%;
+    height: auto;
+  }
+  .login__direita {
+    width: 100%;
+    height: auto;
+  }
+  .login__esquerda_img {
+    width: 50vw;
+  }
+  .card__login {
+    width: 80%;
+  }
 }

@@ -1,24 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/src/css/login.css">
-</head>
-
-<body>
-    <main>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="assets/css/cadastro.css" />
+  </head>
+  <body>
+    <main class="container">
+      <div class="form__img">
+        <img
+          src="assets/imgLogin/Cadastro/undraw_shopping_re_hdd9.svg"
+          alt=""
+        />
+      </div>
+      <div class="form">
         <form>
-            <input type="text" placeholder="Nome do Usuário">
-            <input type="email" placeholder="E-mail">
-            <input type="password" placeholder="Senha">
-            <button id="botao">Cadastrar</button>
-        </form>
-    </main>
-    <script src="./assets/js/cadastro.js"></script>
-</body>
+          <div class="form__header">
+            <div class="titulo">
+              <h1>Cadastre-se</h1>
+            </div>
+            <div class="login__button">
+              <button><a href="">Entrar</a></button>
+            </div>
+          </div>
+          <div class="grupo_inputs">
+            <div class="input__box">
+              <label for="firstname">Nome</label>
+              <input
+                type="text"
+                id="firstname"
+                placeholder="Digite seu nome"
+                required
+              />
+            </div>
+            <div class="input__box">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                placeholder="Digite seu email"
+                required
+              />
+            </div>
+            <div class="input__box">
+              <label for="senha">Senha</label>
+              <input
+                type="password"
+                id="senha"
+                placeholder="Digite seu senha"
+                required
+              />
+            </div>
+          </div>
 
+          <div class="botao__continuar">
+            <button><a href="">Continuar</a></button>
+          </div>
+        </form>
+      </div>
+    </main>
+  </body>
 </html>
