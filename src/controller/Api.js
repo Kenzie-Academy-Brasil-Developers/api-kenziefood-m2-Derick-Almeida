@@ -9,31 +9,39 @@ class Api {
       },
       body: JSON.stringify(dados)
     });
+    if (resposta.status == 201) {
+      const modalDiv = document.getElementById("modalDiv");
+      modalDiv.classList.add("modal__div");
+      const modalTexto = document.querySelector(".modal__texto");
 
-    const infos = await resposta.json()
-      .then((res) => {
-        if (res.status) {
-          console.log(res.status)
-          return false;
-        } else if (res.id) {
-          console.log(res.id)
-          return true;
-        }
-      })
+      const infos = await resposta.json()
+        .then((res) => {
+          if (res.status) {
+            console.log(res.status)
+            return false;
+          } else if (res.id) {
+            console.log(res.id)
+            return true;
+          }
+        })
+      modalDiv.style.background = "red";
+      modalTexto.innerText = "Informações Inválidas!";
+      setTimeout(() => {
+        location.reload();
+      }, 3000);
+    }
 
-    console.log(infos);
+    const infos = await resposta.json();
     return infos;
   }
 
   static async loginUsuario(dados) {
-
     const resposta = await fetch(`${this.baseUrl}auth/login`, {
       method: "POST",
       headers: {
         "Content-type": "application/json"
       },
       body: JSON.stringify(dados)
-
     });
     if (resposta.status == 200) {
       const modalDiv = document.getElementById("modalDiv");
@@ -65,7 +73,6 @@ class Api {
   static async produtos() {
     const resposta = await fetch(`${this.baseUrl}products`);
     const info = await resposta.json();
-    console.log(info);
     return info;
   }
 
@@ -76,7 +83,6 @@ class Api {
       }
     });
     const infos = await resposta.json();
-    console.log(infos);
     return infos;
   }
 
@@ -90,7 +96,6 @@ class Api {
       body: JSON.stringify(dados)
     });
     const infos = await resposta.json();
-    console.log(infos);
     return infos;
   }
 }

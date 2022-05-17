@@ -1,7 +1,6 @@
 import { Api } from "../../../controller/Api.js";
 
-async function loginUser(event) {
-  event.preventDefault();
+async function loginUser() {
   const email = document.getElementById("email");
   const password = document.getElementById("password");
 
@@ -9,7 +8,7 @@ async function loginUser(event) {
     email: email.value,
     password: password.value
   });
-  console.log(localStorage.getItem("token"));
+
   return USER_DATAS;
 }
 const BUTTON_LOGIN = document.getElementById("btnLogin");
