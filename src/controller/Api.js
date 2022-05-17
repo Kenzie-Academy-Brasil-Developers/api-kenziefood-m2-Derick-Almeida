@@ -9,6 +9,7 @@ class Api {
       },
       body: JSON.stringify(dados)
     });
+
     const infos = await resposta.json()
     .then((res) => {
       if (res.status) {
@@ -19,25 +20,47 @@ class Api {
         return true;
       }
     })
+
     console.log(infos);
     return infos;
   }
 
   static async loginUsuario(dados) {
-    fetch(`${this.baseUrl}auth/login`, {
+
+    const resposta = await fetch(`${this.baseUrl}auth/login`, {
       method: "POST",
       headers: {
         "Content-type": "application/json"
       },
       body: JSON.stringify(dados)
-    })
-      .then(resposta => resposta.json())
-      .then(resposta => {
-        console.log(resposta);
-        localStorage.setItem("token", JSON.stringify(resposta));
-        return resposta;
-      })
-      .catch(err => console.log(err));
+   
+    });
+
+    if (resposta.status == 200) {
+      console.log(resposta.status);
+      const modalDiv = document.getElementById("modalDiv");
+      modalDiv.classList.add("modal__div");
+      const modalTexto = document.querySelector(".modal__texto");
+
+      localStorage.setItem("token", resposta);
+
+      modalTexto.innerText = "Login efetuado com sucesso!";
+      setTimeout(() => {
+        window.location = "../../src/pages/dashboard.html";
+      }, 3000);
+    } else {
+      const modalDiv = document.getElementById("modalDiv");
+      modalDiv.classList.add("modal__div");
+      const modalTexto = document.querySelector(".modal__texto");
+
+      modalDiv.style.background = "red";
+      modalTexto.innerText = "Informações Inválidas!";
+      setTimeout(() => {
+        location.reload();
+      }, 3000);
+    }
+    const infos = await resposta.json();
+    return infos;
   }
 
   static async produtos() {
