@@ -21,7 +21,7 @@ class Api {
         "Content-type": "application/json"
       },
       body: JSON.stringify(dados)
-    })
+    });
     const infos = await resposta.json();
     console.log(infos);
     return infos;
