@@ -15,20 +15,17 @@ class Api {
   }
 
   static async loginUsuario(dados) {
-    fetch(`${this.baseUrl}auth/login`, {
+    const resposta = await fetch(`${this.baseUrl}auth/login`, {
       method: "POST",
       headers: {
         "Content-type": "application/json"
       },
       body: JSON.stringify(dados)
-    })
-      .then(resposta => resposta.json())
-      .then(resposta => {
-        console.log(resposta);
-        localStorage.setItem("token", JSON.stringify(resposta));
-        return resposta;
-      })
-      .catch(err => console.log(err));
+    });
+
+    const infos = await resposta.json();
+    console.log(infos);
+    return infos;
   }
 
   static async produtos() {

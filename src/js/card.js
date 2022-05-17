@@ -1,55 +1,55 @@
 function criarCard(produto) {
-    const box = document.querySelector('.box'); 
-    const card = document.createElement('card');
-    card.classList.add('card', 'box_card')
+  const caixa = document.querySelector(".box");
+  const card = document.createElement("card");
+  card.classList.add("card", "box_card");
 
-    const img = criarCardImg(produto);
-    const content = criarCardContent(produto);
-    const footer = criarCardFooter(produto);
-    
-    card.append(img,content,footer);
-    box.appendChild(card);
+  const img = criarCardImg(produto);
+  const conteudo = criarCardContent(produto);
+  const footer = criarCardFooter(produto);
+
+  card.append(img, conteudo, footer);
+  caixa.appendChild(card);
 }
 
 function criarCardImg({ imagem }) {
-    console.log(imagem)
-    const img = document.createElement('img');
-    img.src = imagem;
+  console.log(imagem);
+  const img = document.createElement("img");
+  img.src = imagem;
 
-    return img
+  return img;
 }
 
 function criarCardContent({ nome, descricao, categoria }) {
-    const content = document.createElement('div');
-    content.classList.add('card__content');
+  const conteudo = document.createElement("div");
+  conteudo.classList.add("card__content");
 
-    const titulo = document.createElement('h3');
-    titulo.innerText = nome;
+  const titulo = document.createElement("h3");
+  titulo.innerText = nome;
 
-    const text = document.createElement('p');
-    text.innerText = descricao;
+  const texto = document.createElement("p");
+  texto.innerText = descricao;
 
-    const secao = document.createElement('span');
-    secao.innerText = categoria;
+  const secao = document.createElement("span");
+  secao.innerText = categoria;
 
-    content.append(titulo, text, categoria);
+  conteudo.append(titulo, texto, categoria);
 
-    return content
+  return conteudo;
 }
 
 function criarCardFooter({ preco, id }) {
-    const footer = document.createElement('div');
-    footer.classList.add('card__footer');
+  const footer = document.createElement("div");
+  footer.classList.add("card__footer");
 
-    const valor = document.createElement('span');
-    valor.innerText = `R$: ${preco}`;
+  const valor = document.createElement("span");
+  valor.innerText = `R$: ${preco}`;
 
-    const botao = document.createElement('button');
-    botao.id = id;
+  const botao = document.createElement("button");
+  botao.id = id;
 
-    footer.append(valor, botao);
+  footer.append(valor, botao);
 
-    return footer
+  return footer;
 }
 
-export { criarCard }
+export { criarCard };
