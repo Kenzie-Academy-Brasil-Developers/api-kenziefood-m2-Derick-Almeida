@@ -5,17 +5,19 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
-        <link rel="stylesheet" href="/src/css/login.css">
+        <link rel="stylesheet" href="./assets/css/reset.css" />
+        <link rel="stylesheet" href="./assets/css/login.css" />
     </head>
     <body>
-        <main>
+        <main class="main">
             <form>
+                <h1 class="form__titulo">Cadastro</h1>
                 <input type="text" placeholder="Nome do Usuário">
-                <input type="email" placeholder="Gmail">
+                <input type="email" placeholder="E-mail">
                 <input type="password" placeholder="Senha">
-                <button id="botao">Cadastrar</button>
+                <button id="btnCadastro" class="form__botao">Cadastrar</button>
             </form>
         </main>
-        <script src="/src/js/cadastro.js"></script>
+        <script src="./assets/js/cadastro.js"></script>
     </body>
 </html>
