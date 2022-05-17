@@ -3,7 +3,7 @@ body {
 }
 
 .main {
-    background: #DEE2E6;
+    background: #f988da;
     border-radius: 12px;
     max-width: 80%;
     margin: 25% auto;
@@ -15,13 +15,13 @@ body {
     font-weight: 700;
     font-size: 24px;
     line-height: 33px;
-    text-shadow: 1px 1px 0px #FF2253;
+    text-shadow: 1px 1px 2px #ff2253, -0.5px -0.5px 0px white;
     margin-bottom: 25px;
 }
 
 input {
     background: #F8F9FA;
-    border: 1.5px solid #c2c2c2;
+    border: 1.5px solid #DEE2E6;
     border-radius: 8px;
     outline: none;
     padding: 8px;
@@ -36,23 +36,29 @@ input::placeholder {
     line-height: 19px;
 }
 
+input:focus {
+    background: #DEE2E6;
+    border: 1.5px solid #DEE2E6;
+}
+
 .form__botao {
     border: none;
-    background: #FF2253;
-    border: 1.5px solid #FF2253;
+    background: #F8F9FA;
+    border: 1.5px solid #F8F9FA;
     border-radius: 32px;
-    color: #F8F9FA;
+    color: #212529;
     font-weight: 500;
     font-size: 16px;
     line-height: 19px;
     padding: 5px 20px;
+
 }
 
 .form__botao:hover {
     cursor: pointer;
-    background: #ca1a41;
-    border: 1.5px solid #ca1a41;
-    color: #cfcfcf;
+    background: #FF2253;
+    border: 1.5px solid #FF2253;
+    color: #F8F9FA;
 }
 
 @media (min-width: 560px) {
