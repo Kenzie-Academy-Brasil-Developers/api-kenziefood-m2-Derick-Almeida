@@ -67,7 +67,7 @@ function filtrarProdutos() {
     input.addEventListener('keyup', buscar);
 }
 
-async function buscar(event) {
+function buscar(event) {
     const campoDeBusca = event.target.value;
 
     const campoDeBuscaFormatado = campoDeBusca.toLowerCase();

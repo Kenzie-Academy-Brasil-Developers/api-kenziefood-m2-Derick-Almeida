@@ -1,9 +1,35 @@
 import { Api } from "../controller/Api.js";
 import { criarCard } from "./card.js";
 
-const box = document.querySelector(".box");
+const produtos = await Api.produtos();
 
-let produtos = await Api.produtos();
-produtos.forEach(element => {
-  criarCard(element);
-});
+function mostrarProdutos(array) {
+  const box = document.querySelector('.box');
+  box.innerHTML = '';
+
+  array.forEach(element => {
+    criarCard(element);
+  });
+}
+mostrarProdutos(produtos);
+
+function filtrarProdutos() {
+  const input = document.getElementById('buscarProduto');
+
+  input.addEventListener('keyup', buscar);
+}
+
+function buscar(event) {
+  const campoDeBusca = event.target.value;
+
+  const campoDeBuscaFormatado = campoDeBusca.toLowerCase();
+
+  const filtro = produtos.filter(produto => {
+    const nomeProdutoFormatado = produto.nome.toLowerCase();
+
+    return nomeProdutoFormatado.includes(campoDeBuscaFormatado)
+  });
+
+  mostrarProdutos(filtro);
+}
+filtrarProdutos()
