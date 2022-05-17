@@ -8,6 +8,16 @@
     <link rel="stylesheet" href="assets/css/cadastro.css" />
   </head>
   <body>
+    <section class="modal">
+      <div id="modalDiv">
+        <p class="modal__texto"></p>
+      </div>
+
+      <div id="modalNegativo">
+        <p class="modal__texto"></p>
+      </div>
+    </section>
+
     <main class="container">
       <div class="form__img">
         <img
@@ -56,10 +66,11 @@
           </div>
 
           <div class="botao__continuar">
-            <button><a href="">Continuar</a></button>
+            <button id="btnRegistrar"><a href="">Continuar</a></button>
           </div>
         </form>
       </div>
     </main>
+    <script type="module" src="assets/js/cadastro.js"></script>
   </body>
 </html>
