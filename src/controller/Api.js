@@ -9,35 +9,39 @@ class Api {
       },
       body: JSON.stringify(dados)
     });
+    if (resposta.status == 201) {
+      const modalDiv = document.getElementById("modalDiv");
+      modalDiv.classList.add("modal__div");
+      const modalTexto = document.querySelector(".modal__texto");
 
-    const infos = await resposta.json()
-    .then((res) => {
-      if (res.status) {
-        console.log(res.status)
-        return false;
-      } else if (res.id) {
-        console.log(res.id)
-        return true;
-      }
-    })
+      modalTexto.innerText = "Cadastro efetuado com sucesso!";
+      setTimeout(() => {
+        window.location = "../../src/pages/login.html";
+      }, 3000);
+    } else {
+      const modalDiv = document.getElementById("modalDiv");
+      modalDiv.classList.add("modal__div");
+      const modalTexto = document.querySelector(".modal__texto");
 
-    console.log(infos);
+      modalDiv.style.background = "red";
+      modalTexto.innerText = "Informações Inválidas!";
+      setTimeout(() => {
+        location.reload();
+      }, 3000);
+    }
+    const infos = await resposta.json();
     return infos;
   }
 
   static async loginUsuario(dados) {
-
     const resposta = await fetch(`${this.baseUrl}auth/login`, {
       method: "POST",
       headers: {
         "Content-type": "application/json"
       },
       body: JSON.stringify(dados)
-   
     });
-
     if (resposta.status == 200) {
-      console.log(resposta.status);
       const modalDiv = document.getElementById("modalDiv");
       modalDiv.classList.add("modal__div");
       const modalTexto = document.querySelector(".modal__texto");
@@ -60,13 +64,13 @@ class Api {
       }, 3000);
     }
     const infos = await resposta.json();
+    localStorage.setItem("token", JSON.stringify(infos));
     return infos;
   }
 
   static async produtos() {
     const resposta = await fetch(`${this.baseUrl}products`);
     const info = await resposta.json();
-    console.log(info);
     return info;
   }
 
@@ -77,7 +81,6 @@ class Api {
       }
     });
     const infos = await resposta.json();
-    console.log(infos);
     return infos;
   }
 
@@ -91,7 +94,6 @@ class Api {
       body: JSON.stringify(dados)
     });
     const infos = await resposta.json();
-    console.log(infos);
     return infos;
   }
 }

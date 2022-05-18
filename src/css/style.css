@@ -17,30 +17,44 @@
     --cinza-1: #F8F9FA;
 
     --font: 'Poppins';
+
     --font-inter: 'Inter'
 }
 
 
 @media only screen and (max-width: 560px) {
     header .containerLogo {
+
+    --font-inter : 'Inter'
+}
+
+
+@media only screen and (max-width: 560px){
+    header .containerLogo{
         display: flex;
         height: 4vh;
         padding: 21px 18px;
     }
 
-    .containerLogo>h2 {
+    .containerLogo > h2 {
+    
         font-family: var(--font);
         font-weight: 700;
         font-size: 22px;
         color: var(--cinza-4);
     }
 
+
     .containerLogo>h2>span {
+
+    .containerLogo > h2 > span {
+
         font-family: var(--font);
         font-weight: 700;
         font-size: 16px;
         color: var(--cor-primaria);
     }
+
 
     header>.containerBuscaPorNome {
         width: 80%;
@@ -55,6 +69,7 @@
         border-radius: 12px;
     }
 
+
     .containerBuscaPorNome>input {
         color: var(--cinza-3);
         background-color: var(--cinza-2);
@@ -67,19 +82,23 @@
     }
 
     .containerBuscaPorNome input::focus {
+        border:none;
+        outline: none;
+    }
+    .containerBuscaPorNome input::focus{
         background-color: var(--background);
         border: 1.5px solid var(--cinza-4);
     }
 
     .filtros {
         margin: 10px auto;
+
         display: flex;
         width: 80%;
         height: 60px;
         overflow-x: hidden;
         overflow-x: scroll;
     }
-
     .filtro_botao {
         background-color: var(--cinza-1);
         font-size: 16px;
@@ -91,7 +110,6 @@
         width: auto;
         padding: 15px 14px;
     }
-
     .botao--focado {
         background-color: var(--cor-primaria);
         color: var(--cinza-1);
@@ -105,21 +123,18 @@
         overflow-x: scroll;
         padding: 8px 18px;
     }
-
     .carrinhoBox {
         background-color: var(--cor-primaria);
         height: auto;
         width: 100%;
         height: 64px;
     }
-
     .carrinho_header {
         display: flex;
         justify-content: center;
         align-items: center;
         height: 100%;
     }
-
     .carrinho_header h3 {
         font-family: var(--font);
         font-weight: 700;
@@ -127,6 +142,7 @@
         color: var(--cinza-1);
     }
 }
+
 
 @media (min-width: 561px) {
 
@@ -349,4 +365,3 @@
         display: flex;
         margin: 50px auto 123px 350px;
     }
-}
