@@ -46,6 +46,7 @@
         border-radius: 12px;
     }
     .containerBuscaPorNome>input {
+        padding: 15px 18px 15px 16px;
         color: var(--cinza-3);
         background-color: var(--cinza-2);
         width: 100%;
@@ -55,9 +56,10 @@
         border: none;
         outline: none;
     }
-    .containerBuscaPorNome input::focus {
-        background-color: var(--background);
-        border: 1.5px solid var(--cinza-4);
+    .containerBuscaPorNome input:focus {
+        background-color: #E9ECEF;
+        border: none;
+        outline: none;
     }
     .filtros {
         margin: 10px auto;
@@ -167,13 +169,15 @@
     header {
         display: flex;
         justify-content: space-between;
-        padding: 15px 18px 15px 16px;
+        height: 72px;
+        align-items: center;
     }
     header .containerLogo {
         display: flex;
         height: 4vh;
         padding: 21px 18px;
         width: 150px;
+        align-items: center;
     }
     .containerLogo>h2 {
         font-family: var(--font);
@@ -182,27 +186,32 @@
         color: var(--cinza-4);
     }
     header>.containerBuscaPorNome {
-        padding: 15px 18px 15px 16px;
-        width: 40%;
+        width: 400px;
         height: 35px;
-        background-color: var(--cinza-2);
         display: flex;
         flex-direction: row;
         align-items: center;
+        justify-content: flex-start;
+        background-color: #E9ECEF;
+        border-radius: 12px;
+        padding: 5px 18px 5px 16px;
     }
     .containerBuscaPorNome>input {
-        color: var(--cinza-3);
-        background-color: var(--cinza-2);
-        width: 100%;
+        padding: 15px 18px 15px 16px;
+        width: 312px;
+        height: 100%;
         padding: 15px 2px;
         font-size: 16px;
         font-weight: 400;
         border: none;
         outline: none;
     }
-    .containerBuscaPorNome input::focus {
+    .containerBuscaPorNome input:focus {
         background-color: var(--background);
         border: 1.5px solid var(--cinza-4);
+        border-radius: 8px;
+        font-family: 'inter';
+        outline: none;
     }
     .filtros {
         display: flex;
@@ -243,7 +252,7 @@
         width: 1009px;
         flex-direction: column;
     }
-    img {
+    .box_card figure img {
         width: 100%;
         height: 194px;
         margin: auto;
@@ -253,6 +262,7 @@
         width: 303px;
         display: flex;
         flex-direction: column;
+        margin-bottom: 30px;
     }
     .box_card h3 {
         font-family: var(--font);
@@ -263,10 +273,13 @@
     }
     .box_card p {
         font-family: var(--font);
+        max-height: 70px;
         font-style: normal;
         font-weight: 400;
         font-size: 14px;
         line-height: 24px;
+        overflow-x: hidden;
+        overflow-y: auto;
     }
     .card__text {
         display: flex;
@@ -284,9 +297,15 @@
         justify-content: space-between;
         align-items: center;
     }
-    .card__footer button {
-        Width: 38px;
-        Height: 38px;
+    .card__text__footer img {
+        Width: 15px;
+        Height: 15px;
+    }
+    .carrinho_header img {
+        Width: 15px;
+        Height: 15px;
+        color: #ffff;
+        margin: 0px 20px;
     }
     /* -------------------------------- carrinho -------------------------------- */
     .carrinhoBox {
@@ -315,8 +334,13 @@
         justify-content: center;
         align-items: center;
         align-content: center;
+        flex-direction: column;
     }
     .carrinho_content figure {
+        height: 100px;
+    }
+    .carrinho_content figure img {
+        height: 50px;
         height: 50px;
     }
     .carrinho_content span {
@@ -347,12 +371,14 @@
     }
 }
 
-@media (min-width: 1023px){
+
+@media (min-width: 1023px) {
+
     /*-------------------------------- Header --------------------------*/
     header {
         display: flex;
         justify-content: space-between;
-        padding: 15px 18px 15px 16px;
+        height: 72px;
     }
     header .containerLogo {
         display: flex;
@@ -367,31 +393,30 @@
         color: var(--cinza-4);
     }
     header>.containerBuscaPorNome {
-        padding: 15px 18px 15px 16px;
-        width: 40%;
+        width: 400px;
         height: 35px;
-        /* margin: auto; */
-        background-color: var(--cinza-2);
         display: flex;
         flex-direction: row;
         align-items: center;
-        /* padding: 15px 17px; */
-        /* gap: 14px; */
-        /* border-radius: 12px;*/
+        justify-content: flex-start;
+        background-color: #E9ECEF;
+        border-radius: 12px;
+        padding: 5px 18px 5px 16px;
     }
     .containerBuscaPorNome>input {
-        color: var(--cinza-3);
-        background-color: var(--cinza-2);
-        width: 100%;
+        padding: 15px 18px 15px 16px;
+        width: 312px;
+        height: 100%;
         padding: 15px 2px;
         font-size: 16px;
         font-weight: 400;
         border: none;
         outline: none;
     }
-    .containerBuscaPorNome input::focus {
-        background-color: var(--background);
-        border: 1.5px solid var(--cinza-4);
+    .containerBuscaPorNome input:focus {
+        background-color: #E9ECEF;
+        border: none;
+        outline: none;
     }
     .filtros {
         display: flex;
@@ -432,16 +457,17 @@
         width: 1009px;
         flex-direction: column;
     }
-    img {
+    .box_card figure img {
         width: 100%;
         height: 194px;
         margin: auto;
     }
     .box_card {
-        height: 370px;
+        height: 390px;
         width: 240px;
         display: flex;
         flex-direction: column;
+        margin-bottom: 30px;
     }
     .box_card h3 {
         font-family: var(--font);
@@ -452,10 +478,13 @@
     }
     .box_card p {
         font-family: var(--font);
+        max-height: 70px;
         font-style: normal;
         font-weight: 400;
         font-size: 14px;
         line-height: 24px;
+        overflow-x: hidden;
+        overflow-y: auto;
     }
     .card__text {
         display: flex;
@@ -473,9 +502,15 @@
         justify-content: space-between;
         align-items: center;
     }
-    .card__footer button {
-        Width: 38px;
-        Height: 38px;
+    .card__text__footer img {
+        Width: 15px;
+        Height: 15px;
+    }
+    .carrinho_header img {
+        Width: 15px;
+        Height: 15px;
+        color: #ffff;
+        margin: 0px 20px;
     }
     /* -------------------------------- carrinho -------------------------------- */
     .carrinhoBox {
@@ -504,8 +539,13 @@
         justify-content: center;
         align-items: center;
         align-content: center;
+        flex-direction: column;
     }
     .carrinho_content figure {
+        height: 100px;
+    }
+    .carrinho_content figure img {
+        height: 50px;
         height: 50px;
     }
     .carrinho_content span {
@@ -534,13 +574,19 @@
         display: flex;
         margin: 0px 100px 123px 100px;
     }
+    .card__text__footer button {
+        background-image: "/src/pages/assets/imgIcones/shopping-cart-add.png";
+        width: 30px;
+        height: 30px;
+    }
 }
+
 @media (min-width: 1400px) {
     /*-------------------------------- Header --------------------------*/
     header {
         display: flex;
         justify-content: space-between;
-        padding: 15px 18px 15px 16px;
+        height: 72px;
     }
     header .containerLogo {
         display: flex;
@@ -555,31 +601,30 @@
         color: var(--cinza-4);
     }
     header>.containerBuscaPorNome {
-        padding: 15px 18px 15px 16px;
-        width: 40%;
+        width: 400px;
         height: 35px;
-        /* margin: auto; */
-        background-color: var(--cinza-2);
         display: flex;
         flex-direction: row;
         align-items: center;
-        /* padding: 15px 17px; */
-        /* gap: 14px; */
-        /* border-radius: 12px;*/
+        justify-content: flex-start;
+        background-color: #E9ECEF;
+        border-radius: 12px;
+        padding: 5px 18px 5px 16px;
     }
     .containerBuscaPorNome>input {
-        color: var(--cinza-3);
-        background-color: var(--cinza-2);
-        width: 100%;
+        padding: 15px 18px 15px 16px;
+        width: 312px;
+        height: 100%;
         padding: 15px 2px;
         font-size: 16px;
         font-weight: 400;
         border: none;
         outline: none;
     }
-    .containerBuscaPorNome input::focus {
-        background-color: var(--background);
-        border: 1.5px solid var(--cinza-4);
+    .containerBuscaPorNome input:focus {
+        background-color: #E9ECEF;
+        border: none;
+        outline: none;
     }
     .filtros {
         display: flex;
@@ -621,16 +666,17 @@
         margin: none;
         flex-direction: column;
     }
-    img {
+    .box_card figure img {
         width: 100%;
         height: 194px;
         margin: auto;
     }
     .box_card {
-        height: 370px;
+        height: 390px;
         width: 260px;
         display: flex;
         flex-direction: column;
+        margin-bottom: 30px;
     }
     .box_card h3 {
         font-family: var(--font);
@@ -641,10 +687,13 @@
     }
     .box_card p {
         font-family: var(--font);
+        max-height: 70px;
         font-style: normal;
         font-weight: 400;
         font-size: 14px;
         line-height: 24px;
+        overflow-x: hidden;
+        overflow-y: auto;
     }
     .card__text {
         display: flex;
@@ -662,9 +711,15 @@
         justify-content: space-between;
         align-items: center;
     }
-    .card__footer button {
-        Width: 38px;
-        Height: 38px;
+    .card__text__footer img {
+        Width: 15px;
+        Height: 15px;
+    }
+    .carrinho_header img {
+        Width: 15px;
+        Height: 15px;
+        color: #ffff;
+        margin: 0px 20px;
     }
     /* -------------------------------- carrinho -------------------------------- */
     .carrinhoBox {
@@ -693,8 +748,13 @@
         justify-content: center;
         align-items: center;
         align-content: center;
+        flex-direction: column;
     }
     .carrinho_content figure {
+        height: 100px;
+    }
+    .carrinho_content figure img {
+        height: 50px;
         height: 50px;
     }
     .carrinho_content span {

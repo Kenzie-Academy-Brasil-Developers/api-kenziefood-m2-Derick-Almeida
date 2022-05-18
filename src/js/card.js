@@ -36,7 +36,7 @@ function criarCardContent({ nome, descricao, categoria }) {
   const secao = document.createElement("span");
   secao.innerText = categoria;
 
-  conteudo.append(titulo, texto, categoria);
+  conteudo.append(titulo, texto, secao);
 
   return conteudo;
 }
@@ -48,10 +48,11 @@ function criarCardFooter({ preco, id }) {
   const valor = document.createElement("span");
   valor.innerText = `R$: ${preco}`;
 
-  const botao = document.createElement("button");
-  botao.id = id;
+  const img = document.createElement("img");
+  img.id = id;
+  img.src = "./src/pages/assets/imgIcones/shopping-cart-add.png"
 
-  footer.append(valor, botao);
+  footer.append(valor, img);
 
   return footer;
 }
