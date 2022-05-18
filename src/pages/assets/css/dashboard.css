@@ -154,6 +154,7 @@
 .main .corpo__tabela {
     height: 50vh;
     overflow-y: scroll;
+    flex-direction: column;
 }
 
 .main .corpo__tabela::-webkit-scrollbar {
