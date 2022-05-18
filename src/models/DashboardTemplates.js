@@ -107,9 +107,19 @@ const Templates = class {
         frutas.innerText = 'Frutas';
         bebidas.innerText = 'Bebidas';
 
+        panificadora.dataset.tag = 'panificadora';
+        frutas.dataset.tag = 'frutas';
+        bebidas.dataset.tag = 'bebidas';
+
         nomeProdutoInput.type = 'text';
         valorProdutoInput.type = 'number';
         linkImagemInput.type = 'text';
+
+        nomeProdutoInput.name = 'nome';
+        boxCategoria.name = 'categoria';
+        descricaoTextarea.name = 'descricao';
+        valorProdutoInput.name = 'preco';
+        linkImagemInput.name = 'imagem';
 
         nomeProdutoInput.placeholder = 'Digitar o nome';
         descricaoTextarea.placeholder = 'Digitar a descrição';

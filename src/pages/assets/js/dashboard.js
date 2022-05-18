@@ -1,15 +1,16 @@
 import { Api } from "../../../controller/Api.js";
+import { Data } from "../../../models/DadosFormulario.js";
 import { Templates } from "../../../models/DashboardTemplates.js";
 
-const token = localStorage.getItem('token');
+const token = localStorage.getItem("token");
 const meusProdutos = await Api.produtosCriados(JSON.parse(token));
 
 Templates.listarMeusProdutos(meusProdutos);
 
 function filtrarProdutos() {
-    const input = document.getElementById('buscarProduto');
+    const input = document.getElementById("buscarProduto");
 
-    input.addEventListener('keyup', buscar);
+    input.addEventListener("keyup", buscar);
 }
 
 function buscar(event) {
@@ -20,7 +21,7 @@ function buscar(event) {
     const filtro = meusProdutos.filter(produto => {
         const nomeProdutoFormatado = produto.nome.toLowerCase();
 
-        return nomeProdutoFormatado.includes(campoDeBuscaFormatado)
+        return nomeProdutoFormatado.includes(campoDeBuscaFormatado);
     });
 
     Templates.listarMeusProdutos(filtro);
@@ -30,18 +31,20 @@ function buscar(event) {
 filtrarProdutos();
 
 function adicionarProduto() {
-    const btnAdicionarProduto = document.getElementById('btnAdicionarProduto');
-    btnAdicionarProduto.addEventListener('click', abrirFormularioAdicionar);
+    const btnAdicionarProduto = document.getElementById("btnAdicionarProduto");
+    btnAdicionarProduto.addEventListener("click", abrirFormularioAdicionar);
 }
 
 function abrirFormularioAdicionar() {
     Templates.adicionarProduto();
 
-    const botaoFechar = document.getElementById('btnFechar');
-    botaoFechar.addEventListener('click', () => {
-        const container = document.querySelector('.container');
+    const botaoFechar = document.getElementById("btnFechar");
+    botaoFechar.addEventListener("click", () => {
+        const container = document.querySelector(".container");
         document.body.removeChild(container);
     });
+
+    Data.novoProduto();
 }
 adicionarProduto();
 
@@ -71,34 +74,61 @@ function fecharMenu() {
 fecharMenu();
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function editarProduto() {
-    const btnEditar = document.getElementById('btnEditar');
-    btnEditar.addEventListener('click', abrirFormularioEditar);
+    const btnEditar = document.getElementById("btnEditar");
+    btnEditar.addEventListener("click", abrirFormularioEditar);
 }
 
 function abrirFormularioEditar() {
     Templates.atualizarProduto();
 
-    const botaoFechar = document.getElementById('btnFechar');
-    botaoFechar.addEventListener('click', () => {
-        const container = document.querySelector('.container');
+    const botaoFechar = document.getElementById("btnFechar");
+    botaoFechar.addEventListener("click", () => {
+        const container = document.querySelector(".container");
         document.body.removeChild(container);
     });
 }
 editarProduto();
 
-
 function excluirProduto() {
-    const btnRemover = document.getElementById('btnRemover');
-    btnRemover.addEventListener('click', mensagemDeConfirmacao);
+    const btnRemover = document.getElementById("btnRemover");
+    btnRemover.addEventListener("click", mensagemDeConfirmacao);
 }
 
 function mensagemDeConfirmacao() {
     Templates.removerProduto();
 
-    const botaoFechar = document.getElementById('btnFechar');
-    botaoFechar.addEventListener('click', () => {
-        const container = document.querySelector('.container');
+    const botaoFechar = document.getElementById("btnFechar");
+    botaoFechar.addEventListener("click", () => {
+        const container = document.querySelector(".container");
         document.body.removeChild(container);
     });
 }
