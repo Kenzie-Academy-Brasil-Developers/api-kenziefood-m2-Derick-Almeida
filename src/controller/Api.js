@@ -106,7 +106,6 @@ class Api {
       },
       body: JSON.stringify(dados)
     });
-    console.log(resposta.status);
     const infos = await resposta.json();
     console.log(infos);
     return infos;

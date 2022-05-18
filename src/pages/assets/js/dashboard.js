@@ -2,6 +2,7 @@ import { Api } from "../../../controller/Api.js";
 import { Templates } from "../../../models/DashboardTemplates.js";
 
 const token = localStorage.getItem("token");
+
 const meusProdutos = await Api.produtosCriados(JSON.parse(token));
 
 Templates.listarMeusProdutos(meusProdutos);
@@ -101,11 +102,3 @@ function fecharMenu() {
   });
 }
 fecharMenu();
-
-const products = {
-  nome: "Bolinho",
-  preco: 5,
-  categoria: "Doce",
-  imagem: "https://picsum.photos/200/300",
-  descricao: "Lorem ipsum"
-};
