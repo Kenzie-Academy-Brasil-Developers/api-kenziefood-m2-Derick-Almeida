@@ -32,12 +32,21 @@
     color: #FF2253;
 }
 
+.header .icone--lupa {
+    color: #868E96;
+    position: absolute;
+    font-size: 20px;
+    left: 30px;
+    top: 97px;
+    right: 0;
+}
+
 .header input {
     background: #E9ECEF;
     border: 1.5px solid #E9ECEF;
     font-family: 'inter';
     border-radius: 8px;
-    padding: 10px;
+    padding: 10px 10px 10px 40px;
     outline: none;
     width: 100%;
 }
@@ -126,7 +135,8 @@
 .main .filtros {
     display: flex;
     overflow-x: scroll;
-    gap: 22px
+    gap: 22px;
+    margin-top: 25px;
 }
 
 .main .filtros::-webkit-scrollbar {
@@ -149,6 +159,9 @@
     text-align: center;
     color: #212529;
     padding: 8px 14px;
+    display: flex;
+    align-items: center;
+    height: 30px;
 }
 
 .container .botao--focado,
@@ -168,7 +181,7 @@
 }
 
 .main .botao--adicionar {
-    margin: 10px 0 30px 0;
+    margin: 10px auto 30px auto;
 }
 
 .main .cabeca__tabela {
@@ -178,6 +191,7 @@
 .main .cabeca__tabela ul {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 10px;
 }
 
 .main .cabeca__tabela .cabeca__tabela--iten {
@@ -452,6 +466,12 @@
         justify-content: space-between;
     }
 
+    .header .icone--lupa {
+        right: 345px;
+        top: 33px;
+        left: auto;
+    }
+
     .header input {
         width: 300px;
         height: 50%;
@@ -465,19 +485,34 @@
     }
 
     .main .filtros {
-        display: block;
+        display: flex;
         gap: 0;
         overflow: hidden;
+        margin-top: 20px;
+        padding-bottom: 40px;
     }
 
     .main .filtro__botao {
         margin-right: 28px;
+        display: block;
+        align-items: center;
+        height: 30px;
+        padding-bottom: 25px;
     }
 
     .main .produto__nome {
         display: flex;
         align-items: center;
         max-width: 250px;
+    }
+
+    .main .corpo__tabela::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    .main .corpo__tabela::-webkit-scrollbar-thumb {
+        background: #FF2253;
+        border-radius: 50px;
     }
 
     .main .corpo__tabela--linha {
@@ -509,6 +544,10 @@
         font-size: 20px;
     }
 
+    .header .icone--lupa {
+        right: 455px;
+    }
+
     .header input {
         width: 312px;
         height: 50%;
@@ -536,9 +575,10 @@
     }
 
     .main .filtros {
-        display: block;
+        display: flex;
         overflow-x: hidden;
         gap: 0;
+        margin: 0;
     }
 
     .main .filtro__botao {
