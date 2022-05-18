@@ -94,9 +94,8 @@ class Api {
       body: JSON.stringify(dados)
     });
     const infos = await resposta.json();
-    console.log(infos);
     return infos;
-  }
+  } 
 }
 
 export { Api };

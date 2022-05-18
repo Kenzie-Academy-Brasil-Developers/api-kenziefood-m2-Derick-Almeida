@@ -3,6 +3,7 @@ import { Data } from "../../../models/DadosFormulario.js";
 import { Templates } from "../../../models/DashboardTemplates.js";
 
 const token = localStorage.getItem("token");
+
 const meusProdutos = await Api.produtosCriados(JSON.parse(token));
 
 Templates.listarMeusProdutos(meusProdutos);
@@ -116,6 +117,7 @@ function abrirFormularioEditar() {
         document.body.removeChild(container);
     });
 }
+
 editarProduto();
 
 function excluirProduto() {
@@ -133,3 +135,4 @@ function mensagemDeConfirmacao() {
     });
 }
 excluirProduto();
+fecharMenu();
