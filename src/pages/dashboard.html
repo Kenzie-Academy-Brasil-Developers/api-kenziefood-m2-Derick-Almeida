@@ -1,61 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter&family=Poppins:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Poppins:wght@400;500;700&display=swap"
+        rel="stylesheet" />
     <link rel="stylesheet" href="assets/css/icones.css" />
     <link rel="stylesheet" href="./assets/css/reset.css" />
     <link rel="stylesheet" href="./assets/css/dashboard.css" />
     <title>Kenzie Food (ADM)</title>
 </head>
 
-  <body>
+<body>
     <header class="header">
-      <h2 class="titulo">Kenzie <span class="titulo--rosa">Food</span></h2>
-      <input
-        type="search"
-        id="buscarProduto"
-        placeholder="Pesquisar por Produto"
-      />
-      <img src="./assets/imgLogin/user.png" alt="Perfil do Usuario" />
+        <h2 class="titulo">Kenzie <span class="titulo--rosa">Food</span></h2>
+        <input type="search" id="buscarProduto" placeholder="Pesquisar por Produto" />
+        <img src="./assets/imgLogin/user.png" alt="Perfil do Usuario" id="perfilUsuario" />
     </header>
 
     <main class="main">
-      <div class="container__botoes">
-        <div class="filtros">
-          <button class="filtro__botao botao--focado" data-tag="todos">
-            Todos
-          </button>
-          <button class="filtro__botao" data-tag="panificadora">
-            <img src="assets/imgIcones/baguette.png" class="i"> Panificadora
-          </button>
-          <button class="filtro__botao" data-tag="frutas">
-            <img src="assets/imgIcones/fruta (1).png" class="i frutas">Frutas</button>
-          <button class="filtro__botao" data-tag="bebidas">
-            <img src="assets/imgIcones/copo-de-vinho.png" class="i">Bebidas</button>
+        <div class="container__botoes">
+            <div class="filtros">
+                <button class="filtro__botao botao--focado" data-tag="todos">
+                    Todos
+                </button>
+                <button class="filtro__botao" data-tag="panificadora">
+                    <img src="assets/imgIcones/baguette.png" class="i"> Panificadora
+                </button>
+                <button class="filtro__botao" data-tag="frutas">
+                    <img src="assets/imgIcones/fruta (1).png" class="i frutas">Frutas</button>
+                <button class="filtro__botao" data-tag="bebidas">
+                    <img src="assets/imgIcones/copo-de-vinho.png" class="i">Bebidas</button>
+            </div>
+            <button id="btnAdicionarProduto" class="filtro__botao botao--adicionar">
+                Adicionar novo produto
+            </button>
         </div>
-        <button id="btnAdicionarProduto" class="filtro__botao botao--adicionar">
-            Adicionar novo produto
-        </button>
-      </div>
-      <section class="tabela__produtos">
-        <div class="cabeca__tabela">
-          <ul>
-            <li class="cabeca__tabela--iten">Produto</li>
-            <li class="cabeca__tabela--iten">Categorias</li>
-            <li class="cabeca__tabela--iten">Descrição</li>
-            <li class="cabeca__tabela--iten">Ações</li>
-          </ul>
-        <ul class="corpo__tabela"></ul>
-      </section>
+        <section class="tabela__produtos">
+            <div class="cabeca__tabela">
+                <ul>
+                    <li class="cabeca__tabela--iten">Produto</li>
+                    <li class="cabeca__tabela--iten">Categorias</li>
+                    <li class="cabeca__tabela--iten">Descrição</li>
+                    <li class="cabeca__tabela--iten">Ações</li>
+                </ul>
+                <ul class="corpo__tabela"></ul>
+        </section>
     </main>
     <script type="module" src="./assets/js/dashboard.js"></script>
-  </body>
+</body>
+
 </html>
