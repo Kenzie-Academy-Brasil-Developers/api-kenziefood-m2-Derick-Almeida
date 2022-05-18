@@ -1,5 +1,3 @@
-import { editar } from "../pages/assets/js/dashBoardEditar.js";
-
 const Templates = class {
   static listarMeusProdutos(array) {
     const lista = document.querySelector(".corpo__tabela");
