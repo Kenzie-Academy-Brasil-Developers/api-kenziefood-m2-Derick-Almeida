@@ -1,10 +1,44 @@
 import { Api } from "../controller/Api.js";
-import {PesquisarProduto} from "../models/pesquisarPorNome.js";
-import {criarCard} from "./card.js"
+import { criarCard } from "./card.js";
+import { Carrinho } from "../models/carrinho.js";
 
-const box = document.querySelector(".box")
-console.log(box)
-let produtos = await Api.produtos()
-produtos.forEach(element => {criarCard(element)});
+const produtos = await Api.produtos();
 
-PesquisarProduto.filtrarProdutos();
+function mostrarProdutos(array) {
+  const box = document.querySelector(".box");
+  box.innerHTML = "";
+
+  array.forEach(element => {
+    criarCard(element);
+  });
+}
+mostrarProdutos(produtos);
+
+function filtrarProdutos() {
+  const input = document.getElementById("buscarProduto");
+
+  input.addEventListener("keyup", buscar);
+}
+
+function buscar(event) {
+  const campoDeBusca = event.target.value;
+
+  const campoDeBuscaFormatado = campoDeBusca.toLowerCase();
+
+  const filtro = produtos.filter(produto => {
+    const nomeProdutoFormatado = produto.nome.toLowerCase();
+
+    return nomeProdutoFormatado.includes(campoDeBuscaFormatado);
+  });
+
+  mostrarProdutos(filtro);
+}
+filtrarProdutos();
+
+function criarModal(array) {
+  array.forEach(element => {
+    criarCard(element);
+  });
+}
+criarModal(produtos);
+export { criarModal };

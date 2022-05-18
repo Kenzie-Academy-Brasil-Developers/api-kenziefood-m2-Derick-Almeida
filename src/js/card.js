@@ -15,7 +15,6 @@ function criarCard(produto) {
 }
 
 function criarCardImg({ imagem }) {
-  console.log(imagem);
   const img = document.createElement("img");
   const figura = document.createElement("figure");
   img.src = imagem;
