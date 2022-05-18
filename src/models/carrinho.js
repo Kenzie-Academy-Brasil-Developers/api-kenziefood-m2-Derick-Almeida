@@ -1,4 +1,39 @@
 class Carrinho {
+    static lista = [];
+    
+    static adicionarProdutoLista(produto) {
+        this.lista.push(produto);
+    }
+
+    static setarListaStorage() {
+        const listaJson = JSON.stringify(this.lista);
+        localStorage.setItem('lista', listaJson);
+    }
+
+    static pegarListaStorage() {
+        const resposta = localStorage.getItem('lista');
+        const data = JSON.parse(resposta);
+        return data
+    }
+
+    static renderizarLista(array) {
+        array.forEach(element => {
+            this.criarProduto(element);
+        })
+        const precoTotal = this.atualizarPreco(array);
+        const quantidadeTotal = array.length;
+        console.log(precoTotal);
+        console.log(quantidadeTotal)
+    }
+    
+    static atualizarPreco (array) {
+        const valor = array.reduce((acc,{preco}) => {
+            acc += preco;
+            return acc
+        },0);
+        return valor
+    }
+
     static criarProduto(produto) {
         const box = document.querySelector('.carrinho_content');
         const card = document.createElement('div');
