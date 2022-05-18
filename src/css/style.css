@@ -61,14 +61,25 @@
     border: none;
     outline: none;
   }
+  .conteudo {
+    height: 84vh;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+
   .filtros {
     margin: 10px auto;
     display: flex;
     width: 80%;
     height: 60px;
-    overflow-x: hidden;
-    overflow-x: scroll;
+    overflow-y: hidden;
+    overflow-x: auto;
   }
+  .filtro::-webkit-scrollbar {
+    display: none;
+  }
+
   .filtro_botao {
     background-color: var(--cinza-1);
     font-size: 16px;
@@ -79,7 +90,9 @@
     height: 48px;
     width: auto;
     padding: 15px 14px;
+    display: flex;
   }
+
   .botao--focado {
     background-color: var(--cor-primaria);
     color: var(--cinza-1);
@@ -119,8 +132,9 @@
   }
 
   .card__text__content > h3 {
-    font-size: 22px;
+    font-size: 16px;
     font-weight: 500;
+    font-family: 'Poppins';
   }
   .card__text__content > p {
     font-family: var(--font);
@@ -140,6 +154,15 @@
     padding: 0 10px;
   }
 
+  .card__text__footer img {
+    width: 15px;
+    height: 15px;
+  }
+  .card__text__footer span {
+    font-family: var(--font);
+    font-size: 14px;
+    font-weight: 500;
+  }
   .carrinhoBox {
     background-color: var(--cor-primaria);
     height: auto;
