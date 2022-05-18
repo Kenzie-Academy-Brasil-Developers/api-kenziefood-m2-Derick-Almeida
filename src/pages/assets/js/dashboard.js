@@ -45,6 +45,32 @@ function abrirFormularioAdicionar() {
 }
 adicionarProduto();
 
+function mostrarMenuUsuario() {
+    const menuUsuario = Templates.perfilUsuario();
+
+    const menu = document.getElementById('perfilUsuario');
+    const divPai = menu.parentNode;
+    divPai.insertBefore(menuUsuario, menu.nextSibling);
+
+    menu.addEventListener('mouseover', () => {
+        menuUsuario.style.animation = 'modal 500ms linear forwards';
+        menuUsuario.style.display = 'block';
+    });
+}
+mostrarMenuUsuario();
+
+function fecharMenu() {
+    const main = document.querySelector('main');
+    const menu = document.querySelector('.menu__usuario');
+
+    main.addEventListener('mousemove', () => {
+        menu.style.opacity = 0;
+        menu.style.display = 'none';
+    });
+}
+fecharMenu();
+
+
 function editarProduto() {
     const btnEditar = document.getElementById('btnEditar');
     btnEditar.addEventListener('click', abrirFormularioEditar);
@@ -77,28 +103,3 @@ function mensagemDeConfirmacao() {
     });
 }
 excluirProduto();
-
-function mostrarMenuUsuario() {
-    const menuUsuario = Templates.perfilUsuario();
-
-    const menu = document.getElementById('perfilUsuario');
-    const divPai = menu.parentNode;
-    divPai.insertBefore(menuUsuario, menu.nextSibling);
-
-    menu.addEventListener('mouseover', () => {
-        menuUsuario.style.animation = 'modal 500ms linear forwards';
-        menuUsuario.style.display = 'block';
-    });
-}
-mostrarMenuUsuario();
-
-function fecharMenu() {
-    const main = document.querySelector('main');
-    const menu = document.querySelector('.menu__usuario');
-
-    main.addEventListener('mousemove', () => {
-        menu.style.opacity = 0;
-        menu.style.display = 'none';
-    });
-}
-fecharMenu();
