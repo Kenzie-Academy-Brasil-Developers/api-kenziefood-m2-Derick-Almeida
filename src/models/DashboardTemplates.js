@@ -1,5 +1,3 @@
-import { editar } from "../pages/assets/js/dashBoardEditar.js";
-
 const Templates = class {
   static listarMeusProdutos(array) {
     const lista = document.querySelector(".corpo__tabela");
@@ -50,18 +48,6 @@ const Templates = class {
       botaoEditar.innerText = "Editar";
       botaoRemover.innerText = "Remover";
 
-      botaoEditar.addEventListener("click", () => {
-        const id = botaoEditar.closest(item).id;
-        const dados = {
-          nome: nomeProduto.value,
-          preco: valorProdutoInput.value,
-          categoria: categoriaProduto.value,
-          imagem: imagemProduto.src,
-          descricao: descricaoProduto.value
-        };
-
-        editar(dados, id);
-      });
       caixa1.append(imagemProduto, nomeProduto);
       caixa2.appendChild(categoriaProduto);
       caixa3.appendChild(descricaoProduto);
