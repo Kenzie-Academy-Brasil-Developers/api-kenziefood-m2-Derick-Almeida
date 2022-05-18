@@ -96,6 +96,21 @@ class Api {
     const infos = await resposta.json();
     return infos;
   }
+
+  static async cadastrarProduto(dados, token) {
+    const resposta = await fetch(`${this.baseUrl}my/products`, {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+        Authorization: `bearer ${token}`
+      },
+      body: JSON.stringify(dados)
+    });
+    console.log(resposta.status);
+    const infos = await resposta.json();
+    console.log(infos);
+    return infos;
+  }
 }
 
 export { Api };
