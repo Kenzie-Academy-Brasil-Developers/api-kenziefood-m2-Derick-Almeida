@@ -2,12 +2,11 @@ import { Api } from "../controller/Api.js";
 import { criarCard } from "./card.js";
 import { Carrinho } from "../models/carrinho.js";
 
-
 const produtos = await Api.produtos();
 
 function mostrarProdutos(array) {
-  const box = document.querySelector('.box');
-  box.innerHTML = '';
+  const box = document.querySelector(".box");
+  box.innerHTML = "";
 
   array.forEach(element => {
     criarCard(element);
@@ -16,9 +15,9 @@ function mostrarProdutos(array) {
 mostrarProdutos(produtos);
 
 function filtrarProdutos() {
-  const input = document.getElementById('buscarProduto');
+  const input = document.getElementById("buscarProduto");
 
-  input.addEventListener('keyup', buscar);
+  input.addEventListener("keyup", buscar);
 }
 
 function buscar(event) {
@@ -29,16 +28,12 @@ function buscar(event) {
   const filtro = produtos.filter(produto => {
     const nomeProdutoFormatado = produto.nome.toLowerCase();
 
-    return nomeProdutoFormatado.includes(campoDeBuscaFormatado)
+    return nomeProdutoFormatado.includes(campoDeBuscaFormatado);
   });
 
   mostrarProdutos(filtro);
 }
-filtrarProdutos()
-
-
-
-PesquisarProduto.filtrarProdutos();
+filtrarProdutos();
 
 function criarModal(array) {
   array.forEach(element => {
@@ -47,4 +42,3 @@ function criarModal(array) {
 }
 criarModal(produtos);
 export { criarModal };
-
