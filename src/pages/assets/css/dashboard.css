@@ -66,6 +66,58 @@
     cursor: pointer;
 }
 
+.header .menu__usuario {
+    position: absolute;
+    right: 24px;
+    top: 71px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 38px rgb(0 0 0 / 15%);
+    border-radius: 8px;
+    text-align: center;
+    opacity: 0;
+    display: none;
+    transition: 500ms;
+}
+
+.menu__usuario .menu__usuario--pontaBalao {
+    width: 0;
+    height: 0;
+    border-right: 8px solid transparent;
+    border-left: 7px solid transparent;
+    border-bottom: 16px solid #FFFFFF;
+    position: absolute;
+    right: 15px;
+    top: -10px;
+}
+
+.menu__usuario .menu__usuario--titulo {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: #000000;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 38px rgb(0 0 0 / 15%);
+    padding: 2px 70px 0 10px;
+    border-radius: 8px 8px 0 0;
+    margin-bottom: 10px
+}
+
+.menu__usuario .menu__usuario--botao {
+    background: #F8F9FA;
+    border: 1.5px solid #F8F9FA;
+    border-radius: 22px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #212529;
+    margin-bottom: 10px;
+}
+
 .main {
     text-align: center;
     padding: 0 18px;
@@ -106,6 +158,7 @@
     color: #F8F9FA;
 }
 
+.menu__usuario .menu__usuario--botao:hover,
 .container .filtro__botao:hover,
 .main .filtro__botao:hover {
     background: #FF2253;
@@ -426,6 +479,10 @@
         max-width: 250px;
     }
 
+    .main .corpo__tabela--linha {
+        padding: 10px;
+    }
+
     .main .corpo__tabela--linha img {
         margin-right: 10px;
     }
@@ -462,6 +519,11 @@
         top: initial;
     }
 
+    .header .menu__usuario {
+        right: 115px;
+        top: 66px;
+    }
+
     .main {
         padding: 0 117px;
     }
@@ -487,8 +549,14 @@
     }
 
     .main .tabela__produtos {
+        height: 70vh;
+        overflow-y: scroll;
+    }
+
+    .main .corpo__tabela {
         height: 60vh;
         overflow-y: scroll;
+        flex-direction: column;
     }
 
     .main .tabela__produtos::-webkit-scrollbar {

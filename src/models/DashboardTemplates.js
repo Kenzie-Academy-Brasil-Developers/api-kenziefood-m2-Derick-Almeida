@@ -200,6 +200,27 @@ const Templates = class {
         container.appendChild(subContainer);
         body.appendChild(container);
     }
+
+    static modalStatus() { }
+
+    static perfilUsuario() {
+        const caixa = document.createElement('div');
+        const pontaBalao = document.createElement('div');
+        const titulo = document.createElement('h2');
+        const botaoLogout = document.createElement('button');
+
+        caixa.classList.add('menu__usuario');
+        pontaBalao.classList.add('menu__usuario--pontaBalao');
+        titulo.classList.add('menu__usuario--titulo');
+        botaoLogout.classList.add('menu__usuario--botao');
+
+        titulo.innerText = 'Time A';
+        botaoLogout.innerText = 'Logout';
+        botaoLogout.id = 'btnLogout';
+
+        caixa.append(pontaBalao, titulo, botaoLogout);
+        return caixa;
+    }
 }
 
 export { Templates }
