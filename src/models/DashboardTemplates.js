@@ -4,8 +4,7 @@ const Templates = class {
   static listarMeusProdutos(array) {
     const lista = document.querySelector(".corpo__tabela");
     lista.innerHTML = "";
-
-    array.forEach(produto => {
+     array.forEach(produto => {
       const item = document.createElement("li");
       const caixa1 = document.createElement("div");
       const imagemProduto = document.createElement("img");
@@ -50,122 +49,107 @@ const Templates = class {
       botaoEditar.innerText = "Editar";
       botaoRemover.innerText = "Remover";
 
-      botaoEditar.addEventListener("click", () => {
-        const id = botaoEditar.closest(item).id;
-        const dados = {
-          nome: nomeProduto.value,
-          preco: valorProdutoInput.value,
-          categoria: categoriaProduto.value,
-          imagem: imagemProduto.src,
-          descricao: descricaoProduto.value
-        };
-
-        editar(dados, id);
-      });
       caixa1.append(imagemProduto, nomeProduto);
       caixa2.appendChild(categoriaProduto);
       caixa3.appendChild(descricaoProduto);
       caixa4.append(botaoEditar, botaoRemover);
       item.append(caixa1, caixa2, caixa3, caixa4);
       lista.appendChild(item);
-    });
+    
     return lista;
   }
+    static form(obj, excluir = false) {
+        const container = document.createElement('div');
+        const subContainer = document.createElement('div');
+        const form = document.createElement('form');
+        const boxTitulo = document.createElement('div');
+        const titulo = document.createElement('h2');
+        const botaoFechar = document.createElement('button');
+        const nomeProdutoLabel = document.createElement('label');
+        const nomeProdutoInput = document.createElement('input');
+        const descricaoLabel = document.createElement('label');
+        const descricaoTextarea = document.createElement('textarea');
 
-  static form(obj, excluir = false) {
-    const container = document.createElement("div");
-    const subContainer = document.createElement("div");
-    const form = document.createElement("form");
-    const boxTitulo = document.createElement("div");
-    const titulo = document.createElement("h2");
-    const botaoFechar = document.createElement("button");
-    const nomeProdutoLabel = document.createElement("label");
-    const nomeProdutoInput = document.createElement("input");
-    const descricaoLabel = document.createElement("label");
-    const descricaoTextarea = document.createElement("textarea");
+        const boxCategoria = document.createElement('div');
+        const categoriaLabel = document.createElement('label');
+        const panificadora = document.createElement('span');
+        const frutas = document.createElement('span');
+        const bebidas = document.createElement('span');
 
-    const boxCategoria = document.createElement("div");
-    const categoriaLabel = document.createElement("label");
-    const panificadora = document.createElement("span");
-    const frutas = document.createElement("span");
-    const bebidas = document.createElement("span");
+        const valorProdutoLabel = document.createElement('label');
+        const valorProdutoInput = document.createElement('input');
+        const linkImagemLabel = document.createElement('label');
+        const linkImagemInput = document.createElement('input');
 
-    const valorProdutoLabel = document.createElement("label");
-    const valorProdutoInput = document.createElement("input");
-    const linkImagemLabel = document.createElement("label");
-    const linkImagemInput = document.createElement("input");
+        const boxBotoes = document.createElement('div');
+        const botaoConcluir = document.createElement('button');
 
-    const boxBotoes = document.createElement("div");
-    const botaoConcluir = document.createElement("button");
+        if (excluir) {
+            const botaoExcluir = document.createElement('button');
+            botaoExcluir.id = 'btnExcluir';
+            botaoExcluir.classList.add('filtro__botao');
+            botaoExcluir.innerText = obj.deletar;
+            boxBotoes.appendChild(botaoExcluir);
+        }
 
-    if (excluir) {
-      const botaoExcluir = document.createElement("button");
-      botaoExcluir.id = "btnExcluir";
-      botaoExcluir.classList.add("filtro__botao");
-      botaoExcluir.innerText = obj.deletar;
-      boxBotoes.appendChild(botaoExcluir);
+        titulo.innerText = obj.titulo;
+        botaoFechar.id = 'btnFechar';
+        botaoConcluir.id = 'btnSalvar';
+        botaoFechar.innerText = 'x';
+        botaoConcluir.innerText = obj.concluir;
+
+        nomeProdutoLabel.innerText = 'Nome do Produto';
+        descricaoLabel.innerText = 'Descrição';
+        valorProdutoLabel.innerText = 'Valor do Produto';
+        linkImagemLabel.innerText = 'Link da imagem';
+
+        categoriaLabel.innerText = 'Categorias';
+        panificadora.innerText = 'Panificadora';
+        frutas.innerText = 'Frutas';
+        bebidas.innerText = 'Bebidas';
+
+        panificadora.dataset.tag = 'panificadora';
+        frutas.dataset.tag = 'frutas';
+        bebidas.dataset.tag = 'bebidas';
+
+        nomeProdutoInput.type = 'text';
+        valorProdutoInput.type = 'number';
+        linkImagemInput.type = 'text';
+
+        nomeProdutoInput.name = 'nome';
+        boxCategoria.name = 'categoria';
+        descricaoTextarea.name = 'descricao';
+        valorProdutoInput.name = 'preco';
+        linkImagemInput.name = 'imagem';
+
+        nomeProdutoInput.placeholder = 'Digitar o nome';
+        descricaoTextarea.placeholder = 'Digitar a descrição';
+        valorProdutoInput.placeholder = 'Digitar o valor aqui';
+        linkImagemInput.placeholder = 'Inserir link ';
+
+        container.classList.add('container');
+        subContainer.classList.add('container__box');
+        boxTitulo.classList.add('box--flex', 'cabeca');
+        titulo.classList.add('titulo');
+        botaoFechar.classList.add('botao__fechar');
+        descricaoTextarea.classList.add('textarea');
+        boxCategoria.classList.add('box--flex', 'box--categorias');
+        panificadora.classList.add('filtro__botao');
+        frutas.classList.add('filtro__botao');
+        bebidas.classList.add('filtro__botao');
+        boxBotoes.classList.add('box--flex');
+        botaoConcluir.classList.add('filtro__botao', 'botao--focado');
+
+        boxBotoes.appendChild(botaoConcluir);
+        boxCategoria.append(panificadora, frutas, bebidas);
+        form.append(nomeProdutoLabel, nomeProdutoInput, descricaoLabel, descricaoTextarea, categoriaLabel, boxCategoria, valorProdutoLabel, valorProdutoInput, linkImagemLabel, linkImagemInput, boxBotoes);
+        boxTitulo.append(titulo, botaoFechar);
+        subContainer.append(boxTitulo, form);
+        container.appendChild(subContainer);
+
+        return container;
     }
-
-    titulo.innerText = obj.titulo;
-    botaoFechar.id = "btnFechar";
-    botaoConcluir.id = "btnSalvar";
-    botaoFechar.innerText = "x";
-    botaoConcluir.innerText = obj.concluir;
-
-    nomeProdutoLabel.innerText = "Nome do Produto";
-    descricaoLabel.innerText = "Descrição";
-    valorProdutoLabel.innerText = "Valor do Produto";
-    linkImagemLabel.innerText = "Link da imagem";
-
-    categoriaLabel.innerText = "Categorias";
-    panificadora.innerText = "Panificadora";
-    frutas.innerText = "Frutas";
-    bebidas.innerText = "Bebidas";
-
-    nomeProdutoInput.type = "text";
-    valorProdutoInput.type = "number";
-    linkImagemInput.type = "text";
-
-    nomeProdutoInput.placeholder = "Digitar o nome";
-    descricaoTextarea.placeholder = "Digitar a descrição";
-    valorProdutoInput.placeholder = "Digitar o valor aqui";
-    linkImagemInput.placeholder = "Inserir link ";
-
-    container.classList.add("container");
-    subContainer.classList.add("container__box");
-    boxTitulo.classList.add("box--flex", "cabeca");
-    titulo.classList.add("titulo");
-    botaoFechar.classList.add("botao__fechar");
-    descricaoTextarea.classList.add("textarea");
-    boxCategoria.classList.add("box--flex", "box--categorias");
-    panificadora.classList.add("filtro__botao");
-    frutas.classList.add("filtro__botao");
-    bebidas.classList.add("filtro__botao");
-    boxBotoes.classList.add("box--flex");
-    botaoConcluir.classList.add("filtro__botao", "botao--focado");
-
-    boxBotoes.appendChild(botaoConcluir);
-    boxCategoria.append(panificadora, frutas, bebidas);
-    form.append(
-      nomeProdutoLabel,
-      nomeProdutoInput,
-      descricaoLabel,
-      descricaoTextarea,
-      categoriaLabel,
-      boxCategoria,
-      valorProdutoLabel,
-      valorProdutoInput,
-      linkImagemLabel,
-      linkImagemInput,
-      boxBotoes
-    );
-    boxTitulo.append(titulo, botaoFechar);
-    subContainer.append(boxTitulo, form);
-    container.appendChild(subContainer);
-
-    return container;
-  }
-
+  
   static adicionarProduto() {
     const body = document.querySelector("body");
 
