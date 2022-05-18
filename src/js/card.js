@@ -1,15 +1,15 @@
 function criarCard(produto) {
   const caixa = document.querySelector(".box");
   const card = document.createElement("card");
-  const texto = document.createElement("div")
-  texto.classList = "card__text"
+  const texto = document.createElement("div");
+  texto.classList = "card__text";
   card.classList.add("card", "box_card");
 
   const img = criarCardImg(produto);
   const conteudo = criarCardContent(produto);
   const footer = criarCardFooter(produto);
 
-  texto.append(conteudo, footer)
+  texto.append(conteudo, footer);
   card.append(img, texto);
   caixa.appendChild(card);
 }
@@ -18,7 +18,7 @@ function criarCardImg({ imagem }) {
   const img = document.createElement("img");
   const figura = document.createElement("figure");
   img.src = imagem;
-  figura.appendChild(img)
+  figura.appendChild(img);
 
   return figura;
 }
@@ -46,11 +46,11 @@ function criarCardFooter({ preco, id }) {
   footer.classList.add("card__text__footer");
 
   const valor = document.createElement("span");
-  valor.innerText = `R$: ${preco}`;
+  valor.innerText = `R$ ${preco}`;
 
   const img = document.createElement("img");
   img.id = id;
-  img.src = "./src/pages/assets/imgIcones/shopping-cart-add.png"
+  img.src = "./src/pages/assets/imgIcones/carrinho-de-compras (2).png";
 
   footer.append(valor, img);
 
