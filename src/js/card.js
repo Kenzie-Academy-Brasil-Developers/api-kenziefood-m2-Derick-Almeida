@@ -73,9 +73,9 @@ class Card {
         preco.innerHTML = ""
         Carrinho.carrinhoCheio()
       }
-
       this.id = event.target.id
       this.retornaItemClicado(this.array)
+      Carrinho.atualizarPreco()
     })
 
     return footer;
@@ -99,7 +99,6 @@ class Card {
           if (Carrinho.checkList.indexOf(this.id) === -1) {
             Carrinho.lista.push(product)
             Carrinho.checkList.push(product.id)
-
           } else {
             console.error('Produto já existe')
           }
