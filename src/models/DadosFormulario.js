@@ -19,7 +19,7 @@ const Data = class {
             });
         });
 
-        botaoSalvar.addEventListener('click', (e) => {
+        botaoSalvar.addEventListener('click', async (e) => {
             e.preventDefault();
 
             [...form.children].forEach(elem => {
@@ -34,7 +34,14 @@ const Data = class {
                 }
             });
 
-            Api.criarProduto(valores, token)
+            await Api.criarProduto(valores, token);
+
+            const container = document.querySelector(".container");
+            document.body.removeChild(container);
+
+            setTimeout(() => {
+                window.location.reload();
+            }, 1000);
         });
     }
 
@@ -81,7 +88,7 @@ const Data = class {
             this.removerProduto(event);
         });
 
-        botaoSalvar.addEventListener('click', (event) => {
+        botaoSalvar.addEventListener('click', async (event) => {
             event.preventDefault();
             const valores = {};
 
@@ -98,23 +105,27 @@ const Data = class {
                 }
             });
 
-            // CHAMAR FUNÇÃO QUE ATUALIZA PRODUTO!
-            // Api.????(valores, token);
+            await Api.atualizarProduto(valores, produtoId, token);
+            const container = document.querySelector(".container");
+            document.body.removeChild(container);
         });
     }
 
     static removerProduto(event) {
+        const produto = event.target.parentNode.parentNode;
+        const listaProdutos = produto.parentNode;
         const produtoId = event.target.parentNode.parentNode.id;
 
         const btnSim = document.getElementById('btnSim');
-        btnSim.addEventListener('click', () => {
+        btnSim.addEventListener('click', async () => {
 
-            // FUNÇÃO QUE REMOVE PRODUTO!
-            // Api.??????(id);
+            await Api.removerProduto(produtoId, token);
 
-            setTimeout(() => {
-                window.location.reload();
-            }, 1000);
+            const container = document.querySelectorAll(".container");
+            container.forEach(elem => {
+                document.body.removeChild(elem);
+            });
+            listaProdutos.removeChild(produto);
         })
 
         const btnNao = document.getElementById('btnNao');
@@ -124,8 +135,6 @@ const Data = class {
                 document.body.removeChild(elem);
             });
         })
-
-        console.log(produtoId);
     }
 }
 
