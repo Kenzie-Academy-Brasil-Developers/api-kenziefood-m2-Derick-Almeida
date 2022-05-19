@@ -41,7 +41,6 @@ const Templates = class {
             nomeProduto.innerText = produto.nome;
 
             categoriaProduto.innerText = produto.categoria;
-
             descricaoProduto.innerText = produto.descricao;
 
             botaoEditar.innerText = 'Editar';
