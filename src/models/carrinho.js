@@ -12,12 +12,12 @@ class Carrinho {
     static pegarListaStorage() {
         const resposta = localStorage.getItem('lista');
         const data = JSON.parse(resposta);
-        return data
+        return data;
     }
 
     static renderizarLista(array) {
         const ul = document.querySelector(".cardinho");
-        ul.innerHTML =""
+        ul.innerHTML ="";
         array.forEach(element => {
             this.criarProduto(element);
         })
@@ -30,9 +30,9 @@ class Carrinho {
     static atualizarPreco (array) {
         const valor = array.reduce((acc,{preco}) => {
             acc += preco;
-            return acc
+            return acc;
         },0);
-        return valor
+        return valor;
     }
 
     static criarProduto(produto) {
@@ -42,19 +42,19 @@ class Carrinho {
 
         const img = this.criarCardImg(produto);
         const conteudo = this.criarCardContent(produto);
-        const botao = this.criarCardBotao(produto);
+        const img2 = this.criarCardBotao(produto);
 
-        li.append(img, conteudo, botao);
+        li.append(img, conteudo, img2);
         box.appendChild(li);
 
     }
-
     static criarCardImg({ imagem }) {
-        const img = document.createElement("img");
-        img.src = imagem;
-
-        return img;
+        const img2 = document.createElement("img");
+        img2.src = imagem;
+        
+        return img2;
     }
+
 
     static criarCardContent({ nome, categoria, preco }) {
         const conteudo = document.createElement('div');
@@ -75,16 +75,19 @@ class Carrinho {
     }
     
     static criarCardBotao({ id }) {
-        const botao = document.createElement('button');
-        botao.id = id;
-        botao.addEventListener('click',(event)=>{
-            
+        const img = document.createElement('img');
+        const figure = document.createElement('figure');
+        img.id = id;
+        img.classList = "lixeira"
+        img.src = "./src/pages/assets/imgIcones/lixeira.png"
+        figure.addEventListener('click',(event)=>{
             this.id = event.target.id
             this.removeItem(this.lista)
             
         })
+        figure.append(img)
         
-        return botao
+        return figure
     }
     static removeItem(arr){
         let itensCarrinho = arr.filter(elen => {
