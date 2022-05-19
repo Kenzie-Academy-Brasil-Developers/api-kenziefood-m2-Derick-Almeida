@@ -95,7 +95,7 @@ class Api {
     });
     const infos = await resposta.json();
     return infos;
-  }
+  } 
 }
 
 export { Api };
