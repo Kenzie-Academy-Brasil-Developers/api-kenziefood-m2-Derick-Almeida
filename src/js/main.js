@@ -36,8 +36,6 @@ function buscar(event) {
 }
 
 
-
-
 function verificaTamanhoTela(){
   const size =  window.innerWidth;
   const carrinho = document.querySelector('.carrinho_header')

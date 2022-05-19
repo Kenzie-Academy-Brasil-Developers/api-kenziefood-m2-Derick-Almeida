@@ -1,10 +1,15 @@
 import { Templates } from "../../../models/DashboardTemplates.js";
 import { Api } from "../../../controller/Api.js";
+import { excluirProduto, editarProduto } from "./dashboard.js";
+
 const token = JSON.parse(localStorage.getItem("token"));
+
 async function filtrarTodos() {
   const produtos = await Api.produtosCriados(token);
   const result = produtos.filter(({ categoria }) => categoria);
   Templates.listarMeusProdutos(result);
+  editarProduto();
+  excluirProduto();
 }
 
 const botaoTodos = document.getElementById("todos");
@@ -17,6 +22,8 @@ async function filtrarPorPanificadora() {
   );
 
   Templates.listarMeusProdutos(result);
+  editarProduto();
+  excluirProduto();
 }
 
 const botaoPanificadora = document.getElementById("panificadora");
@@ -26,6 +33,8 @@ async function filtrarPorFrutas() {
   const produtos = await Api.produtosCriados(token);
   const result = produtos.filter(({ categoria }) => categoria === "Frutas");
   Templates.listarMeusProdutos(result);
+  editarProduto();
+  excluirProduto();
 }
 
 const botaoFrutas = document.getElementById("frutas");
@@ -36,6 +45,8 @@ async function filtrarPorBebidas() {
   const result = produtos.filter(({ categoria }) => categoria === "Bebidas");
 
   Templates.listarMeusProdutos(result);
+  editarProduto();
+  excluirProduto();
 }
 
 const botaoBebidas = document.getElementById("bebidas");
