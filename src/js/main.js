@@ -46,5 +46,12 @@ startAplication()
 
 
 
+const inicio = document.querySelector(".cardinho")
+const preco = document.querySelector(".carrinho_content")
+if (inicio.innerHTML  === "") {
+  preco.innerHTML = ""
+  Carrinho.carrinhoVazio()
+}
+
 
 export { mostrarProdutos };

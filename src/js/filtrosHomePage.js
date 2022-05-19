@@ -1,5 +1,5 @@
-import { Api } from "../../../controller/Api.js";
-import { mostrarProdutos } from "../../../js/main.js";
+import { Api } from "../controller/Api.js";
+import { mostrarProdutos } from "../js/main.js";
 
 async function filtrarPorTodos() {
   const produtos = await Api.produtos();

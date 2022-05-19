@@ -1,7 +1,7 @@
 class Carrinho {
     static lista = [];
     static id;
-    
+
 
 
     static setarListaStorage() {
@@ -17,21 +17,21 @@ class Carrinho {
 
     static renderizarLista(array) {
         const ul = document.querySelector(".cardinho");
-        ul.innerHTML ="";
+        ul.innerHTML = "";
         array.forEach(element => {
             this.criarProduto(element);
         })
         const precoTotal = this.atualizarPreco(array);
         const quantidadeTotal = array.length;
-        console.log(precoTotal);
-        console.log(quantidadeTotal)
+        // console.log(precoTotal);
+        // console.log(quantidadeTotal)
     }
-    
-    static atualizarPreco (array) {
-        const valor = array.reduce((acc,{preco}) => {
+
+    static atualizarPreco(array) {
+        const valor = array.reduce((acc, { preco }) => {
             acc += preco;
             return acc;
-        },0);
+        }, 0);
         return valor;
     }
 
@@ -51,7 +51,7 @@ class Carrinho {
     static criarCardImg({ imagem }) {
         const img2 = document.createElement("img");
         img2.src = imagem;
-        
+
         return img2;
     }
 
@@ -73,31 +73,79 @@ class Carrinho {
 
         return conteudo
     }
-    
+
     static criarCardBotao({ id }) {
         const img = document.createElement('img');
         const figure = document.createElement('figure');
         img.id = id;
         img.classList = "lixeira"
         img.src = "./src/pages/assets/imgIcones/lixeira.png"
-        figure.addEventListener('click',(event)=>{
+        figure.addEventListener('click', (event) => {
             this.id = event.target.id
             this.removeItem(this.lista)
-            
+            this.lipar()
+
         })
         figure.append(img)
-        
+
         return figure
     }
-    static removeItem(arr){
+    static removeItem(arr) {
         let itensCarrinho = arr.filter(elen => {
-           return elen.id != this.id
+            return elen.id != this.id
         })
         this.lista = itensCarrinho
-        console.log(this.lista)
+        // console.log(this.lista)
         this.renderizarLista(itensCarrinho)
-        console.log(itensCarrinho)
+        // console.log(itensCarrinho)
         this.setarListaStorage()
+
+    }
+    static carrinhoVazio() {
+        const inicio = document.querySelector(".carrinho_content");
+        inicio.innerHTML = `
+        <figure>
+            <img src="src/pages/assets/imgIcones/sacola-de-compras-aberta.png" alt="sacola do carrinho img"/>
+        </figure>
+        <span>Por enquanto não temos produtos no carrinho</span>
+        `
+    }
+    static carrinhoCheio() {
+        const inicio = document.querySelector(".carrinho_content");
+        const calcular = document.createElement('section');
+        const quantidade = document.createElement('div');
+        const total = document.createElement('div');
+        const p1q1 = document.createElement('p');
+        const p4q2 = document.createElement('p');
+        const p2t1 = document.createElement('p');
+        const p3t2 = document.createElement('p');
+
+        calcular.classList = "boxGeral"
+        quantidade.classList = "quantidade"
+        total.classList = "pagamentoTotal"
+
+        p1q1.innerText = "Quantidade"
+        p2t1.innerText = "Total"
+
+        //aqui vai o preco todal e a quantidade
+
+        p4q2.innerText = "0"
+        p3t2.innerText = `R$ 0,00`
+
+        total.append(p2t1, p3t2)
+        quantidade.append(p1q1, p4q2)
+        calcular.append(quantidade, total)
+
+        inicio.appendChild(calcular)
+
+    }
+    static lipar() {
+
+        const preco = document.querySelector(".carrinho_content")
+        if (this.lista.length === 0) {
+            preco.innerHTML = ""
+            this.carrinhoVazio()
+        }
     }
 }
 
