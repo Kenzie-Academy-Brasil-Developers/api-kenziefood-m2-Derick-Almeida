@@ -24,7 +24,7 @@ botaoPanificadora.addEventListener("click", filtrarPorPanificadora);
 
 async function filtrarPorFrutas() {
   const produtos = await Api.produtosCriados(token);
-  const result = produtos.filter(({ categoria }) => categoria === "frutas");
+  const result = produtos.filter(({ categoria }) => categoria === "Frutas");
   Templates.listarMeusProdutos(result);
 }
 
