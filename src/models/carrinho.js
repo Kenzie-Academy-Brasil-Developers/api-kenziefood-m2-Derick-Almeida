@@ -1,9 +1,8 @@
 class Carrinho {
     static lista = [];
+    static id;
     
-    static adicionarProdutoLista(produto) {
-        this.lista.push(produto);
-    }
+
 
     static setarListaStorage() {
         const listaJson = JSON.stringify(this.lista);
@@ -17,6 +16,8 @@ class Carrinho {
     }
 
     static renderizarLista(array) {
+        const ul = document.querySelector(".cardinho");
+        ul.innerHTML =""
         array.forEach(element => {
             this.criarProduto(element);
         })
@@ -35,16 +36,17 @@ class Carrinho {
     }
 
     static criarProduto(produto) {
-        const box = document.querySelector('.carrinho_content');
-        const card = document.createElement('div');
-        card.classList.add("carrinho", "carrinho_card");
+        const box = document.querySelector('.cardinho');
+        const li = document.createElement("li")
+        li.classList.add("carrinho", "carrinho_card");
 
         const img = this.criarCardImg(produto);
         const conteudo = this.criarCardContent(produto);
         const botao = this.criarCardBotao(produto);
 
-        card.append(img, conteudo, botao);
-        box.appendChild(card);
+        li.append(img, conteudo, botao);
+        box.appendChild(li);
+
     }
 
     static criarCardImg({ imagem }) {
@@ -71,12 +73,28 @@ class Carrinho {
 
         return conteudo
     }
-
+    
     static criarCardBotao({ id }) {
         const botao = document.createElement('button');
         botao.id = id;
-
+        botao.addEventListener('click',(event)=>{
+            
+            this.id = event.target.id
+            this.removeItem(this.lista)
+            
+        })
+        
         return botao
+    }
+    static removeItem(arr){
+        let itensCarrinho = arr.filter(elen => {
+           return elen.id != this.id
+        })
+        this.lista = itensCarrinho
+        console.log(this.lista)
+        this.renderizarLista(itensCarrinho)
+        console.log(itensCarrinho)
+        this.setarListaStorage()
     }
 }
 

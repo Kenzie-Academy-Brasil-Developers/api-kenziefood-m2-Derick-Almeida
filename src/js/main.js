@@ -1,6 +1,7 @@
 import { Api } from "../controller/Api.js";
-import { criarCard } from "./card.js";
+import { Card } from "./card.js";
 import { Carrinho } from "../models/carrinho.js";
+
 
 const produtos = await Api.produtos();
 
@@ -9,10 +10,10 @@ function mostrarProdutos(array) {
   box.innerHTML = "";
 
   array.forEach(element => {
-    criarCard(element);
+    Card.criarCard(element);
   });
 }
-mostrarProdutos(produtos);
+
 
 function filtrarProdutos() {
   const input = document.getElementById("buscarProduto");
@@ -33,12 +34,25 @@ function buscar(event) {
 
   mostrarProdutos(filtro);
 }
-filtrarProdutos();
+
+
 
 function criarModal(array) {
   array.forEach(element => {
-    criarCard(element);
+    Card.criarCard(element);
   });
 }
-criarModal(produtos);
+
+function startAplication() {
+  mostrarProdutos(produtos);
+  filtrarProdutos();
+  criarModal(produtos);
+  Card.defineArray(produtos)
+  Carrinho.pegarListaStorage()
+}
+startAplication()
+
+
+
+
 export { criarModal };

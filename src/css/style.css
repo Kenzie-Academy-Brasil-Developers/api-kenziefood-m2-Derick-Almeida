@@ -841,4 +841,8 @@
         margin: 0px 100px 123px 100px;
         justify-content: center;
     }
+    .cardinho img{
+        width: 30px;
+        height: 70px;
+    }
 }
