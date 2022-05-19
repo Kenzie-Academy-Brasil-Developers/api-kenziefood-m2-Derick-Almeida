@@ -351,8 +351,9 @@
 }
 
 .container .container__box {
-  margin: 10% auto;
+  margin: 5% auto;
   width: 85%;
+  height: auto;
   background: #ffffff;
   border-radius: 8px;
   animation: modal 500ms linear;
@@ -740,5 +741,16 @@
 
   .container .box--categorias span {
     margin-bottom: 30px;
+  }
+}
+@media (max-width: 1054px) {
+  .main .filtro__botao {
+    font-size: 12px;
+    width: auto;
+    font-weight: 900;
+  }
+
+  .container .container__box {
+    width: 40%;
   }
 }
