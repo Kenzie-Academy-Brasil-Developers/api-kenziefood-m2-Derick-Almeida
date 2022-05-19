@@ -11,21 +11,23 @@
     opacity: 0;
   }
 }
-
+.modal {
+  position: absolute;
+  width: 100%;
+}
 .modal__div {
   width: 100%;
   background: #43fd5f;
   color: #ffffff;
-  position: absolute;
-  top: 0;
-  height: 5%;
+  position: relative;
+  top: 2%;
+  height: 2%;
   display: flex;
+  margin-top: -25px;
   align-items: center;
   animation: modal 3.5s;
   opacity: 0;
-}
-.modal__texto {
-  padding: 15px;
+  padding-left: 15px;
 }
 
 body {
@@ -33,21 +35,25 @@ body {
   font-family: "Noto Sans", sans-serif;
   background: #ff2253;
 }
+body::-webkit-scrollbar {
+  width: 2px;
+}
+body::-webkit-scrollbar-thumb {
+  display: none;
+}
 body * {
   box-sizing: border-box;
 }
 .main__login {
-  width: 100vw;
-  height: 100vh;
-
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 25px;
 }
 
 .login__esquerda {
   width: 50vw;
-  height: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -62,7 +68,6 @@ body * {
 }
 .login__direita {
   width: 50vw;
-  height: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;

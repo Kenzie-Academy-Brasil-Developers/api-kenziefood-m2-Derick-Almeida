@@ -121,6 +121,29 @@ const Data = class {
       });
 
       await Api.atualizarProduto(valores, produtoId, token);
+
+      const resposta = await Api.atualizarProduto(valores, produtoId, token);
+      const modalParagrafo = document.getElementById("modal__paragrafo");
+      const modal = document.getElementById("modal");
+      const pai = modal.parentNode;
+      if (!resposta.error) {
+        pai.style.display = "block";
+        modal.classList.add("modal");
+        modalParagrafo.innerText = "Produto editado com sucesso";
+        setTimeout(() => {
+          location.reload();
+        }, 4000);
+      } else {
+        pai.style.display = "block";
+        modal.classList.add("modal");
+        modalParagrafo.innerText =
+          "Ocorreu algum erro, o produto não foi editado";
+        modalParagrafo.style.borderBottom = "8px solid #ff2253";
+        setTimeout(() => {
+          location.reload();
+        }, 4000);
+      }
+
       const container = document.querySelector(".container");
       document.body.removeChild(container);
     });
