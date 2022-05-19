@@ -95,7 +95,11 @@ class Api {
     });
     const infos = await resposta.json();
     return infos;
-  } 
+  }
+
+  // static async editarProduto(dados, token,id){
+  //   const resposta = await fetch(`${this.baseUrl}`)
+  // }
 }
 
 export { Api };
