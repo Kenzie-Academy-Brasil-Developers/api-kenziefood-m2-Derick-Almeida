@@ -103,7 +103,7 @@
 
 
   .filtro_botao:hover {
-    color:#FFFF;
+    color: #FFFF;
     background-color: #ff2253;
   }
 
@@ -144,9 +144,11 @@
     height: 200px;
     width: 300px;
   }
-  .card__text{
+
+  .card__text {
     max-height: 170px;
   }
+
   .card__text__content {
     display: flex;
     flex-direction: column;
@@ -215,6 +217,7 @@
   .carrinho_content {
     display: none;
   }
+
   .cardinho {
     display: none;
     flex-direction: column;
@@ -230,12 +233,14 @@
     justify-content: space-evenly;
     max-height: 70%;
   }
+
   .carrinho img {
     width: 75px;
     height: 75px;
     object-fit: cover;
     border-radius: 8px;
   }
+
   .carrinho__content {
     display: flex;
     flex-direction: column;
@@ -246,34 +251,35 @@
     font-size: 14px;
     font-weight: 500;
   }
-  .carrinho__content> span:nth-of-type(1) {
+
+  .carrinho__content>span:nth-of-type(1) {
     color: var(--cinza-3);
   }
-  .carrinho__content> span:nth-of-type(2) {
+
+  .carrinho__content>span:nth-of-type(2) {
     color: var(--cinza-4);
     font-weight: 400;
   }
 
-  .carrinho > figure > .lixeira {
+  .carrinho>figure>.lixeira {
     height: 12px;
     width: 10px;
   }
-}
 
-.visivel {
-  background: var(--cor-produto-1);
-  position: absolute;
-  top: 15%;
-  left: 10%;
-  height: 60vh;
-  width: 80%;
-  padding: 10px 0;
-  display: flex;
-  border-radius: 15px;
-}
+  .visivel {
+    background: var(--cor-produto-1);
+    position: absolute;
+    top: 15%;
+    left: 10%;
+    height: 60vh;
+    width: 80%;
+    padding: 10px 0;
+    display: flex;
+    border-radius: 15px;
+  }
 
-.visivel-x {
-  background: rgb(246, 235, 235);
+  .visivel-x {
+    background: rgb(246, 235, 235);
     position: absolute;
     flex-direction: column;
     top: 77%;
@@ -282,12 +288,14 @@
     width: 80%;
     display: flex;
     border-radius: 15px;
+  }
+
+  .visivel-x img {
+    height: 45px;
+    width: 45px;
+  }
 }
 
-.visivel-x img {
-  height: 45px;
-  width: 45px;
-}
 @media (min-width: 561px) {
 
   /*-------------------------------- Header --------------------------*/
@@ -366,8 +374,9 @@
     width: auto;
     padding: 15px 14px;
   }
+
   .filtro_botao:hover {
-    color:#FFFF;
+    color: #FFFF;
     background-color: #ff2253;
   }
 
@@ -527,6 +536,7 @@
     margin: 0px 100px 123px 100px;
   }
 }
+
 .cardinho {
   width: 319px;
   max-height: 221px;
@@ -552,14 +562,15 @@
 .carrinho_card {
   justify-content: space-between;
   flex-direction: row;
+  position: relative;
 }
-.carrinho__content{
+
+.carrinho__content {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 175px;
 }
-
 
 figure .lixeira {
   width: 15px;
@@ -578,7 +589,8 @@ figure .lixeira {
   display: flex;
   justify-content: space-between;
 }
-.pagamentoTotal{
+
+.pagamentoTotal {
   display: flex;
   justify-content: space-between;
 }
@@ -667,8 +679,9 @@ figure .lixeira {
     width: auto;
     padding: 15px 14px;
   }
+
   .filtro_botao:hover {
-    color:#FFFF;
+    color: #FFFF;
     background-color: #ff2253;
   }
 
@@ -833,6 +846,7 @@ figure .lixeira {
     width: 30px;
     height: 30px;
   }
+
   .cardinho {
     width: 319px;
     max-height: 221px;
@@ -858,8 +872,10 @@ figure .lixeira {
   .carrinho_card {
     justify-content: space-between;
     flex-direction: row;
+    position: relative;
   }
-  .carrinho__content{
+
+  .carrinho__content {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -884,7 +900,8 @@ figure .lixeira {
     display: flex;
     justify-content: space-between;
   }
-  .pagamentoTotal{
+
+  .pagamentoTotal {
     display: flex;
     justify-content: space-between;
   }
@@ -965,8 +982,9 @@ figure .lixeira {
     width: auto;
     padding: 15px 14px;
   }
+
   .filtro_botao:hover {
-    color:#FFFF;
+    color: #FFFF;
     background-color: #ff2253;
   }
 
@@ -1048,15 +1066,15 @@ figure .lixeira {
   }
 
 
-  .btn{
-    color: #4aca94; 
+  .btn {
+    color: #4aca94;
     padding: 15px;
     border-radius: 50%;
     background-color: #e4f7ef;
-    
+
   }
 
-  .btn:hover{
+  .btn:hover {
     transition: background 1s;
     padding: 15px;
     background-color: #4aca94;
@@ -1168,8 +1186,10 @@ figure .lixeira {
   .carrinho_card {
     justify-content: space-between;
     flex-direction: row;
+    position: relative;
   }
-  .carrinho__content{
+
+  .carrinho__content {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -1194,10 +1214,33 @@ figure .lixeira {
     display: flex;
     justify-content: space-between;
   }
-  .pagamentoTotal{
+
+  .pagamentoTotal {
     display: flex;
     justify-content: space-between;
   }
 
 
+}
+
+.quantidadeDoProduto {
+  border: 1px solid black;
+  width: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  height: 24px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.quantidadeDoProduto--botao {
+  font-weight: bold;
+  font-size: 22px;
+  cursor: pointer;
+  background: #d9d9d9;
+  width: 26%;
+  text-align: center;
 }
