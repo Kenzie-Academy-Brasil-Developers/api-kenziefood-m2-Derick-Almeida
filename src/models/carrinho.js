@@ -2,7 +2,7 @@ class Carrinho {
     static lista = [];
     static checkList = [];
     static id;
-
+    static precos = [{}];
 
 
     static setarListaStorage() {
@@ -16,12 +16,17 @@ class Carrinho {
         return data;
     }
 
-    static atualizarPreco(array) {
+    static atualizarPreco() {
+        const array = Carrinho.lista ;
         const valor = array.reduce((acc, { preco }) => {
             acc += preco;
             return acc;
         }, 0);
-        return valor;
+        const quantidade = document.querySelector('.quantidade').children[1];
+        quantidade.innerText = Carrinho.lista.length;
+        const preco = document.querySelector('.pagamentoTotal').children[1];
+        preco.innerText = `R$ ${valor}`;
+        return valor
     }
 
     static criarProduto() {
@@ -36,9 +41,8 @@ class Carrinho {
             const img = this.criarCardImg(produto);
             const conteudo = this.criarCardContent(produto);
             const img2 = this.criarCardBotao(produto);
-            const contador = this.botaoContagem();
 
-            li.append(img, conteudo, img2, contador);
+            li.append(img, conteudo, img2, );
 
             box.appendChild(li);
         });
@@ -92,7 +96,7 @@ class Carrinho {
         })
         this.lista = itensCarrinho
         this.criarProduto(itensCarrinho)
-
+        this.atualizarPreco();
     }
     static carrinhoVazio() {
         const inicio = document.querySelector(".carrinho_content");
@@ -141,79 +145,29 @@ class Carrinho {
         }
     }
 
-    static botaoContagem() {
-        const qtdProdutos = document.createElement('div');
-        const botaoRemover = document.createElement('span');
-        const contador = document.createElement('span');
-        const botaoAdicionar = document.createElement('span');
-
-        qtdProdutos.classList.add('quantidadeDoProduto');
-        botaoRemover.classList.add('quantidadeDoProduto--botao');
-        contador.classList.add('quantidadeDoProduto--numero');
-        botaoAdicionar.classList.add('quantidadeDoProduto--botao');
-
-        botaoRemover.id = 'remover';
-        contador.id = 'quantidade';
-        botaoAdicionar.id = 'remover';
-
-        botaoRemover.innerText = '-';
-        contador.innerText = '1';
-        botaoAdicionar.innerText = '+';
-
-        botaoAdicionar.addEventListener('click', this.adicionar);
-        botaoRemover.addEventListener('click', this.remover);
-
-        qtdProdutos.append(botaoRemover, contador, botaoAdicionar)
-        return qtdProdutos;
-    }
-
-    static adicionar(event) {
-        const quantidade = event.target.parentNode.children[1]
-        let quantidadeAtual = quantidade.textContent;
-        let novoValor = Number(quantidadeAtual) + 1;
-
-        quantidade.innerText = novoValor;
-        quantidadeAtual = novoValor;
-    }
-
-    static remover(event) {
-        const quantidade = event.target.parentNode.children[1]
-        let quantidadeAtual = quantidade.textContent;
-
-        let novoValor = Number(quantidadeAtual) - 1;
-
-        if (novoValor === 0) {
-            const container = event.target.parentNode.parentNode.parentNode;
-            const li = event.target.parentNode.parentNode;
-
-            Carrinho.lista.forEach((elem, index) => {
-                if (elem.id === li.id) {
-                    Carrinho.lista.splice(index, 1);
-                    Carrinho.checkList.splice(index, 1);
-                    container.removeChild(li);
-                }
-            })
-        } else {
-            quantidade.innerText = novoValor;
-            quantidadeAtual = novoValor;
-        }
-    }
 
     static abrirCarrinho() {
         const ul = document.querySelector('.cardinho');
         const div = document.querySelector('.carrinho_content')
-        if (ul.classList.contains("visivel") === true) {
-            console.log('noap')
+        if(Carrinho.lista.length > 0){
+            if (ul.classList.contains("visivel") === true) {
+                console.log('noap')
+                ul.classList.remove('visivel')
+                div.classList.remove('visivel-x')
+                div.style.display = 'none'
+                ul.style.display = 'none'
+            } else {
+                div.classList.toggle('visivel-x');
+                div.style.display = 'Flex'
+                ul.classList.toggle('visivel')
+                ul.style.display = 'Flex'
+                console.log('sim')
+            }
+        }else {
             ul.classList.remove('visivel')
             div.classList.remove('visivel-x')
             div.style.display = 'none'
             ul.style.display = 'none'
-        } else {
-            div.classList.toggle('visivel-x');
-            div.style.display = 'Flex'
-            ul.classList.toggle('visivel')
-            ul.style.display = 'Flex'
-            console.log('sim')
         }
     }
 }
