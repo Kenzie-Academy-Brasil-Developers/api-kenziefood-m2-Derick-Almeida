@@ -779,7 +779,7 @@
     display: flex;
     justify-content: start;
     overflow-x: scroll;
-    gap: 22px;
+    gap: 21px;
     margin-top: 25px;
   }
 }
