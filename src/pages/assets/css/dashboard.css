@@ -238,7 +238,7 @@
 
 .main .cabeca__tabela ul {
   display: flex;
-  justify-content: space-between;
+  justify-content: start;
   margin-bottom: 10px;
 }
 
@@ -344,10 +344,10 @@
 }
 .container {
   position: absolute;
-  top: 0;
+  bottom: 0;
   background: rgba(0, 0, 0, 0.5);
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
 }
 
 .container .container__box {
@@ -749,8 +749,37 @@
     width: auto;
     font-weight: 900;
   }
-
   .container .container__box {
-    width: 40%;
+    min-width: 100px;
+  }
+}
+
+@media (max-width: 990px) {
+  .container__botoes {
+    align-items: center;
+  }
+  .filtros {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+  }
+}
+@media (max-width: 768px) {
+  .main .filtros {
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    width: 100%;
+  }
+}
+@media (max-width: 530px) {
+  .main .filtros {
+    display: flex;
+    justify-content: start;
+    overflow-x: scroll;
+    gap: 21px;
+    margin-top: 25px;
   }
 }
