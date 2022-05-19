@@ -57,15 +57,18 @@ class Card {
     const valor = document.createElement("span");
     valor.innerText = `R$: ${preco}`;
 
-    const img = document.createElement("img");
-    img.id = id;
-    img.classList = "btn"
-    img.src = "./src/pages/assets/imgIcones/shopping-cart-add.png"
+    const span = document.createElement("span");
+    span.id = id;
 
-    footer.append(valor, img);
+    span.innerText ="shopping_cart"
+    span.classList.add("material-symbols-outlined", "btn")
 
 
-    img.addEventListener('click', (event) => {
+
+    footer.append(valor, span);
+
+
+    span.addEventListener('click', (event) => {
       const inicio = document.querySelector(".cardinho")
       const preco = document.querySelector(".carrinho_content")
       

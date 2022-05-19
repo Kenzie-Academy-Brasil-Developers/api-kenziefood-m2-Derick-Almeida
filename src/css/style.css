@@ -101,6 +101,12 @@
     display: flex;
   }
 
+  .filtro_botao:hover {
+    color:#FFFF;
+    background-color: #ff2253;
+  }
+
+
   .botao--focado {
     background-color: var(--cor-primaria);
     color: var(--cinza-1);
@@ -284,6 +290,10 @@
     height: 48px;
     width: auto;
     padding: 15px 14px;
+  }
+  .filtro_botao:hover {
+    color:#FFFF;
+    background-color: #ff2253;
   }
 
   .containerLogo>h2>span {
@@ -582,6 +592,10 @@ figure .lixeira {
     width: auto;
     padding: 15px 14px;
   }
+  .filtro_botao:hover {
+    color:#FFFF;
+    background-color: #ff2253;
+  }
 
   .containerLogo>h2>span {
     font-family: var(--font);
@@ -876,6 +890,10 @@ figure .lixeira {
     width: auto;
     padding: 15px 14px;
   }
+  .filtro_botao:hover {
+    color:#FFFF;
+    background-color: #ff2253;
+  }
 
   .containerLogo>h2>span {
     font-family: var(--font);
@@ -951,11 +969,25 @@ figure .lixeira {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 40px;
   }
 
-  .card__text__footer img {
-    Width: 15px;
-    Height: 15px;
+
+  .btn{
+    color: #4aca94; 
+    padding: 15px;
+    border-radius: 50%;
+    background-color: #e4f7ef;
+    
+  }
+
+  .btn:hover{
+    transition: background 1s;
+    padding: 15px;
+    background-color: #4aca94;
+    border-radius: 50%;
+    cursor: pointer;
+    color: #FFFF;
   }
 
   .carrinho_header img {
