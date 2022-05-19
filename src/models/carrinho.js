@@ -147,6 +147,24 @@ class Carrinho {
             this.carrinhoVazio()
         }
     }
+
+    static abrirCarrinho(){ 
+        const ul = document.querySelector('.cardinho');
+        const div = document.querySelector('.carrinho_content')
+        if(ul.classList.contains("visivel") === true){
+            console.log('noap')
+            ul.classList.remove('visivel')
+            div.classList.remove('visivel-x')
+            div.style.display ='none'
+            ul.style.display = 'none' 
+        } else {
+            div.classList.toggle('visivel-x');
+            div.style.display = 'Flex'
+            ul.classList.toggle('visivel')
+            ul.style.display = 'Flex'
+            console.log('sim')
+        }
+      }
 }
 
 

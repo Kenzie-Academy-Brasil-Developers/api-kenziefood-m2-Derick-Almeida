@@ -78,7 +78,7 @@
   .filtros {
     margin: 10px auto;
     display: flex;
-    width: 80%;
+    width: 90%;
     height: 60px;
     overflow-y: hidden;
     overflow-x: auto;
@@ -92,24 +92,26 @@
     background-color: var(--cinza-1);
     font-size: 16px;
     color: var(--cinza-4);
-    line-height: 19px;
     border: 1.5px solid var(--cinza-1);
     border-radius: 30px;
     height: 48px;
-    width: auto;
+    width: 150px;
     padding: 15px 14px;
     display: flex;
+    justify-content: center;
   }
+
 
   .filtro_botao:hover {
     color:#FFFF;
     background-color: #ff2253;
   }
 
-
   .botao--focado {
     background-color: var(--cor-primaria);
     color: var(--cinza-1);
+    height: 48px;
+    width: 150px;
   }
 
   .box {
@@ -119,8 +121,8 @@
     flex-direction: row;
     overflow-y: hidden;
     overflow-x: scroll;
-    gap: 15px;
-    margin: 0 15px;
+    gap: 7px;
+    margin: 0 10px;
   }
 
   .card {
@@ -129,6 +131,7 @@
     display: inline-block;
     gap: 16px;
     background-color: rgb(255, 255, 255);
+    padding: 10px;
   }
 
   .card>figure {
@@ -141,13 +144,14 @@
     height: 200px;
     width: 300px;
   }
-
+  .card__text{
+    max-height: 170px;
+  }
   .card__text__content {
     display: flex;
     flex-direction: column;
-    margin-top: 16px;
+    margin-top: 10px;
     gap: 16px;
-    padding: 0 10px;
   }
 
   .card__text__content>h3 {
@@ -172,8 +176,8 @@
   .card__text__footer {
     display: flex;
     justify-content: space-between;
-    margin-top: 50px;
-    padding: 0 10px;
+    margin-top: 10%;
+
   }
 
   .card__text__footer img {
@@ -211,8 +215,79 @@
   .carrinho_content {
     display: none;
   }
+  .cardinho {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 430px;
+  }
+
+  .carrinho {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    max-height: 70%;
+  }
+  .carrinho img {
+    width: 75px;
+    height: 75px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  .carrinho__content {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    gap: 12px;
+    justify-content: space-between;
+    font-family: var(--font);
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .carrinho__content> span:nth-of-type(1) {
+    color: var(--cinza-3);
+  }
+  .carrinho__content> span:nth-of-type(2) {
+    color: var(--cinza-4);
+    font-weight: 400;
+  }
+
+  .carrinho > figure > .lixeira {
+    height: 12px;
+    width: 10px;
+  }
 }
 
+.visivel {
+  background: var(--cor-produto-1);
+  position: absolute;
+  top: 15%;
+  left: 10%;
+  height: 60vh;
+  width: 80%;
+  padding: 10px 0;
+  display: flex;
+  border-radius: 15px;
+}
+
+.visivel-x {
+  background: rgb(246, 235, 235);
+    position: absolute;
+    flex-direction: column;
+    top: 77%;
+    left: 10%;
+    height: 96px;
+    width: 80%;
+    display: flex;
+    border-radius: 15px;
+}
+
+.visivel-x img {
+  height: 45px;
+  width: 45px;
+}
 @media (min-width: 561px) {
 
   /*-------------------------------- Header --------------------------*/
