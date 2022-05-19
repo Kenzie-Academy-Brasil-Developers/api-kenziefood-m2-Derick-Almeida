@@ -36,17 +36,9 @@ function buscar(event) {
 }
 
 
-
-function criarModal(array) {
-  array.forEach(element => {
-    Card.criarCard(element);
-  });
-}
-
 function startAplication() {
   mostrarProdutos(produtos);
   filtrarProdutos();
-  criarModal(produtos);
   Card.defineArray(produtos)
   Carrinho.pegarListaStorage()
 }
@@ -55,4 +47,4 @@ startAplication()
 
 
 
-export { criarModal };
+export { mostrarProdutos };
