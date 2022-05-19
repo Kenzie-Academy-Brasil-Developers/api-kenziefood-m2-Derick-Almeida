@@ -3,6 +3,7 @@ import { Data } from "../../../models/DadosFormulario.js";
 import { Templates } from "../../../models/DashboardTemplates.js";
 
 const token = localStorage.getItem("token");
+
 const meusProdutos = await Api.produtosCriados(JSON.parse(token));
 
 Templates.listarMeusProdutos(meusProdutos);
@@ -81,8 +82,9 @@ function editarProduto() {
     });
 }
 
-function abrirFormularioEditar() {
+function abrirFormularioEditar(event) {
     Templates.atualizarProduto();
+    Data.editarProduto(event, meusProdutos);
 
     const botaoFechar = document.getElementById("btnFechar");
     botaoFechar.addEventListener("click", () => {
@@ -99,8 +101,9 @@ function excluirProduto() {
     });
 }
 
-function mensagemDeConfirmacao() {
+function mensagemDeConfirmacao(event) {
     Templates.removerProduto();
+    Data.removerProduto(event);
 
     const botaoFechar = document.getElementById("btnFechar");
     botaoFechar.addEventListener("click", () => {
