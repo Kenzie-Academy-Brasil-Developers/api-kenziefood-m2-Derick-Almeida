@@ -123,3 +123,5 @@ function logout() {
     });
 }
 logout();
+
+export { editarProduto, excluirProduto }
