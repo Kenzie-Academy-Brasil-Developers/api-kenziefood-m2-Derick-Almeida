@@ -34,13 +34,26 @@ const Data = class {
         }
       });
 
-      const a = await Api.criarProduto(valores, token);
+      const resposta = await Api.criarProduto(valores, token);
       const modalParagrafo = document.getElementById("modal__paragrafo");
       const modal = document.getElementById("modal");
-      console.log(a);
-      if (!a.nome) {
+      const pai = modal.parentNode;
+      if (resposta.nome) {
+        pai.style.display = "block";
         modal.classList.add("modal");
-        modalParagrafo.innerText = "oi";
+        modalParagrafo.innerText = "Produto adicionado com sucesso";
+        setTimeout(() => {
+          location.reload();
+        }, 4000);
+      } else {
+        pai.style.display = "block";
+        modal.classList.add("modal");
+        modalParagrafo.innerText =
+          "Ocorreu algum erro, o produto não foi adicionado";
+        modalParagrafo.style.borderBottom = "8px solid #ff2253";
+        setTimeout(() => {
+          location.reload();
+        }, 4000);
       }
 
       const container = document.querySelector(".container");
