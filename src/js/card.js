@@ -72,9 +72,6 @@ class Card {
       if (inicio.innerHTML === "") {
         preco.innerHTML = ""
         Carrinho.carrinhoCheio()
-
-        const arrayProdutos = Carrinho.lista;
-        console.log(arrayProdutos);
       }
 
       this.id = event.target.id

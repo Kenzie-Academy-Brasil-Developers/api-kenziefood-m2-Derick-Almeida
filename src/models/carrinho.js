@@ -30,13 +30,15 @@ class Carrinho {
 
         this.lista.forEach(produto => {
             const li = document.createElement("li")
+            li.id = produto.id;
             li.classList.add("carrinho", "carrinho_card");
 
             const img = this.criarCardImg(produto);
             const conteudo = this.criarCardContent(produto);
             const img2 = this.criarCardBotao(produto);
+            const contador = this.botaoContagem();
 
-            li.append(img, conteudo, img2);
+            li.append(img, conteudo, img2, contador);
 
             box.appendChild(li);
         });
@@ -136,6 +138,64 @@ class Carrinho {
         if (this.lista.length === 0) {
             preco.innerHTML = ""
             this.carrinhoVazio()
+        }
+    }
+
+    static botaoContagem() {
+        const qtdProdutos = document.createElement('div');
+        const botaoRemover = document.createElement('span');
+        const contador = document.createElement('span');
+        const botaoAdicionar = document.createElement('span');
+
+        qtdProdutos.classList.add('quantidadeDoProduto');
+        botaoRemover.classList.add('quantidadeDoProduto--botao');
+        contador.classList.add('quantidadeDoProduto--numero');
+        botaoAdicionar.classList.add('quantidadeDoProduto--botao');
+
+        botaoRemover.id = 'remover';
+        contador.id = 'quantidade';
+        botaoAdicionar.id = 'remover';
+
+        botaoRemover.innerText = '-';
+        contador.innerText = '1';
+        botaoAdicionar.innerText = '+';
+
+        botaoAdicionar.addEventListener('click', this.adicionar);
+        botaoRemover.addEventListener('click', this.remover);
+
+        qtdProdutos.append(botaoRemover, contador, botaoAdicionar)
+        return qtdProdutos;
+    }
+
+    static adicionar(event) {
+        const quantidade = event.target.parentNode.children[1]
+        let quantidadeAtual = quantidade.textContent;
+        let novoValor = Number(quantidadeAtual) + 1;
+
+        quantidade.innerText = novoValor;
+        quantidadeAtual = novoValor;
+    }
+
+    static remover(event) {
+        const quantidade = event.target.parentNode.children[1]
+        let quantidadeAtual = quantidade.textContent;
+
+        let novoValor = Number(quantidadeAtual) - 1;
+
+        if (novoValor === 0) {
+            const container = event.target.parentNode.parentNode.parentNode;
+            const li = event.target.parentNode.parentNode;
+
+            Carrinho.lista.forEach((elem, index) => {
+                if (elem.id === li.id) {
+                    Carrinho.lista.splice(index, 1);
+                    Carrinho.checkList.splice(index, 1);
+                    container.removeChild(li);
+                }
+            })
+        } else {
+            quantidade.innerText = novoValor;
+            quantidadeAtual = novoValor;
         }
     }
 
