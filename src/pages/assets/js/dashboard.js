@@ -74,42 +74,17 @@ function fecharMenu() {
 }
 fecharMenu();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 function editarProduto() {
-    const btnEditar = document.getElementById("btnEditar");
-    btnEditar.addEventListener("click", abrirFormularioEditar);
+    const btnEditar = document.querySelectorAll("#btnEditar");
+
+    btnEditar.forEach(botao => {
+        botao.addEventListener("click", abrirFormularioEditar);
+    });
 }
 
-function abrirFormularioEditar() {
+function abrirFormularioEditar(event) {
     Templates.atualizarProduto();
+    Data.editarProduto(event, meusProdutos);
 
     const botaoFechar = document.getElementById("btnFechar");
     botaoFechar.addEventListener("click", () => {
@@ -117,16 +92,18 @@ function abrirFormularioEditar() {
         document.body.removeChild(container);
     });
 }
-
 editarProduto();
 
 function excluirProduto() {
-    const btnRemover = document.getElementById("btnRemover");
-    btnRemover.addEventListener("click", mensagemDeConfirmacao);
+    const btnRemover = document.querySelectorAll("#btnRemover");
+    btnRemover.forEach(botao => {
+        botao.addEventListener("click", mensagemDeConfirmacao);
+    });
 }
 
-function mensagemDeConfirmacao() {
+function mensagemDeConfirmacao(event) {
     Templates.removerProduto();
+    Data.removerProduto(event);
 
     const botaoFechar = document.getElementById("btnFechar");
     botaoFechar.addEventListener("click", () => {
@@ -135,4 +112,14 @@ function mensagemDeConfirmacao() {
     });
 }
 excluirProduto();
-fecharMenu();
+
+function logout() {
+    const btnLogout = document.getElementById('btnLogout');
+    btnLogout.addEventListener('click', () => {
+        localStorage.removeItem('token');
+        setTimeout(() => {
+            window.location = '../../../../index.html'
+        }, 1000);
+    });
+}
+logout();

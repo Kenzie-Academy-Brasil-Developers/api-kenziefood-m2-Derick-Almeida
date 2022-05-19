@@ -344,7 +344,7 @@
   width: 85%;
   background: #ffffff;
   border-radius: 8px;
-  animation: modal 1s linear;
+  animation: modal 500ms linear;
   transition: 500ms;
 }
 
