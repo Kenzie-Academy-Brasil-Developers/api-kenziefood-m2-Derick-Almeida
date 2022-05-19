@@ -97,11 +97,6 @@ class Api {
     return infos;
   }
 
-<<<<<<< HEAD
-  // static async editarProduto(dados, token,id){
-  //   const resposta = await fetch(`${this.baseUrl}`)
-  // }
-=======
   static async atualizarProduto(dados, id, token) {
     const resposta = await fetch(`${this.baseUrl}my/products/${id}`, {
       method: "PATCH",
@@ -121,10 +116,9 @@ class Api {
       headers: {
         "Content-type": "application/json",
         Authorization: `Bearer ${token}`
-      },
+      }
     });
   }
->>>>>>> f0fa0f80d78f24040535da6fd77e059bbb2167ab
 }
 
 export { Api };
