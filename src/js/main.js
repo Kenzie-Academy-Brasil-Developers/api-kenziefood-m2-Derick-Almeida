@@ -36,15 +36,24 @@ function buscar(event) {
 }
 
 
+
+
+function verificaTamanhoTela(){
+  const size =  window.innerWidth;
+  const carrinho = document.querySelector('.carrinho_header')
+    if(size < 560){
+      carrinho.addEventListener('click', Carrinho.abrirCarrinho)
+    } 
+}
+
+
 function startAplication() {
   mostrarProdutos(produtos);
   filtrarProdutos();
   Card.defineArray(produtos)
   Carrinho.pegarListaStorage()
+  verificaTamanhoTela()
 }
 startAplication()
-
-
-
 
 export { mostrarProdutos };
