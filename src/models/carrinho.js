@@ -1,5 +1,6 @@
 class Carrinho {
     static lista = [];
+    static checkList = [];
     static id;
 
 
@@ -15,18 +16,6 @@ class Carrinho {
         return data;
     }
 
-    static renderizarLista(array) {
-        const ul = document.querySelector(".cardinho");
-        ul.innerHTML = "";
-        array.forEach(element => {
-            this.criarProduto(element);
-        })
-        const precoTotal = this.atualizarPreco(array);
-        const quantidadeTotal = array.length;
-        // console.log(precoTotal);
-        // console.log(quantidadeTotal)
-    }
-
     static atualizarPreco(array) {
         const valor = array.reduce((acc, { preco }) => {
             acc += preco;
@@ -35,17 +24,22 @@ class Carrinho {
         return valor;
     }
 
-    static criarProduto(produto) {
+    static criarProduto() {
         const box = document.querySelector('.cardinho');
-        const li = document.createElement("li")
-        li.classList.add("carrinho", "carrinho_card");
+        box.innerHTML = '';
 
-        const img = this.criarCardImg(produto);
-        const conteudo = this.criarCardContent(produto);
-        const img2 = this.criarCardBotao(produto);
+        this.lista.forEach(produto => {
+            const li = document.createElement("li")
+            li.classList.add("carrinho", "carrinho_card");
 
-        li.append(img, conteudo, img2);
-        box.appendChild(li);
+            const img = this.criarCardImg(produto);
+            const conteudo = this.criarCardContent(produto);
+            const img2 = this.criarCardBotao(produto);
+
+            li.append(img, conteudo, img2);
+
+            box.appendChild(li);
+        });
 
     }
     static criarCardImg({ imagem }) {
@@ -54,7 +48,6 @@ class Carrinho {
 
         return img2;
     }
-
 
     static criarCardContent({ nome, categoria, preco }) {
         const conteudo = document.createElement('div');
@@ -90,15 +83,13 @@ class Carrinho {
 
         return figure
     }
+
     static removeItem(arr) {
         let itensCarrinho = arr.filter(elen => {
             return elen.id != this.id
         })
         this.lista = itensCarrinho
-        // console.log(this.lista)
-        this.renderizarLista(itensCarrinho)
-        // console.log(itensCarrinho)
-        this.setarListaStorage()
+        this.criarProduto(itensCarrinho)
 
     }
     static carrinhoVazio() {
@@ -148,15 +139,15 @@ class Carrinho {
         }
     }
 
-    static abrirCarrinho(){ 
+    static abrirCarrinho() {
         const ul = document.querySelector('.cardinho');
         const div = document.querySelector('.carrinho_content')
-        if(ul.classList.contains("visivel") === true){
+        if (ul.classList.contains("visivel") === true) {
             console.log('noap')
             ul.classList.remove('visivel')
             div.classList.remove('visivel-x')
-            div.style.display ='none'
-            ul.style.display = 'none' 
+            div.style.display = 'none'
+            ul.style.display = 'none'
         } else {
             div.classList.toggle('visivel-x');
             div.style.display = 'Flex'
@@ -164,7 +155,7 @@ class Carrinho {
             ul.style.display = 'Flex'
             console.log('sim')
         }
-      }
+    }
 }
 
 

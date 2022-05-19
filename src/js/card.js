@@ -60,22 +60,21 @@ class Card {
     const span = document.createElement("span");
     span.id = id;
 
-    span.innerText ="shopping_cart"
+    span.innerText = "shopping_cart"
     span.classList.add("material-symbols-outlined", "btn")
 
-
-
     footer.append(valor, span);
-
 
     span.addEventListener('click', (event) => {
       const inicio = document.querySelector(".cardinho")
       const preco = document.querySelector(".carrinho_content")
-      
-      if (inicio.innerHTML  === "") {
-        // console.log("oi")
+
+      if (inicio.innerHTML === "") {
         preco.innerHTML = ""
         Carrinho.carrinhoCheio()
+
+        const arrayProdutos = Carrinho.lista;
+        console.log(arrayProdutos);
       }
 
       this.id = event.target.id
@@ -87,14 +86,32 @@ class Card {
   static defineArray(arr) {
     this.array = arr
   }
+
   static retornaItemClicado(arr) {
 
-    const produto = arr.find((elen) => {
-      return elen.id == this.id
-    })
-    Carrinho.criarProduto(produto)
-    Carrinho.lista.push(produto)
-    Carrinho.setarListaStorage()
+    if (Carrinho.lista.length === 0) {
+      const produto = arr.find((elen) => {
+        return elen.id == this.id
+      })
+      Carrinho.lista.push(produto)
+      Carrinho.checkList.push(produto.id)
+
+    } else {
+      arr.forEach(product => {
+        if (product.id === this.id) {
+          if (Carrinho.checkList.indexOf(this.id) === -1) {
+            Carrinho.lista.push(product)
+            Carrinho.checkList.push(product.id)
+
+          } else {
+            console.error('Produto já existe')
+          }
+        }
+      });
+    }
+
+    Carrinho.criarProduto();
+    // Carrinho.setarListaStorage()
   }
 }
 
