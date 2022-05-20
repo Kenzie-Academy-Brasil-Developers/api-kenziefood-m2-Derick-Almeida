@@ -1,15 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="assets/css/login.css" />
+  </head>
+  <body>
+    <section class="modal">
+      <div id="modalDiv">
+        <p class="modal__texto"></p>
+      </div>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-
-</body>
-
+      <div id="modalNegativo">
+        <p class="modal__texto"></p>
+      </div>
+    </section>
+    <main>
+      <div class="main__login">
+        <div class="login__esquerda">
+          <h1>Faça Login<br />E compre do conforto do seu lar</h1>
+          <img
+            src="assets/imgLogin/Cadastro/woman-reading-animate.svg"
+            class="login__esquerda_img"
+            alt="Animação Mulher Lendo"
+          />
+        </div>
+        <div class="login__direita">
+          <div class="card__login">
+            <h1>Login</h1>
+            <div class="textfield">
+              <label for="usuario">Usuário</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Usuário"
+                required
+              />
+            </div>
+            <div class="textfield">
+              <label for="senha">senha</label>
+              <input
+                type="password"
+                name="password"
+                id="password"
+                placeholder="Senha"
+                required
+              />
+            </div>
+            <button id="btnLogin" type="submit" class="btn__login">
+              Login
+            </button>
+            <a class="redirecionamento" href="cadastro.html">Cadastre-se</a>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script type="module" src="assets/js/login.js"></script>
+  </body>
 </html>

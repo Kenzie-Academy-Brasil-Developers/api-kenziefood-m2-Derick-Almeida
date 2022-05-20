@@ -1,0 +1,10 @@
+.i {
+  width: 25px;
+  height: 15px;
+  padding-right: 5px;
+  background: transparent;
+  object-fit: contain;
+}
+.frutas {
+  margin-right: 15px;
+}
