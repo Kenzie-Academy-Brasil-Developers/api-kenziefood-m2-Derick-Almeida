@@ -107,7 +107,7 @@ class Card {
     }
 
     Carrinho.criarProduto();
-    // Carrinho.setarListaStorage()
+    Carrinho.setarListaStorage();
   }
 }
 

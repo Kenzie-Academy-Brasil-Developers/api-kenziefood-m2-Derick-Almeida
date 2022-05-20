@@ -2,7 +2,6 @@ import { Api } from "../controller/Api.js";
 import { Card } from "./card.js";
 import { Carrinho } from "../models/carrinho.js";
 
-
 const produtos = await Api.produtos();
 
 function mostrarProdutos(array) {
@@ -13,7 +12,6 @@ function mostrarProdutos(array) {
     Card.criarCard(element);
   });
 }
-
 
 function filtrarProdutos() {
   const input = document.getElementById("buscarProduto");
@@ -35,15 +33,13 @@ function buscar(event) {
   mostrarProdutos(filtro);
 }
 
-
-function verificaTamanhoTela(){
-  const size =  window.innerWidth;
+function verificaTamanhoTela() {
+  const size = window.innerWidth;
   const carrinho = document.querySelector('.carrinho_header')
-    if(size < 560){
-      carrinho.addEventListener('click', Carrinho.abrirCarrinho)
-    } 
+  if (size < 560) {
+    carrinho.addEventListener('click', Carrinho.abrirCarrinho)
+  }
 }
-
 
 function startAplication() {
   mostrarProdutos(produtos);
@@ -54,11 +50,42 @@ function startAplication() {
 }
 startAplication()
 
-
 const inicio = document.querySelector(".cardinho")
 const preco = document.querySelector(".carrinho_content")
-if (inicio.innerHTML  === "") {
+if (inicio.innerHTML === "") {
   preco.innerHTML = ""
   Carrinho.carrinhoVazio()
 }
+
+function abrirMenu() {
+  const perfilUsuario = document.getElementById('perfilUsuario');
+  perfilUsuario.addEventListener('click', () => {
+    const menuUsuario = document.querySelector('.menu__usuario');
+    menuUsuario.style.display = 'block';
+    menuUsuario.style.opacity = '1';
+  })
+}
+abrirMenu()
+
+
+function fazerLogin() {
+  const btnLogin = document.getElementById('btnLogin');
+  btnLogin.addEventListener('click', () => {
+    setTimeout(() => {
+      window.location = './src/pages/login.html'
+    }, 1000);
+  })
+}
+fazerLogin()
+
+function fezerRegistro() {
+  const btnRegistro = document.getElementById('btnRegistro');
+  btnRegistro.addEventListener('click', () => {
+    setTimeout(() => {
+      window.location = './src/pages/cadastro.html'
+    }, 1000);
+  })
+}
+fezerRegistro()
+
 export { mostrarProdutos };
