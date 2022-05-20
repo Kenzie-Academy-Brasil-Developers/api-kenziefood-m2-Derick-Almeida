@@ -40,6 +40,7 @@ function verificaTamanhoTela() {
     carrinho.addEventListener("click", Carrinho.abrirCarrinho);
   }
 }
+
 function startAplication() {
   mostrarProdutos(produtos);
   filtrarProdutos();
