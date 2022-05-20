@@ -2,7 +2,6 @@ import { Api } from "../controller/Api.js";
 import { Card } from "./card.js";
 import { Carrinho } from "../models/carrinho.js";
 
-
 const produtos = await Api.produtos();
 
 function mostrarProdutos(array) {
@@ -13,7 +12,6 @@ function mostrarProdutos(array) {
     Card.criarCard(element);
   });
 }
-
 
 function filtrarProdutos() {
   const input = document.getElementById("buscarProduto");
@@ -35,30 +33,26 @@ function buscar(event) {
   mostrarProdutos(filtro);
 }
 
-
-function verificaTamanhoTela(){
-  const size =  window.innerWidth;
-  const carrinho = document.querySelector('.carrinho_header')
-    if(size < 560){
-      carrinho.addEventListener('click', Carrinho.abrirCarrinho)
-    } 
+function verificaTamanhoTela() {
+  const size = window.innerWidth;
+  const carrinho = document.querySelector(".carrinho_header");
+  if (size < 560) {
+    carrinho.addEventListener("click", Carrinho.abrirCarrinho);
+  }
 }
-
 
 function startAplication() {
   mostrarProdutos(produtos);
   filtrarProdutos();
-  Card.defineArray(produtos)
-  Carrinho.pegarListaStorage()
-  verificaTamanhoTela()
+  Card.defineArray(produtos);
+  verificaTamanhoTela();
 }
-startAplication()
+startAplication();
 
-
-const inicio = document.querySelector(".cardinho")
-const preco = document.querySelector(".carrinho_content")
-if (inicio.innerHTML  === "") {
-  preco.innerHTML = ""
-  Carrinho.carrinhoVazio()
+const inicio = document.querySelector(".cardinho");
+const preco = document.querySelector(".carrinho_content");
+if (inicio.innerHTML === "") {
+  preco.innerHTML = "";
+  Carrinho.carrinhoVazio();
 }
 export { mostrarProdutos };

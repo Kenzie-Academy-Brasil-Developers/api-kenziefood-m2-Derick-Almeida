@@ -1,69 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./src/pages/assets/css/icones.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&family=Inter:wght@300;400;600;700&family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./src/css/reset.css" />
+    <link rel="stylesheet" href="./src/css/style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
-  <link rel="stylesheet" href="./src/pages/assets/css/icones.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat&family=Inter:wght@300;400;600;700&family=Poppins:wght@400;500;700&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="./src/css/reset.css" />
-  <link rel="stylesheet" href="./src/css/style.css" />
-</head>
-
-<body>
-  <header>
-    <div class="containerLogo">
-      <h2>Kenzie <span>Food</span></h2>
-    </div>
-    <div class="containerBuscaPorNome">
-      <img src="./src/pages/assets/imgIcones/search.png" class="i" alt="icon" />
-      <input type="search" placeholder="Pesquisar por Produto" id="buscarProduto" />
-    </div>
-  </header>
-  <section class="conteudo">
-    <main>
-      <div class="filtros">
-        <button class="filtro_botao botao--focado" data-tag="Todos" id="todos">
-          Todos
-        </button>
-
-        <button class="filtro_botao" data-tag="Panificadora" id="panificadora">
-          <img src="src/pages/assets/imgIcones/baguette.png" class="i" alt="" />
-          Panificadora
-        </button>
-
-        <button class="filtro_botao" data-tag="Frutas" id="frutas">
-          <img src="src/pages/assets/imgIcones/fruta (1).png" alt="" class="i" />
-          Frutas
-        </button>
-        <button class="filtro_botao" data-tag="Bebidas" id="bebidas">
-          <img src="src/pages/assets/imgIcones/copo-de-vinho.png" class="i" alt="" />
-          Bebida
-        </button>
+  <body>
+    <header>
+      <div class="containerLogo">
+        <h2>Kenzie <span>Food</span></h2>
       </div>
-      <div class="box"></div>
-    </main>
-    <aside class="carrinhoBox">
-      <div class="carrinho_header">
-        <figure>
-          <img src="src/pages/assets/imgIcones/carrinho.svg" alt="img do carrinho de compras" />
-        </figure>
-        <h3>Carrinho</h3>
+      <div class="containerBuscaPorNome">
+        <img
+          src="./src/pages/assets/imgIcones/search.png"
+          class="i"
+          alt="icon"
+        />
+        <input
+          type="search"
+          placeholder="Pesquisar por Produto"
+          id="buscarProduto"
+        />
       </div>
-      <ul class="cardinho"></ul>
-      <div class="carrinho_content"></div>
-    </aside>
-  </section>
-</body>
-<script type="module" src="./src/js/main.js"></script>
-<script type="module" src="./src/js/filtrosHomePage.js"></script>
+    </header>
+    <section class="conteudo">
+      <main>
+        <div class="filtros">
+          <button
+            class="filtro_botao botao--focado"
+            data-tag="Todos"
+            id="todos"
+          >
+            Todos
+          </button>
 
+          <button
+            class="filtro_botao"
+            data-tag="Panificadora"
+            id="panificadora"
+          >
+            <img
+              src="src/pages/assets/imgIcones/baguette.png"
+              class="i"
+              alt=""
+            />
+            Panificadora
+          </button>
+
+          <button class="filtro_botao" data-tag="Frutas" id="frutas">
+            <img
+              src="src/pages/assets/imgIcones/fruta (1).png"
+              alt=""
+              class="i"
+            />
+            Frutas
+          </button>
+          <button class="filtro_botao" data-tag="Bebidas" id="bebidas">
+            <img
+              src="src/pages/assets/imgIcones/copo-de-vinho.png"
+              class="i"
+              alt=""
+            />
+            Bebida
+          </button>
+        </div>
+        <div class="box"></div>
+      </main>
+      <aside class="carrinhoBox">
+        <div class="carrinho_header">
+          <figure>
+            <img
+              src="src/pages/assets/imgIcones/carrinho.svg"
+              alt="img do carrinho de compras"
+            />
+          </figure>
+          <h3>Carrinho</h3>
+        </div>
+        <ul class="cardinho"></ul>
+        <div class="carrinho_content"></div>
+      </aside>
+    </section>
+  </body>
+  <script type="module" src="./src/js/main.js"></script>
+  <script type="module" src="./src/js/filtrosHomePage.js"></script>
 </html>
