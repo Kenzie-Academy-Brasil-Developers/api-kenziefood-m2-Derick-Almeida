@@ -31,32 +31,21 @@ class Carrinho {
 
   static criarProduto() {
     const box = document.querySelector(".cardinho");
-    const rota2 = document.querySelector(".lista__modal_homePage");
 
     box.innerHTML = "";
-    rota2.innerHTML = "";
+
     this.lista.forEach(produto => {
       const li = document.createElement("li");
-      const l2 = document.createElement("li");
       li.id = produto.id;
       li.classList.add("carrinho", "carrinho_card");
-
-      l2.id = produto.id;
-      l2.classList.add("item__modal_homePage");
 
       const img = this.criarCardImg(produto);
       const conteudo = this.criarCardContent(produto);
       const img2 = this.criarCardBotao(produto);
 
-      const imgrota = this.criarCardImg(produto);
-      const conteudorota = this.criarCardContent(produto);
-      const img2rota = this.criarCardBotao(produto);
-
       li.append(img, conteudo, img2);
-      l2.append(imgrota, conteudorota, img2rota);
 
       box.appendChild(li);
-      rota2.appendChild(l2);
     });
   }
 
