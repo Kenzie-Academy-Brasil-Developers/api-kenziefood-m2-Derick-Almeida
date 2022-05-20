@@ -48,8 +48,12 @@ class Carrinho {
       const conteudo = this.criarCardContent(produto);
       const img2 = this.criarCardBotao(produto);
 
+      const imgrota = this.criarCardImg(produto);
+      const conteudorota = this.criarCardContent(produto);
+      const img2rota = this.criarCardBotao(produto);
+
       li.append(img, conteudo, img2);
-      l2.append(img, conteudo, img2);
+      l2.append(imgrota, conteudorota, img2rota);
 
       box.appendChild(li);
       rota2.appendChild(l2);
