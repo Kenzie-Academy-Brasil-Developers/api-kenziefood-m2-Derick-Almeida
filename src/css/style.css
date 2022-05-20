@@ -16,35 +16,33 @@
   --font-inter: "Inter";
 }
 
-
 @media only screen and (max-width: 560px) {
-
   header .containerLogo {
     display: flex;
     height: 4vh;
     padding: 21px 30px;
   }
 
-  .containerLogo>h2 {
+  .containerLogo > h2 {
     font-family: var(--font);
     font-weight: 700;
     font-size: 22px;
     color: var(--cinza-4);
   }
 
-  .containerLogo>h2>span {
+  .containerLogo > h2 > span {
     font-family: var(--font);
     font-weight: 700;
     font-size: 16px;
     color: var(--cor-primaria);
   }
 
-  header>input {
-    background: #E9ECEF;
-    border: 1.5px solid #E9ECEF;
+  header > input {
+    background: #e9ecef;
+    border: 1.5px solid #e9ecef;
     border-radius: 12px;
     padding: 10px 0px 10px 40px;
-    font-family: 'Inter';
+    font-family: "Inter";
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -55,7 +53,7 @@
   }
 
   header input:focus {
-    background: #F8F9FA;
+    background: #f8f9fa;
     border: 1.5px solid #212529;
     border-radius: 12px;
     outline: none;
@@ -69,7 +67,7 @@
     z-index: 9;
   }
 
-  header>#perfilUsuario {
+  header > #perfilUsuario {
     width: 36px;
     height: 36px;
     border-radius: 50%;
@@ -112,9 +110,8 @@
     justify-content: center;
   }
 
-
   .filtro_botao:hover {
-    color: #FFFF;
+    color: #ffff;
     background-color: #ff2253;
   }
 
@@ -145,13 +142,13 @@
     padding: 10px;
   }
 
-  .card>figure {
+  .card > figure {
     max-height: 200px;
     max-width: 300px;
     object-fit: cover;
   }
 
-  .card>figure>img {
+  .card > figure > img {
     height: 200px;
     width: 300px;
   }
@@ -167,20 +164,20 @@
     gap: 16px;
   }
 
-  .card__text__content>h3 {
+  .card__text__content > h3 {
     font-size: 16px;
     font-weight: 500;
-    font-family: 'Poppins';
+    font-family: "Poppins";
   }
 
-  .card__text__content>p {
+  .card__text__content > p {
     font-family: var(--font);
     font-weight: 400;
     color: var(--cinza-3);
     font-size: 14px;
   }
 
-  .card__text__content>span {
+  .card__text__content > span {
     font-family: var(--font-inter);
     font-weight: 400;
     font-size: 12px;
@@ -190,7 +187,6 @@
     display: flex;
     justify-content: space-between;
     margin-top: 10%;
-
   }
 
   .card__text__footer img {
@@ -263,16 +259,16 @@
     font-weight: 500;
   }
 
-  .carrinho__content>span:nth-of-type(1) {
+  .carrinho__content > span:nth-of-type(1) {
     color: var(--cinza-3);
   }
 
-  .carrinho__content>span:nth-of-type(2) {
+  .carrinho__content > span:nth-of-type(2) {
     color: var(--cinza-4);
     font-weight: 400;
   }
 
-  .carrinho>figure>.lixeira {
+  .carrinho > figure > .lixeira {
     height: 12px;
     width: 10px;
   }
@@ -367,7 +363,6 @@
 }
 
 @media (min-width: 561px) {
-
   /*-------------------------------- Header --------------------------*/
   header {
     display: flex;
@@ -385,19 +380,19 @@
     align-items: center;
   }
 
-  .containerLogo>h2 {
+  .containerLogo > h2 {
     font-family: var(--font);
     font-weight: 700;
     font-size: 22px;
     color: var(--cinza-4);
   }
 
-  header>input {
-    background: #E9ECEF;
-    border: 1.5px solid #E9ECEF;
+  header > input {
+    background: #e9ecef;
+    border: 1.5px solid #e9ecef;
     border-radius: 12px;
     padding: 10px 0px 10px 40px;
-    font-family: 'Inter';
+    font-family: "Inter";
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -407,7 +402,7 @@
   }
 
   header input:focus {
-    background: #F8F9FA;
+    background: #f8f9fa;
     border: 1.5px solid #212529;
     border-radius: 12px;
     outline: none;
@@ -415,11 +410,11 @@
 
   header img {
     position: absolute;
-    right: 415px;
+    right: 390px;
     z-index: 9;
   }
 
-  header>#perfilUsuario {
+  header > #perfilUsuario {
     width: 36px;
     height: 36px;
     border-radius: 50%;
@@ -429,7 +424,7 @@
   }
 
   .filtros {
-   overflow-x: hidden;
+    overflow-x: hidden;
     display: flex;
     height: 60px;
     flex-direction: row;
@@ -455,11 +450,11 @@
   }
 
   .filtro_botao:hover {
-    color: #FFFF;
+    color: #ffff;
     background-color: #ff2253;
   }
 
-  .containerLogo>h2>span {
+  .containerLogo > h2 > span {
     font-family: var(--font);
     font-weight: 700;
     font-size: 16px;
@@ -734,7 +729,6 @@
 }
 
 @media (min-width: 1023px) {
-
   /*-------------------------------- Header --------------------------*/
   header {
     display: flex;
@@ -750,19 +744,19 @@
     width: 150px;
   }
 
-  .containerLogo>h2 {
+  .containerLogo > h2 {
     font-family: var(--font);
     font-weight: 700;
     font-size: 22px;
     color: var(--cinza-4);
   }
 
-  header>input {
-    background: #E9ECEF;
-    border: 1.5px solid #E9ECEF;
+  header > input {
+    background: #e9ecef;
+    border: 1.5px solid #e9ecef;
     border-radius: 12px;
     padding: 10px 0px 10px 40px;
-    font-family: 'Inter';
+    font-family: "Inter";
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -772,7 +766,7 @@
   }
 
   header input:focus {
-    background: #F8F9FA;
+    background: #f8f9fa;
     border: 1.5px solid #212529;
     border-radius: 12px;
     outline: none;
@@ -780,11 +774,11 @@
 
   header img {
     position: absolute;
-    right: 415px;
+    right: 390px;
     z-index: 9;
   }
 
-  header>#perfilUsuario {
+  header > #perfilUsuario {
     width: 36px;
     height: 36px;
     border-radius: 50%;
@@ -819,11 +813,11 @@
   }
 
   .filtro_botao:hover {
-    color: #FFFF;
+    color: #ffff;
     background-color: #ff2253;
   }
 
-  .containerLogo>h2>span {
+  .containerLogo > h2 > span {
     font-family: var(--font);
     font-weight: 700;
     font-size: 16px;
@@ -1020,7 +1014,6 @@
     width: 175px;
   }
 
-
   figure .lixeira {
     width: 15px;
     height: 15px;
@@ -1105,7 +1098,6 @@
 }
 
 @media (min-width: 1400px) {
-
   /*-------------------------------- Header --------------------------*/
   header {
     display: flex;
@@ -1121,19 +1113,19 @@
     width: 150px;
   }
 
-  .containerLogo>h2 {
+  .containerLogo > h2 {
     font-family: var(--font);
     font-weight: 700;
     font-size: 22px;
     color: var(--cinza-4);
   }
 
-  header>input {
-    background: #E9ECEF;
-    border: 1.5px solid #E9ECEF;
+  header > input {
+    background: #e9ecef;
+    border: 1.5px solid #e9ecef;
     border-radius: 12px;
     padding: 10px 0px 10px 40px;
-    font-family: 'Inter';
+    font-family: "Inter";
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -1142,8 +1134,8 @@
     right: 60px;
   }
 
-  header>input:focus {
-    background: #F8F9FA;
+  header > input:focus {
+    background: #f8f9fa;
     border: 1.5px solid #212529;
     border-radius: 12px;
     outline: none;
@@ -1151,11 +1143,11 @@
 
   header img {
     position: absolute;
-    right: 415px;
+    right: 390px;
     z-index: 9;
   }
 
-  header>#perfilUsuario {
+  header > #perfilUsuario {
     width: 36px;
     height: 36px;
     border-radius: 50%;
@@ -1189,11 +1181,11 @@
   }
 
   .filtro_botao:hover {
-    color: #FFFF;
+    color: #ffff;
     background-color: #ff2253;
   }
 
-  .containerLogo>h2>span {
+  .containerLogo > h2 > span {
     font-family: var(--font);
     font-weight: 700;
     font-size: 16px;
@@ -1254,7 +1246,6 @@
     height: 100%;
     flex-direction: column;
     justify-content: space-between;
-
   }
 
   .card__text__content {
@@ -1270,13 +1261,11 @@
     height: 40px;
   }
 
-
   .btn {
     color: #4aca94;
     padding: 15px;
     border-radius: 50%;
     background-color: #e4f7ef;
-
   }
 
   .btn:hover {
@@ -1285,12 +1274,12 @@
     background-color: #4aca94;
     border-radius: 50%;
     cursor: pointer;
-    color: #FFFF;
+    color: #ffff;
   }
 
   .carrinho_header img {
-    Width: 15px;
-    Height: 15px;
+    width: 15px;
+    height: 15px;
     color: #ffff;
     margin: 0px 20px;
   }
@@ -1400,7 +1389,6 @@
     justify-content: space-between;
     width: 175px;
   }
-
 
   figure .lixeira {
     width: 15px;
