@@ -119,6 +119,43 @@ class Api {
       }
     });
   }
+
+  static async getPrivado(token) {
+    const resposta = await fetch(`${this.baseUrl}cart`, {
+      method: "GET",
+      headers: {
+        "Content-type": "application/json",
+        Authorization: `Bearer ${token}`
+      }
+    });
+    const infos = await resposta.json();
+    return infos;
+  }
+
+  static async postPrivado(dados, token) {
+    const resposta = await fetch(`${this.baseUrl}cart/add`, {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+        Authorization: `Bearer ${token}`
+      },
+      body: JSON.stringify(dados)
+    });
+    const infos = await resposta.json();
+    return infos;
+  }
+
+  static async deletePrivado(id, token) {
+    const resposta = await fetch(`${this.baseUrl}cart/remove/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-type": "application/json",
+        Authorization: `Bearer ${token}`
+      }
+    });
+    const infos = await resposta.json();
+    return infos;
+  }
 }
 
 export { Api };

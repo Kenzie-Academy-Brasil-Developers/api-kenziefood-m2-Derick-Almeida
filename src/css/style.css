@@ -429,9 +429,12 @@
   }
 
   .filtros {
+   overflow-x: hidden;
     display: flex;
-    width: 80%;
     height: 60px;
+    flex-direction: row;
+    justify-content: center;
+    width: 500px;
   }
 
   .botao--focado {
@@ -791,9 +794,11 @@
   }
 
   .filtros {
+    overflow-x: hidden;
     display: flex;
-    width: 80%;
     height: 60px;
+    flex-direction: row;
+    justify-content: center;
   }
 
   .botao--focado {
