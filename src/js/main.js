@@ -35,10 +35,9 @@ function buscar(event) {
 
 function verificaTamanhoTela() {
   const size = window.innerWidth;
-  const carrinho = document.querySelector(".carrinho_header");
+  const carrinho = document.querySelector('.carrinho_header')
   if (size < 560) {
-    carrinho.addEventListener("click", Carrinho.abrirCarrinho);
-  }
+    carrinho.addEventListener('click', Carrinho.abrirCarrinho)
 }
 
 function startAplication() {
@@ -47,12 +46,45 @@ function startAplication() {
   Card.defineArray(produtos);
   verificaTamanhoTela();
 }
-startAplication();
 
-const inicio = document.querySelector(".cardinho");
-const preco = document.querySelector(".carrinho_content");
+startAplication()
+
+const inicio = document.querySelector(".cardinho")
+const preco = document.querySelector(".carrinho_content")
 if (inicio.innerHTML === "") {
-  preco.innerHTML = "";
-  Carrinho.carrinhoVazio();
+  preco.innerHTML = ""
+  Carrinho.carrinhoVazio()
 }
+
+function abrirMenu() {
+  const perfilUsuario = document.getElementById('perfilUsuario');
+  perfilUsuario.addEventListener('click', () => {
+    const menuUsuario = document.querySelector('.menu__usuario');
+    menuUsuario.style.display = 'block';
+    menuUsuario.style.opacity = '1';
+  })
+}
+abrirMenu()
+
+
+function fazerLogin() {
+  const btnLogin = document.getElementById('btnLogin');
+  btnLogin.addEventListener('click', () => {
+    setTimeout(() => {
+      window.location = './src/pages/login.html'
+    }, 1000);
+  })
+}
+fazerLogin()
+
+function fezerRegistro() {
+  const btnRegistro = document.getElementById('btnRegistro');
+  btnRegistro.addEventListener('click', () => {
+    setTimeout(() => {
+      window.location = './src/pages/cadastro.html'
+    }, 1000);
+  })
+}
+fezerRegistro()
+
 export { mostrarProdutos };

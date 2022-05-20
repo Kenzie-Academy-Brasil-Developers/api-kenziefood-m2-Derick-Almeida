@@ -20,64 +20,41 @@
     <link rel="stylesheet" href="./src/css/style.css" />
   </head>
 
-  <body>
-    <header>
-      <div class="containerLogo">
-        <h2>Kenzie <span>Food</span></h2>
-      </div>
-      <div class="containerBuscaPorNome">
-        <img
-          src="./src/pages/assets/imgIcones/search.png"
-          class="i"
-          alt="icon"
-        />
-        <input
-          type="search"
-          placeholder="Pesquisar por Produto"
-          id="buscarProduto"
-        />
-      </div>
-    </header>
-    <section class="conteudo">
-      <main>
-        <div class="filtros">
-          <button
-            class="filtro_botao botao--focado"
-            data-tag="Todos"
-            id="todos"
-          >
-            Todos
-          </button>
+<body>
+  <header>
+    <div class="containerLogo">
+      <h2>Kenzie <span>Food</span></h2>
+    </div>
+    <img src="./src/pages/assets/imgIcones/search.png" class="i" alt="icon" />
+    <input type="search" placeholder="Pesquisar por Produto" id="buscarProduto" />
+    <img src="./src/pages/assets/imgLogin/user.png" alt="Perfil do Usuario" id="perfilUsuario" />
+    <div class="menu__usuario">
+      <div class="menu__usuario--pontaBalao"></div>
+      <h2 class="menu__usuario--titulo">Time A</h2>
+      <button class="menu__usuario--botao" id="btnLogin">Login</button>
+      <button class="menu__usuario--botao" id="btnRegistro">Registro</button>
+    </div>
+  </header>
+  <section class="conteudo">
+    <main>
+      <div class="filtros">
+        <button class="filtro_botao botao--focado" data-tag="Todos" id="todos">
+          Todos
+        </button>
+        <button class="filtro_botao" data-tag="Panificadora" id="panificadora">
+          <img src="src/pages/assets/imgIcones/baguette.png" class="i" alt="" />
+          Panificadora
+        </button>
 
-          <button
-            class="filtro_botao"
-            data-tag="Panificadora"
-            id="panificadora"
-          >
-            <img
-              src="src/pages/assets/imgIcones/baguette.png"
-              class="i"
-              alt=""
-            />
-            Panificadora
-          </button>
+        <button class="filtro_botao" data-tag="Frutas" id="frutas">
+          <img src="src/pages/assets/imgIcones/fruta (1).png" alt="" class="i" />
+          Frutas
+        </button>
+        <button class="filtro_botao" data-tag="Bebidas" id="bebidas">
+          <img src="src/pages/assets/imgIcones/copo-de-vinho.png" class="i" alt="" />
+          Bebida
+        </button>
 
-          <button class="filtro_botao" data-tag="Frutas" id="frutas">
-            <img
-              src="src/pages/assets/imgIcones/fruta (1).png"
-              alt=""
-              class="i"
-            />
-            Frutas
-          </button>
-          <button class="filtro_botao" data-tag="Bebidas" id="bebidas">
-            <img
-              src="src/pages/assets/imgIcones/copo-de-vinho.png"
-              class="i"
-              alt=""
-            />
-            Bebida
-          </button>
         </div>
         <div class="box"></div>
       </main>

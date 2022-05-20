@@ -16,7 +16,9 @@
   --font-inter: "Inter";
 }
 
+
 @media only screen and (max-width: 560px) {
+
   header .containerLogo {
     display: flex;
     height: 4vh;
@@ -37,35 +39,44 @@
     color: var(--cor-primaria);
   }
 
-  header>.containerBuscaPorNome {
-    width: 80%;
-    height: 35px;
-    margin: auto;
-    background-color: var(--cinza-2);
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 15px 17px;
-    gap: 14px;
+  header>input {
+    background: #E9ECEF;
+    border: 1.5px solid #E9ECEF;
     border-radius: 12px;
-  }
-
-  .containerBuscaPorNome>input {
-    padding: 15px 18px 15px 16px;
-    color: var(--cinza-3);
-    background-color: var(--cinza-2);
-    width: 100%;
-    padding: 15px 2px;
-    font-size: 16px;
+    padding: 10px 0px 10px 40px;
+    font-family: 'Inter';
+    font-style: normal;
     font-weight: 400;
-    border: none;
+    font-size: 16px;
+    line-height: 19px;
+    position: initial;
+    width: 89%;
+    margin: 0 30px;
+  }
+
+  header input:focus {
+    background: #F8F9FA;
+    border: 1.5px solid #212529;
+    border-radius: 12px;
+    outline: none;
     outline: none;
   }
 
-  .containerBuscaPorNome input:focus {
-    background-color: #e9ecef;
-    border: none;
-    outline: none;
+  header .i {
+    position: absolute;
+    left: 38px;
+    top: 83px;
+    z-index: 9;
+  }
+
+  header>#perfilUsuario {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    position: absolute;
+    right: 40px;
+    top: 20px;
+    cursor: pointer;
   }
 
   .conteudo {
@@ -294,6 +305,65 @@
     height: 45px;
     width: 45px;
   }
+
+  header .menu__usuario {
+    position: absolute;
+    right: 34px;
+    top: 71px;
+    background: #ffffff;
+    box-shadow: 0px 4px 38px rgb(0 0 0 / 15%);
+    border-radius: 8px;
+    text-align: center;
+    opacity: 0;
+    display: none;
+    transition: 500ms;
+  }
+
+  .menu__usuario .menu__usuario--pontaBalao {
+    width: 0;
+    height: 0;
+    border-right: 8px solid transparent;
+    border-left: 7px solid transparent;
+    border-bottom: 16px solid #ffffff;
+    position: absolute;
+    right: 15px;
+    top: -10px;
+  }
+
+  .menu__usuario .menu__usuario--titulo {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: #000000;
+    background: #ffffff;
+    box-shadow: 0px 4px 38px rgb(0 0 0 / 15%);
+    padding: 2px 70px 0 10px;
+    border-radius: 8px 8px 0 0;
+    margin-bottom: 10px;
+  }
+
+  .menu__usuario .menu__usuario--botao {
+    background: #f8f9fa;
+    border: 1.5px solid #f8f9fa;
+    border-radius: 22px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #212529;
+    margin-bottom: 10px;
+  }
+
+  .menu__usuario .menu__usuario--botao:hover {
+    background: #ff2253;
+    border: 1.5px solid #ff2253;
+    color: #f8f9fa;
+    cursor: pointer;
+  }
 }
 
 @media (min-width: 561px) {
@@ -304,6 +374,7 @@
     justify-content: space-between;
     height: 72px;
     align-items: center;
+    padding: 0 100px;
   }
 
   header .containerLogo {
@@ -321,35 +392,40 @@
     color: var(--cinza-4);
   }
 
-  header>.containerBuscaPorNome {
-    width: 400px;
-    height: 35px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    background-color: #e9ecef;
+  header>input {
+    background: #E9ECEF;
+    border: 1.5px solid #E9ECEF;
     border-radius: 12px;
-    padding: 5px 18px 5px 16px;
-  }
-
-  .containerBuscaPorNome>input {
-    padding: 15px 18px 15px 16px;
-    width: 312px;
-    height: 100%;
-    padding: 15px 2px;
-    font-size: 16px;
+    padding: 10px 0px 10px 40px;
+    font-family: 'Inter';
+    font-style: normal;
     font-weight: 400;
-    border: none;
+    font-size: 16px;
+    line-height: 19px;
+    position: relative;
+    right: 60px;
+  }
+
+  header input:focus {
+    background: #F8F9FA;
+    border: 1.5px solid #212529;
+    border-radius: 12px;
     outline: none;
   }
 
-  .containerBuscaPorNome input:focus {
-    background-color: var(--background);
-    border: 1.5px solid var(--cinza-4);
-    border-radius: 8px;
-    font-family: "inter";
-    outline: none;
+  header img {
+    position: absolute;
+    right: 415px;
+    z-index: 9;
+  }
+
+  header>#perfilUsuario {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    position: absolute;
+    right: 110px;
+    cursor: pointer;
   }
 
   .filtros {
@@ -538,64 +614,123 @@
     display: flex;
     margin: 0px 100px 123px 100px;
   }
-}
 
-.cardinho {
-  width: 319px;
-  max-height: 221px;
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  align-items: center;
-  padding: 17px 10px;
-  overflow-y: scroll;
-}
+  .cardinho {
+    width: 319px;
+    max-height: 221px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    padding: 17px 10px;
+    overflow-y: scroll;
+  }
 
-.cardinho li {
-  display: flex;
-  width: 100%;
-}
+  .cardinho li {
+    display: flex;
+    width: 100%;
+  }
 
-.cardinho img {
-  width: 70px;
-  height: 70px;
-  border-radius: 8px;
-}
+  .cardinho img {
+    width: 70px;
+    height: 70px;
+    border-radius: 8px;
+  }
 
-.carrinho_card {
-  justify-content: space-between;
-  flex-direction: row;
-  position: relative;
-}
+  .carrinho_card {
+    justify-content: space-between;
+    flex-direction: row;
+    position: relative;
+  }
 
-.carrinho__content {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 175px;
-}
+  .carrinho__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 175px;
+  }
 
-figure .lixeira {
-  width: 15px;
-  height: 15px;
-}
+  figure .lixeira {
+    width: 15px;
+    height: 15px;
+  }
 
-.boxGeral {
-  flex-direction: column;
-  justify-content: space-between;
-  width: 100%;
-  display: flex;
-  height: 70px;
-}
+  .boxGeral {
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    display: flex;
+    height: 70px;
+  }
 
-.quantidade {
-  display: flex;
-  justify-content: space-between;
-}
+  .quantidade {
+    display: flex;
+    justify-content: space-between;
+  }
 
-.pagamentoTotal {
-  display: flex;
-  justify-content: space-between;
+  .pagamentoTotal {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  header .menu__usuario {
+    position: absolute;
+    right: 104px;
+    top: 71px;
+    background: #ffffff;
+    box-shadow: 0px 4px 38px rgb(0 0 0 / 15%);
+    border-radius: 8px;
+    text-align: center;
+    opacity: 0;
+    display: none;
+    transition: 500ms;
+  }
+
+  .menu__usuario .menu__usuario--pontaBalao {
+    width: 0;
+    height: 0;
+    border-right: 8px solid transparent;
+    border-left: 7px solid transparent;
+    border-bottom: 16px solid #ffffff;
+    position: absolute;
+    right: 15px;
+    top: -10px;
+  }
+
+  .menu__usuario .menu__usuario--titulo {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: #000000;
+    background: #ffffff;
+    box-shadow: 0px 4px 38px rgb(0 0 0 / 15%);
+    padding: 2px 70px 0 10px;
+    border-radius: 8px 8px 0 0;
+    margin-bottom: 10px;
+  }
+
+  .menu__usuario .menu__usuario--botao {
+    background: #f8f9fa;
+    border: 1.5px solid #f8f9fa;
+    border-radius: 22px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #212529;
+    margin-bottom: 10px;
+  }
+
+  .menu__usuario .menu__usuario--botao:hover {
+    background: #ff2253;
+    border: 1.5px solid #ff2253;
+    color: #f8f9fa;
+    cursor: pointer;
+  }
 }
 
 @media (min-width: 1023px) {
@@ -605,6 +740,7 @@ figure .lixeira {
     display: flex;
     justify-content: space-between;
     height: 72px;
+    padding: 0 100px;
   }
 
   header .containerLogo {
@@ -621,43 +757,40 @@ figure .lixeira {
     color: var(--cinza-4);
   }
 
-  header>.containerBuscaPorNome {
-    width: 300px;
-    height: 35px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    background-color: #e9ecef;
+  header>input {
+    background: #E9ECEF;
+    border: 1.5px solid #E9ECEF;
     border-radius: 12px;
-    padding: 5px 18px 5px 16px;
-  }
-
-  .containerBuscaPorNome>input {
-    padding: 15px 18px 15px 16px;
-    width: 312px;
-    height: 100%;
-    padding: 15px 2px;
-    font-size: 16px;
+    padding: 10px 0px 10px 40px;
+    font-family: 'Inter';
+    font-style: normal;
     font-weight: 400;
-    border: none;
+    font-size: 16px;
+    line-height: 19px;
+    position: relative;
+    right: 60px;
+  }
+
+  header input:focus {
+    background: #F8F9FA;
+    border: 1.5px solid #212529;
+    border-radius: 12px;
     outline: none;
-    background: #e9ecef;
   }
 
-  .containerBuscaPorNome input:focus {
-    background-color: #fff;
-    border: none;
-    outline: none;
+  header img {
+    position: absolute;
+    right: 415px;
+    z-index: 9;
   }
 
-  .containerBuscaPorNome:hover {
-    background: #fff;
-    border: 1px solid #000;
-  }
-
-  .containerBuscaPorNome>input:hover {
-    background: #fff;
+  header>#perfilUsuario {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    position: absolute;
+    right: 110px;
+    cursor: pointer;
   }
 
   .filtros {
@@ -910,6 +1043,65 @@ figure .lixeira {
     display: flex;
     justify-content: space-between;
   }
+
+  header .menu__usuario {
+    position: absolute;
+    right: 104px;
+    top: 71px;
+    background: #ffffff;
+    box-shadow: 0px 4px 38px rgb(0 0 0 / 15%);
+    border-radius: 8px;
+    text-align: center;
+    opacity: 0;
+    display: none;
+    transition: 500ms;
+  }
+
+  .menu__usuario .menu__usuario--pontaBalao {
+    width: 0;
+    height: 0;
+    border-right: 8px solid transparent;
+    border-left: 7px solid transparent;
+    border-bottom: 16px solid #ffffff;
+    position: absolute;
+    right: 15px;
+    top: -10px;
+  }
+
+  .menu__usuario .menu__usuario--titulo {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: #000000;
+    background: #ffffff;
+    box-shadow: 0px 4px 38px rgb(0 0 0 / 15%);
+    padding: 2px 70px 0 10px;
+    border-radius: 8px 8px 0 0;
+    margin-bottom: 10px;
+  }
+
+  .menu__usuario .menu__usuario--botao {
+    background: #f8f9fa;
+    border: 1.5px solid #f8f9fa;
+    border-radius: 22px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #212529;
+    margin-bottom: 10px;
+  }
+
+  .menu__usuario .menu__usuario--botao:hover {
+    background: #ff2253;
+    border: 1.5px solid #ff2253;
+    color: #f8f9fa;
+    cursor: pointer;
+  }
 }
 
 @media (min-width: 1400px) {
@@ -919,6 +1111,7 @@ figure .lixeira {
     display: flex;
     justify-content: space-between;
     height: 72px;
+    padding: 0 100px;
   }
 
   header .containerLogo {
@@ -935,34 +1128,41 @@ figure .lixeira {
     color: var(--cinza-4);
   }
 
-  header>.containerBuscaPorNome {
-    width: 400px;
-    height: 35px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    background-color: #e9ecef;
+  header>input {
+    background: #E9ECEF;
+    border: 1.5px solid #E9ECEF;
     border-radius: 12px;
-    padding: 5px 18px 5px 16px;
-  }
-
-  .containerBuscaPorNome>input {
-    padding: 15px 18px 15px 16px;
-
-    width: 312px;
-    height: 100%;
-    padding: 15px 2px;
-    font-size: 16px;
+    padding: 10px 0px 10px 40px;
+    font-family: 'Inter';
+    font-style: normal;
     font-weight: 400;
-    border: none;
+    font-size: 16px;
+    line-height: 19px;
+    position: relative;
+    right: 60px;
+  }
+
+  header>input:focus {
+    background: #F8F9FA;
+    border: 1.5px solid #212529;
+    border-radius: 12px;
     outline: none;
   }
 
-  .containerBuscaPorNome input:focus {
-    background-color: #e9ecef;
-    border: none;
-    outline: none;
+  header img {
+    position: absolute;
+    right: 415px;
+    z-index: 9;
+  }
+
+  header>#perfilUsuario {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    position: absolute;
+    right: 120px;
+    right: 110px;
+    cursor: pointer;
   }
 
   .filtros {
@@ -1225,27 +1425,62 @@ figure .lixeira {
     justify-content: space-between;
   }
 
+  header .menu__usuario {
+    position: absolute;
+    right: 104px;
+    top: 71px;
+    background: #ffffff;
+    box-shadow: 0px 4px 38px rgb(0 0 0 / 15%);
+    border-radius: 8px;
+    text-align: center;
+    opacity: 0;
+    display: none;
+    transition: 500ms;
+  }
 
-}
+  .menu__usuario .menu__usuario--pontaBalao {
+    width: 0;
+    height: 0;
+    border-right: 8px solid transparent;
+    border-left: 7px solid transparent;
+    border-bottom: 16px solid #ffffff;
+    position: absolute;
+    right: 15px;
+    top: -10px;
+  }
 
-.quantidadeDoProduto {
-  border: 1px solid black;
-  width: 70px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: white;
-  height: 24px;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-}
+  .menu__usuario .menu__usuario--titulo {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: #000000;
+    background: #ffffff;
+    box-shadow: 0px 4px 38px rgb(0 0 0 / 15%);
+    padding: 2px 70px 0 10px;
+    border-radius: 8px 8px 0 0;
+    margin-bottom: 10px;
+  }
 
-.quantidadeDoProduto--botao {
-  font-weight: bold;
-  font-size: 22px;
-  cursor: pointer;
-  background: #d9d9d9;
-  width: 26%;
-  text-align: center;
+  .menu__usuario .menu__usuario--botao {
+    background: #f8f9fa;
+    border: 1.5px solid #f8f9fa;
+    border-radius: 22px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #212529;
+    margin-bottom: 10px;
+  }
+
+  .menu__usuario .menu__usuario--botao:hover {
+    background: #ff2253;
+    border: 1.5px solid #ff2253;
+    color: #f8f9fa;
+    cursor: pointer;
+  }
 }
