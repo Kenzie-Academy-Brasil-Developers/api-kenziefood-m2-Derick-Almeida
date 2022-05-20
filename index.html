@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./src/pages/assets/css/icones.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="src/css/modalHomePage.css" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
@@ -20,45 +21,72 @@
     <link rel="stylesheet" href="./src/css/style.css" />
   </head>
 
-<body>
-  <header>
-    <div class="containerLogo">
-      <h2>Kenzie <span>Food</span></h2>
-    </div>
-    <img src="./src/pages/assets/imgIcones/search.png" class="i" alt="icon" />
-    <input type="search" placeholder="Pesquisar por Produto" id="buscarProduto" />
-    <img src="./src/pages/assets/imgLogin/user.png" alt="Perfil do Usuario" id="perfilUsuario" />
-    <div class="menu__usuario">
-      <div class="menu__usuario--pontaBalao"></div>
-      <h2 class="menu__usuario--titulo">Time A</h2>
-      <button class="menu__usuario--botao" id="btnLogin">Login</button>
-      <button class="menu__usuario--botao" id="btnRegistro">Registro</button>
-    </div>
-  </header>
-  <section class="conteudo">
-    <main>
-      <div class="filtros">
-        <button class="filtro_botao botao--focado" data-tag="Todos" id="todos">
-          Todos
-        </button>
-        <button class="filtro_botao" data-tag="Panificadora" id="panificadora">
-          <img src="src/pages/assets/imgIcones/baguette.png" class="i" alt="" />
-          Panificadora
-        </button>
+  <body>
+    <header>
+      <div class="containerLogo">
+        <h2>Kenzie <span>Food</span></h2>
+      </div>
+      <img src="./src/pages/assets/imgIcones/search.png" class="i" alt="icon" />
+      <input
+        type="search"
+        placeholder="Pesquisar por Produto"
+        id="buscarProduto"
+      />
+      <img
+        src="./src/pages/assets/imgLogin/user.png"
+        alt="Perfil do Usuario"
+        id="perfilUsuario"
+      />
+      <div class="menu__usuario">
+        <div class="menu__usuario--pontaBalao"></div>
+        <h2 class="menu__usuario--titulo">Time A</h2>
+        <button class="menu__usuario--botao" id="btnLogin">Login</button>
+        <button class="menu__usuario--botao" id="btnRegistro">Registro</button>
+      </div>
+    </header>
+    <section class="conteudo">
+      <main>
+        <div class="filtros">
+          <button
+            class="filtro_botao botao--focado"
+            data-tag="Todos"
+            id="todos"
+          >
+            Todos
+          </button>
+          <button
+            class="filtro_botao"
+            data-tag="Panificadora"
+            id="panificadora"
+          >
+            <img
+              src="src/pages/assets/imgIcones/baguette.png"
+              class="i"
+              alt=""
+            />
+            Panificadora
+          </button>
 
-        <button class="filtro_botao" data-tag="Frutas" id="frutas">
-          <img src="src/pages/assets/imgIcones/fruta (1).png" alt="" class="i" />
-          Frutas
-        </button>
-        <button class="filtro_botao" data-tag="Bebidas" id="bebidas">
-          <img src="src/pages/assets/imgIcones/copo-de-vinho.png" class="i" alt="" />
-          Bebida
-        </button>
-
+          <button class="filtro_botao" data-tag="Frutas" id="frutas">
+            <img
+              src="src/pages/assets/imgIcones/fruta (1).png"
+              alt=""
+              class="i"
+            />
+            Frutas
+          </button>
+          <button class="filtro_botao" data-tag="Bebidas" id="bebidas">
+            <img
+              src="src/pages/assets/imgIcones/copo-de-vinho.png"
+              class="i"
+              alt=""
+            />
+            Bebida
+          </button>
         </div>
         <div class="box"></div>
       </main>
-      <aside class="carrinhoBox">
+      <aside class="carrinhoBox" id="aside">
         <div class="carrinho_header">
           <figure>
             <img
@@ -72,7 +100,67 @@
         <div class="carrinho_content"></div>
       </aside>
     </section>
+
+    <div class="modal__homePage" id="modal_home">
+      <div class="header__modal_homePage">
+        <img src="src/pages/assets/imgIcones/carrinho-de-compras.png" alt="" />
+        <p>Carrinho</p>
+      </div>
+      <ul class="lista__modal_homePage">
+        <li class="item__modal_homePage">
+          <div class="item__imagem">
+            <img src="" alt="" />
+          </div>
+          <div class="itens__lista">
+            <h3>Panqueca</h3>
+            <p class="categoria">Panificadora</p>
+            <p class="preco">20,00</p>
+          </div>
+        </li>
+        <li class="item__modal_homePage">
+          <div class="item__imagem">
+            <img src="" alt="" />
+          </div>
+          <div class="itens__lista">
+            <h3>Panqueca</h3>
+            <p class="categoria">Panificadora</p>
+            <p class="preco">20,00</p>
+          </div>
+        </li>
+        <li class="item__modal_homePage">
+          <div class="item__imagem">
+            <img src="" alt="" />
+          </div>
+          <div class="itens__lista">
+            <h3>Panqueca</h3>
+            <p class="categoria">Panificadora</p>
+            <p class="preco">20,00</p>
+          </div>
+        </li>
+        <li class="item__modal_homePage">
+          <div class="item__imagem">
+            <img src="" alt="" />
+          </div>
+          <div class="itens__lista">
+            <h3>Panqueca</h3>
+            <p class="categoria">Panificadora</p>
+            <p class="preco">20,00</p>
+          </div>
+        </li>
+      </ul>
+      <div class="infos__modal_homePage">
+        <div class="textos__modal_homePage">
+          <p class="quantidade">Quantidade</p>
+          <p class="total">Total</p>
+        </div>
+        <div class="numeros__modal_homePage">
+          <p class="quantidadeTotal">0</p>
+          <p class="valorTotal">0</p>
+        </div>
+      </div>
+    </div>
   </body>
   <script type="module" src="./src/js/main.js"></script>
   <script type="module" src="./src/js/filtrosHomePage.js"></script>
+  <script src="src/pages/assets/js/exibirModalMobile.js"></script>
 </html>
